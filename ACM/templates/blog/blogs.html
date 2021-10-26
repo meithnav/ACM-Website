@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Scrolling Effect-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
+
+    <!--Header Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <!-- Hind Blog_Post Tiltle -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri" rel="stylesheet">
+     <!--Recent Post Title Roboto -->
+     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--ROW H2 Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+
+<!--Favicon-->
+<link rel="shortcut icon" href="{% static 'images/acm-black-logo.png' %}" type="image/x-icon">
+
+<!-- Page Layout css -->
+<link rel="stylesheet" href="{% static 'css/pageLayout.css' %}">
+<!--PageLayout js-->
+<script type="text/javascript" src="{% static 'js/pageLayout.js' %}"></script>
+
+<!--Blog Dashboard CSS-->
+<link rel="stylesheet" href="{% static 'css/BlogDashboard.css' %}">
+
+    <title>DJACM - BLOGS</title>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="header" id="header">
+            <div class="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a>
+            </div>
+            <div class="menubtn" id="menubtn">
+                <div class="p">
+                    <p id="bar1"></p>
+                    <p id="bar2"></p>
+                    <p id="bar3">  </p>
+                </div>
+            </div>
+
+            <div class="innerheader" id="innerheader">
+                        <div class="items"><a href="{% url 'home' %}"> Home </a></div>
+                        <div class="items"><a href="{% url 'events' %}"> Events </a></div>
+                        <div class="items"><a href="{% url 'teams' %}"> Committee </a></div>
+                        <div class="items">
+                            <div class="dropdown " >
+                                <button class="dropbtn">Resources</button>
+                                <div class="dropdown-content">
+                                    <a href="{% url 'resources' %}">PPT</a>
+                                    <a href="{% url 'ascii' %}">ASCII</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="items"><a href="{% url 'blog' %}"> Blogs </a></div> -->
+                        <div class="items contact"><a href="{% url 'contact' %}"> Contact Us </a></div>
+                        <!-- <div class="items member"><a href="{% url 'submit' %}" class="membertext"> Be a Member</a></div> -->
+                        <div class="items member"><a href="{% url 'if_home' %}" class="membertext">IF</a></div>
+                    </div><!--closes innerheader-->
+
+        </div> <!--closes header-->
+      </div>
+
+      <div class="box">
+      <!--HEADING-->
+        <div class="event_head">
+        <h1 data-aos="fade-in" data-aos-duration="500" >Blogs</h1>
+        </div>
+
+      <!-- Gallery -->
+      <div class="pic_slider">
+          <div class="gallery">
+
+           <div class="displayslider">
+            <div class="previous arrows" data-aos="fade-in" data-aos-delay="400"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+            <div class="next arrows" data-aos="fade-in" data-aos-delay="400"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+
+              <div class="bannerslider" data-aos="fade-right" >
+               <div><a href="#"> <img src="{% static 'images/blog_images/blog_AI_3.jpg' %}" alt=""></a></div>
+               <div><a href="#"> <img src="{% static 'images/blog_images/ml_banner.png' %}" alt=""></a></div>
+               <div><a href="#"> <img src="{% static 'images/blog_images/blog_ethical-hacking_2.jpg' %}" alt=""></a></div>
+               <div><a href="#"> <img src="{% static 'images/blog_images/blog_ml_1.jpeg' %}" alt=""></a></div>
+
+              </div>
+
+           </div>
+
+              <div class="options">
+
+                  <div class="myimg" data-aos="fade-left">
+                    <a href="#"><img src="{% static 'images/blog_images/blog_AI.jpg' %}" alt=""></a>
+                  </div>
+                  <div class="myimg mobile_view_block" data-aos="fade-left" data-aos-delay="200">
+                  <a href="#"><img src="{% static 'images/blog_images/blog_appdev.jpg' %}" alt=""> </a>
+                  </div>
+                  <div class="myimg mobile_view_block" data-aos="fade-left" >
+                   <a href="#"><img src="{% static 'images/blog_images/blog_AI_2.jpg' %}" alt=""></a>
+                  </div>
+                  <div class="myimg" data-aos="fade-left" data-aos-delay="200">
+                   <a href="#"><img src="{% static 'images/blog_images/blog_ethical-hacking_2.jpg' %}" alt=""></a>
+                  </div>
+
+
+              </div>
+
+          </div>
+      </div><!--closes pic_slider-->
+
+      <!-- Blog Body -->
+      <div class="blog_body">
+
+        <div class="blogcontent">
+
+          <div class="utilitybar">
+
+            <div class="search" data-aos="fade-down" >
+              <form method ='post'>
+                {% csrf_token %}
+                <input type="text" placeholder="Search Blogs" name="keyword">
+               <button type='submit' name='submit' class='search-btn'><i class="fa fa-search" aria-hidden="true"></i></button>
+             </form>
+            </div>
+
+          </div>
+
+          {% for blog in blogs %}
+            <div class="blog_post"  data-aos="fade-right" data-aos-duration="3000" >
+              <div class="blogitem blog_img left">
+                  <img src="{{blog.main_img.url}}"  data-aos="fade-in" data-aos-delay="100">
+              </div>
+              <div class="blogitem blog_data right">
+                  <h1 data-aos="fade-down">{{blog.title}}</h1>
+                  <div class="author_info" data-aos="fade-down" data-aos-delay="100">
+                      <span class="genre">{{blog.type}}</span>
+                      <span class="auth_name">{{blog.author}}</span>
+                      <span class="date">{{blog.date}}</span>
+                  </div>
+                  <div class="summary" data-aos="fade-right" data-aos-delay="100">
+                      {{blog.summary}}
+                  </div>
+                  <div class="readmore" data-aos="fade-up" data-aos-delay="100"><a href="{% url 'blog_detail' blog.title %}">Read More</a></div>
+              </div>
+            </div>
+          {% endfor %}
+
+            <!-- <div class="blog_post"  data-aos="fade-right" data-aos-duration="3000" >
+              <div class="blogitem blog_img right">
+                  <img src="./ACM-Web-Official/static/images/Pankaj.jpeg" data-aos="fade-in" data-aos-delay="100">
+              </div>
+              <div class="blogitem blog_data left">
+                <h1 data-aos="fade-down">The Header of Blog</h1>
+                <div class="author_info" data-aos="fade-down" data-aos-delay="100">
+                    <span class="genre">Technical</span>
+                    <span class="auth_name">Meith Navlakha</span>
+                    <span class="date">January 30, 2021</span>
+                </div>
+                <div class="summary" data-aos="fade-right" data-aos-delay="100">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatum omnis vel. Dolorem, velit a.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, consectetur?
+                </div>
+                <div class="readmore" data-aos="fade-up" data-aos-delay="100"><a href="#">Read More</a></div>
+            </div>
+            </div>
+
+            <div class="blog_post"  data-aos="fade-right" data-aos-duration="3000">
+              <div class="blogitem blog_img left">
+                  <img src="./ACM-Web-Official/static/images/Pankaj.jpeg" alt="" data-aos="fade-in" data-aos-delay="100">
+              </div>
+              <div class="blogitem blog_data right">
+                <h1 data-aos="fade-down">Concepts of Machine Learning</h1>
+                <div class="author_info" data-aos="fade-down" data-aos-delay="100">
+                    <span class="genre">Technical</span>
+                    <span class="auth_name">Meith Navlakha</span>
+                    <span class="date">January 30, 2021</span>
+                </div>
+                <div class="summary" data-aos="fade-right" data-aos-delay="100">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatum omnis vel. Dolorem, velit a.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, consectetur?
+                </div>
+                <div class="readmore" data-aos="fade-up" data-aos-delay="100"><a href="#">Read More</a></div>
+            </div>
+            </div> -->
+
+        </div><!--closes blogcontent-->
+
+        <div class="recentpost">
+
+          <h1 data-aos="fade-in" >Trending Blogs</h1>
+          {% for blog in trending_blogs %}
+          <a href="{% url 'blog_detail' blog.title %}" class="posts" data-aos="flip-left"  data-aos-easing="ease-out-cubic"  data-aos-duration="500">
+            <div class="posts_img" data-aos="fade-in"  data-aos-delay="400"> <img src="{{blog.main_img.url}}" alt=""></div>
+            <div class="title" data-aos="fade-left"  data-aos-delay="500">
+              <h2>{{blog.title}}</h2>
+              <span class="recent_data">
+                {{blog.short_summary}}
+              </span>
+              <span class="date">{{blog.date}}</span>
+            </div>
+          </a>
+          {% endfor %}
+
+          <!-- <a href="#" class="posts" data-aos="flip-left"  data-aos-easing="ease-out-cubic"  data-aos-duration="500">
+            <div class="posts_img" data-aos="fade-in"  data-aos-delay="400"> <img src="./blog_AI.jpg" alt=""></div>
+            <div class="title" data-aos="fade-left"  data-aos-delay="500">
+              <h2>The Blog Title</h2>
+              <span class="recent_data">
+                Lorem, ipsum dolor elit. Sit, ipsam...
+              </span>
+              <span class="date">January 20, 2021</span>
+            </div>
+          </a>
+
+          <a href="#" class="posts" data-aos="flip-left"  data-aos-easing="ease-out-cubic"  data-aos-duration="500">
+            <div class="posts_img" data-aos="fade-in"  data-aos-delay="400"> <img src="./blog_AI.jpg" alt=""></div>
+            <div class="title" data-aos="fade-left"  data-aos-delay="500">
+              <h2>The Blog Title</h2>
+              <span class="recent_data">
+                Lorem, ipsum dolor elit. Sit, ipsam...
+              </span>
+              <span class="date">January 20, 2021</span>
+            </div>
+          </a>
+
+          <a href="#" class="posts" data-aos="flip-left"  data-aos-easing="ease-out-cubic"  data-aos-duration="500">
+            <div class="posts_img" data-aos="fade-in"  data-aos-delay="400"> <img src="./blog_AI.jpg" alt=""></div>
+            <div class="title" data-aos="fade-left"  data-aos-delay="500">
+              <h2>The Blog Title</h2>
+              <span class="recent_data">
+                Lorem, ipsum dolor elit. Sit, ipsam...
+              </span>
+              <span class="date">January 20, 2021</span>
+            </div>
+          </a> -->
+
+        </div><!--closes recentpost-->
+
+      </div>
+
+      </div><!--Closes Box-->
+
+      <footer>
+
+        <div class="innerfooter">
+            <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a></div>
+
+            <div class="footerbox">
+                <div class="parts involved">
+                    <h2>Get Involved</h2>
+                    <ul>
+                      <li><a href="{% url 'resources' %}"> PPT </a></li>
+                      <li><a href="{% url 'blog' %}"> Blogs </a></li>
+                      <!-- <li><a href=""> Blogs </a></li> -->
+                      <li><a href="{% url 'events' %}"> Events </a></li>
+                      <li><a href="{% url 'contact' %}"> Contact Us </a></li>
+                    </ul>
+                </div>
+                <div class="parts sociallinks">
+                    <h2>Stay Connected</h2>
+                    <div class="icons">
+                      <a href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+                      <a href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></i></a>
+                      <a href="https://in.linkedin.com/company/dj-sanghvi-acm"><i class="fa fa-linkedin"></i></i></a>
+                    </div>
+                </div>
+                <div class="parts subscribe">
+                    <h2>Subscribe To NewsLetter</h2>
+                   <div class="emailinput">
+                      <input type="email" class="email" placeholder="Enter your Email Address">
+                      <button>Join</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copyright"> <i class="fa fa-copyright"></i> 2021 DJSCE ACM -- All Rights Reserved</div>
+      </footer>
+
+
+        <!--Scrolling Effect-->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({
+
+              offset: 150, // offset (in px) from the original trigger point
+              delay: 0, // values from 0 to 3000, with step 50ms
+              duration: 600, // values from 0 to 3000, with step 50ms
+          });
+        </script>
+
+      <!--Sticky Scrollbar -->
+      <script>
+        window.onscroll = function() { StickyHeader() };
+      </script>
+
+    <!--JQuery Menu for small screen-->
+    <script>
+      $(document).ready(function(){
+        $("#menubtn").click(function(){
+          $("#innerheader").slideToggle("activemenu");
+          $(".header").toggleClass("activemenu");
+          $(".logo").toggleClass("activelogo");
+
+        });
+      });
+    </script>
+
+      <!-- Slick Slider -->
+  <script type="text/javascript" src="{% static 'js/slick_min.js' %}"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.bannerslider').slick({
+          dots: false,
+          infinite: true,
+          autoplay: true,
+          autoplaySpeed: 1500,
+          speed: 500,
+          fade: false,
+          cssEase: 'linear' ,
+          nextArrow: '.next',
+        prevArrow: '.previous' ,
+      });
+    });
+  </script>
+
+
+      </body>
+
+      </html>

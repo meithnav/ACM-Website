@@ -1,0 +1,975 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  user-select: none;
+}
+
+input, button,select,option{
+  outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #00FFFF ;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00E6FF;
+  }
+
+
+html{
+
+  background-color: rgb(0, 3, 36);
+  height: fit-content;
+  overflow-x: hidden;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  }
+
+  body{
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+    color: white;
+    position: relative;
+/* border: 0.1rem solid red;  */
+}
+
+/* MODAL BOX */
+
+.myModal{
+  display: none;
+  opacity: 1;
+  /* transform: scale(0); */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.575);
+  /* border: 0.1rem solid red; */
+  overflow: hidden;
+  transition: all 0.5s linear;
+
+}
+
+.myModal .modal_content{
+  height: 80%;
+  width: fit-content;
+  max-width: 80%;
+  margin: 1rem auto ;
+  margin-top: 8rem;
+  position: relative;
+  overflow: hidden;
+  /* border: 0.1rem solid rgb(255, 196, 0); */
+
+}
+.mySlides {
+  display: none;
+  width: fit-content;
+  margin: 1rem auto ;
+  height: 100%;
+  /* border: 0.1rem solid red; */
+
+}
+
+.myModal .modal_content .mySlides img{
+  display: block;
+  height: 100%;
+  width: auto;
+  margin: 0rem auto;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  /* background-size: 100% 100%; */
+}
+
+
+/*COLUMN IMAGES*/
+
+.myModal .mycolumn{
+  display: none;
+  position: relative;
+  width: 90%;
+  height: 20rem;
+  margin: 1rem auto;
+
+}
+
+.myModal .mycolumn .row{
+  width: calc(25% - 1rem );
+  height: 100%;
+  float: left;
+  margin: 0rem 0.5rem;
+  overflow: hidden;
+
+}
+
+.myModal .mycolumn .row .demo{
+  width: 100%;
+  height: 100%;
+ display: block;
+
+}
+
+/* The Close Button */
+
+.myModal .close {
+  color: rgb(255, 254, 254);
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  z-index: 10;
+  cursor: pointer;
+}
+
+
+.myModal .close:hover, .myModal .close:focus {
+  color: rgb(253, 6, 6);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.numbertext{
+  display: block;
+}
+
+/*MAIN */
+.main{
+  width: 95%;
+  height: fit-content;
+  margin: 4rem auto;
+  margin-top: 15rem;
+  /* border: 0.1rem solid red; */
+}
+
+.main .event_head{
+  width: 100%;
+  margin: 4rem auto;
+  color:white;
+  text-align: center;
+  text-shadow: 1px 1px 2px grey;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 3.5rem;
+  /* border: 0.1rem solid rgb(9, 255, 0); */
+}
+
+.main .registration{
+  width: 100%;
+  height: fit-content;
+
+}
+
+.main .registration a{
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  color:white;
+  border-radius: 1.0rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+  margin: 1rem auto;
+  font-size: 1.7rem;
+  font-family: sans-serif;
+  background-color: #F74B42;
+  margin-top: 0rem;
+}
+
+/*PREVIEW GALLERY*/
+
+.main .previewGallery{
+  display: flow-root ;
+  position: relative;
+  background-color: transparent;
+  width: 63%;
+  height: 45rem;
+  /* border: 0.1rem solid rgb(240, 227, 227); */
+  margin: 4rem auto;
+
+}
+
+.main .previewGallery .left{
+  width: calc(40% - 0.5rem);
+  height: 100%;
+  float: left;
+  margin-right: 0.3rem;
+  /* border: 0.1rem solid red; */
+
+}
+
+.main .previewGallery .right{
+  width: calc(60% - 0.5rem);
+  height: 100%;
+  float: left;
+  margin-left: 0.3rem;
+
+  /* border: 0.1rem solid red; */
+}
+
+.main .previewGallery .right .top{
+  width: 100%;
+  position: relative;
+  height: calc(50% - 0.2rem);
+  /* border: 0.1rem solid yellow; */
+}
+
+.main .previewGallery .right .top div{
+  float: left;
+  width: calc(50% - 0.3rem);
+}
+
+.main .previewGallery .left img{
+  object-fit: cover;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.main .previewGallery .right .top div img{
+  object-fit: cover;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.main .previewGallery .right .bottom{
+  width: 100%;
+  position: relative;
+  height: calc(50% - 0.2rem);
+  /* border: 0.1rem solid rgb(0, 255, 242); */
+
+}
+
+.main .previewGallery .right .bottom div{
+  width: calc(50% - 0.1rem) ;
+  height: calc(100% - 0.2rem);
+  float: left;
+  position: relative;
+}
+
+.main .previewGallery .right .bottom div .mymodalbox{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.904);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  /* background-image: url(./images/event2.jpg); */
+}
+
+.main .previewGallery .right .bottom div .mymodalbox a{
+  display: flow-root;
+  width: fit-content;
+  height: fit-content;
+  margin: 35% auto;
+  /* border: 0.1rem solid rgb(0, 255, 13); */
+
+}
+
+.main .previewGallery .right .bottom div .mymodalbox a h2{
+
+  width: fit-content;
+  height: fit-content;
+  float: left;
+  font-size: 1.8rem;
+  padding-top: 1rem ;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  padding-bottom: 0.2rem;
+  color: rgb(9, 13, 19);
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+  border-bottom: 0.1rem solid rgb(9, 13, 19) ;
+  /* border: 0.1rem solid rgb(255, 115, 0); */
+}
+
+.main .previewGallery .right .bottom div .mymodalbox a span{
+  font-family: 'Redressed', cursive;
+  float: left;
+  padding-left: 0.4rem;
+  font-size: 4rem;
+  color: rgb(9, 13, 19);
+
+  /* border: 0.1rem solid rgb(255, 115, 0); */
+
+
+}
+.main .previewGallery div img , .main .previewGallery div div img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*TABS*/
+
+.main .tab{
+  width: 100%;
+  height: fit-content;
+  display: flow-root;
+  /* border: 0.1rem solid rgb(238, 235, 235); */
+}
+
+.main .tab .tablinks{
+  font-size: 2.5rem;
+  float: left;
+  width: fit-content;
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+  /* border: 0.1rem solid red; */
+  font-family: 'Montserrat';
+}
+
+.main .tab .tablinks.active{
+  border-bottom: 0.3rem solid  #F74B42;
+}
+
+/*TEXT*/
+
+.main .txt{
+  display: block;
+  position: relative;
+  width: 85%;
+  height: fit-content;
+  margin: 1rem auto;
+
+  /* border: 0.1rem solid red; */
+}
+
+.main .txt .row{
+  display: flow-root;
+  width: calc(100% - 0rem);
+  margin: 2rem auto;
+  /* height: 30rem; */
+  height: fit-content;
+  /* border: 0.1rem solid rgb(9, 255, 0); */
+  overflow: hidden;
+}
+
+.main .txt .row .subtext , .main .txt .row .ques{
+  /* padding: 1rem 0rem; */
+  width: calc(50% - 0.2rem);
+  height: 100%;
+  overflow: hidden;
+}
+
+.main .txt .row .left{
+  float: left;
+}
+
+.main .txt .row .right{
+  float: right;
+}
+
+.main .txt .row .ques h1{
+  width: 80%;
+  height: fit-content;
+  margin: 22% auto;
+  font-size: 3.5rem;
+  text-align: center;
+  color: rgba(75, 250, 250, 0.822);
+  font-family: 'Montserrat';
+  /* border: 0.1rem solid rgb(9, 255, 0); */
+
+}
+
+.main .txt .row .subtext h6{
+
+  width: 80%;
+  display: block;
+  height: fit-content;
+  margin: 3rem auto;
+  font-size: 2rem;
+  padding: 2.5rem  ;
+  font-family: 'Nunito', sans-serif;
+  /* border: 0.1rem solid rgb(255, 115, 0); */
+}
+
+.main .txt .row .subtext .date{
+  margin-top: 13rem;
+  /* border: 0.1rem solid rgb(255, 115, 0); */
+}
+
+.main .txt .row .subtext.left h6{
+  border-left: 0.3rem solid #F74B42;
+
+}
+.main .txt .row .subtext.right h6{
+  border-right: 0.3rem solid #F74B42;
+}
+
+
+
+/*RESPONSIVE*/
+@media(max-width:1000px){
+  .main .txt .row .subtext .date{
+    margin-top: 7rem;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+  .main .registration a{
+    border-radius: 1.0rem;
+    padding: 0.8rem 1rem;
+    margin: 1rem auto;
+    font-size: 2rem;
+    margin-top: 0rem;
+  }
+
+}
+
+@media(max-width:830px){
+  html{
+    font-size: 45% ;
+  }
+
+  .main .event_head{
+    font-size: 3.5rem;
+    margin-top: 14rem;
+  }
+  .main .registration a{
+    border-radius: 1.0rem;
+    padding: 0.8rem 1rem;
+    margin: 1rem auto;
+    font-size: 2.5rem;
+    margin-top: 0rem;
+  }
+  .main .previewGallery{
+    width: 80%;
+    height: 50rem;
+    /* border: 0.1rem solid rgb(240, 227, 227); */
+    margin: 4rem auto;
+    margin-top: 6rem;
+  }
+
+  .main .tab .tablinks{
+    font-size: 3.5rem;
+    padding: 1rem;
+    margin: 1.5rem 2rem;
+    /* border: 0.1rem solid red; */
+  }
+
+
+  /*TEXT*/
+  .main .txt .row .subtext .date{
+    margin-top: 7rem;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+  .main .txt{
+    width: 90%;
+    margin: 1.5rem auto;
+
+    /* border: 0.1rem solid red; */
+  }
+
+  .main .txt .row{
+    margin: 2rem auto;
+    height: fit-content;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+  }
+
+  .main .txt .row .subtext , .main .txt .row .ques{
+    width: calc(50% - 0.2rem);
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .main .txt .row .ques h1{
+    width: 80%;
+    margin: 22% auto;
+    font-size: 4rem;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+
+  }
+
+  .main .txt .row .subtext h6{
+
+    width: 85%;
+    margin: 3rem auto;
+    font-size: 2.2rem;
+    padding: 2.9rem  ;
+    letter-spacing: 0.1rem;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+
+
+}
+
+@media(max-width:695px){
+  html{
+    font-size: 40% ;
+  }
+
+
+.main .event_head{
+  margin: 6rem auto;
+  margin-top: 18rem;
+  text-shadow: 1px 2px 3px grey;
+  font-size: 4rem;
+  /* border: 0.1rem solid rgb(9, 255, 0); */
+}
+.main .registration a{
+  border-radius: 1.0rem;
+  padding: 0.8rem 1rem;
+  margin: 1rem auto;
+  font-size: 3rem;
+  margin-top: 0rem;
+}
+
+
+  .main .previewGallery{
+    height: 55rem;
+    margin: 4rem auto;
+    margin-top: 8rem;
+  }
+
+  .main .previewGallery .right .bottom div .mymodalbox a{
+    margin: 45% auto;
+    /* border: 0.1rem solid rgb(0, 255, 13); */
+
+  }
+
+.main .tab .tablinks.active{
+  border-bottom: 0.6rem solid  #F74B42;
+}
+
+  .main .txt .row .subtext h6{
+
+    width: 85%;
+    margin: 3rem auto;
+    font-size: 2.2rem;
+    padding: 2.9rem  ;
+    letter-spacing: 0.1rem;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+  .main .txt .row .subtext.left h6{
+    border-left: 0.5rem solid #F74B42;
+
+  }
+  .main .txt .row .subtext.right h6{
+    border-right: 0.5rem solid #F74B42;
+  }
+
+}
+
+
+@media(max-width:600px){
+  html{
+    font-size: 30% ;
+  }
+  .main .event_head{
+    margin: 5rem auto;
+    margin-top: 20rem;
+    text-shadow: 1px 3px 4px grey;
+    font-size: 5.5rem;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+  }
+  .main .registration a{
+    border-radius: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem auto;
+    font-size: 4rem;
+    margin-top: 0rem;
+  }
+
+
+  .main .previewGallery{
+    width: 90%;
+    height: 72rem;
+    /* border: 0.1rem solid rgb(240, 227, 227); */
+    margin: 6.5rem auto;
+
+  }
+
+  .main .previewGallery .right .bottom div .mymodalbox a h2{
+    font-size: 2.5rem;
+    border-bottom: 0.2rem solid rgb(9, 13, 19) ;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+  .main .previewGallery .right .bottom div .mymodalbox a span{
+    padding-left: 0.4rem;
+    font-size: 5rem;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+  .main .tab .tablinks{
+    font-size: 4.5rem;
+    padding: 1rem;
+    margin: 1.5rem 2rem;
+    /* border: 0.1rem solid red; */
+  }
+
+
+  /*TEXT*/
+  .main .txt .row .subtext .date{
+    margin-top: 13rem;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+  .main .txt{
+    width: 90%;
+    margin: 2rem auto;
+
+    /* border: 0.1rem solid red; */
+  }
+
+  .main .txt .row{
+    margin: 2rem auto;
+    height: fit-content;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+  }
+
+  .main .txt .row .subtext , .main .txt .row .ques{
+    width: calc(50% - 0.2rem);
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .main .txt .row .ques h1{
+    width: 80%;
+    margin: 28% auto;
+    font-size: 4.5rem;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+
+  }
+
+  .main .txt .row .subtext h6{
+
+    width: 85%;
+    margin: 3rem auto;
+    font-size: 2.6rem;
+    padding: 2.8rem  ;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+
+
+}
+
+@media(max-width:465px){
+  html{
+    font-size: 25% ;
+  }
+  .main .txt .row .subtext .date{
+    margin-top: 4rem;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+
+  .main .event_head{
+    margin: 9rem auto;
+    margin-top: 28rem;
+    text-shadow: 1px 3px 4px grey;
+    font-size: 6.5rem;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+  }
+
+
+  .main .previewGallery{
+    width: 95%;
+    height: 83rem;
+    /* border: 0.1rem solid rgb(240, 227, 227); */
+    margin: 8rem auto;
+
+  }
+
+  .main .previewGallery .right .bottom div .mymodalbox a{
+    margin: 55% auto;
+    /* border: 0.1rem solid rgb(0, 255, 13); */
+
+  }
+
+  .main .previewGallery .right .bottom div .mymodalbox a h2{
+    font-size: 2.6rem;
+    border-bottom: 0.2rem solid rgb(9, 13, 19) ;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+  .main .previewGallery .right .bottom div .mymodalbox a span{
+    padding-left: 0.4rem;
+    font-size: 5rem;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+
+  .main .tab .tablinks{
+    font-size: 5rem;
+    padding: 1rem;
+    margin: 2rem 2.8rem;
+    /* border: 0.1rem solid red; */
+  }
+
+
+  /*TEXT*/
+
+  .main .txt{
+    width: 95%;
+    margin: 2.5rem auto;
+
+    /* border: 0.1rem solid red; */
+  }
+
+  .main .txt .row{
+    margin: 2rem auto;
+    height: fit-content;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+  }
+
+  .main .txt .row .subtext , .main .txt .row .ques{
+    width: calc(90% - 0rem);
+    height: 100%;
+    overflow: hidden;
+    float: none;
+  }
+
+  .main .txt .row .ques h1{
+    width: 100%;
+    margin: 2rem auto;
+    font-size: 5.2rem;
+    text-align: center;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+
+  }
+
+  .main .txt .row .subtext h6{
+
+    width: 85%;
+    margin: 3rem auto;
+    font-size: 3.5rem;
+    padding: 5rem  ;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+
+
+}
+
+@media(max-width:326px){
+  html{
+    font-size: 16% ;
+  }
+
+
+  .main .event_head{
+    margin: 6rem auto;
+    margin-top: 40rem;
+    text-shadow: 1px 3px 4px grey;
+    font-size: 8rem;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+  }
+  .main .registration a{
+    border-radius: 2rem;
+    padding: 1.5rem 3rem;
+    margin: 1rem auto;
+    font-size: 6.5rem;
+    margin-top: 0rem;
+  }
+
+
+  .main .previewGallery{
+    width: 95%;
+    height: 92rem;
+    /* border: 0.1rem solid rgb(240, 227, 227); */
+    margin: 15rem auto;
+
+  }
+
+  .main .previewGallery .right .bottom div .mymodalbox a{
+    margin: 60% auto;
+    /* border: 0.1rem solid rgb(0, 255, 13); */
+
+  }
+
+  .main .previewGallery .right .bottom div .mymodalbox a h2{
+    font-size: 3.2rem;
+    border-bottom: 0.2rem solid rgb(9, 13, 19) ;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+  .main .previewGallery .right .bottom div .mymodalbox a span{
+    padding-left: 0.4rem;
+    font-size: 5rem;
+
+  }
+
+
+  .main .tab .tablinks{
+    font-size: 6rem;
+    padding: 1rem;
+    margin: 2rem 2.8rem;
+    /* border: 0.1rem solid red; */
+  }
+
+
+  /*TEXT*/
+
+  .main .txt{
+    width: 95%;
+    margin: 4rem auto;
+
+    /* border: 0.1rem solid red; */
+  }
+
+  .main .txt .row{
+    margin: 5rem auto;
+    height: fit-content;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+  }
+
+  .main .txt .row .subtext , .main .txt .row .ques{
+    width: calc(95% - 0rem);
+    height: 100%;
+    overflow: hidden;
+    float: none;
+  }
+
+  .main .txt .row .ques h1{
+    width: 100%;
+    margin: 3rem auto;
+    font-size: 7rem;
+    text-align: center;
+    /* border: 0.1rem solid rgb(9, 255, 0); */
+
+  }
+
+  .main .txt .row .subtext h6{
+
+    width: 85%;
+    margin: 3rem auto;
+    font-size: 5rem;
+    padding: 5rem  ;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+    /* border: 0.1rem solid rgb(255, 115, 0); */
+  }
+
+
+
+}
+
+/*Gallery*/
+.main .gallery{
+  position: relative;
+  height: auto;
+  width: 90%;
+  margin: auto;
+  padding: 45px 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 2vh;
+  grid-auto-flow: dense;
+}
+.main .gallery .img{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.9);
+  border-radius: 2px;
+}
+.main .gallery .img:first-child{
+  grid-column-start: span 2;
+  grid-row-start: span 3;
+}
+.main .gallery .img:nth-child(2n+3){
+  grid-row-start: span 3;
+}
+.main .gallery .img:nth-child(4n+5){
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+}
+.main .gallery .img:nth-child(6n+7){
+  grid-row-start: span 1;
+}
+.main .gallery .img:nth-child(8n+9){
+  grid-column-start: span 1;
+  grid-row-start: span 1;
+}
+.main .gallery .img img{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  transition: 0.35s ease-in-out;
+}
+.main .gallery .img:hover img{
+  filter: brightness(1) grayscale(0);
+}
+
+@media only screen and (max-width: 950px) {
+  .main .gallery{
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .main .gallery{
+    display: block;
+  }
+  .main .gallery .img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin : 3% 0;
+  }
+  .main .gallery .img img{
+    display: block;
+    filter: brightness(1) grayscale(0);
+
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail of {{student.full_name}}</title>
+</head>
+<body>
+    <h3>Total Categories:</h3>
+    <ol>
+    {% for i in total_categories %}
+    <li>{{i}}</li>
+    {% endfor %}
+    </ol>
+    <br>
+    <h3>Unattended Categories:</h3>
+    <ol>
+    {% for i in unattended_categories %}
+    <li>{{i}}</li>
+    {% endfor %}
+    </ol>
+    <br>
+    <br>
+    <h2>Amount Paid: {{amount_paid}}</h2>
+    <h2>Refund Amount: {{refund_amount}}</h2>
+</body>
+</html>

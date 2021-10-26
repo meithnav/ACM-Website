@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DJACM - Lines Of Code 3.0</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                <!-- Load icon library -->
+           <!--JQuery-->
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>          
+           <!--Font Awesome-->
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+           <!--Scrolling Effect-->
+            <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+            <!--Header Font-->
+            <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+           <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">           <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet"> -->
+           <!--Scrolling Effect-->
+           <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+           <!--Favicon-->
+           <link rel="shortcut icon" href="{% static 'images/acm-black-logo.png' %}" type="image/x-icon">
+        <!-- LOC JS -->
+
+           <link rel="stylesheet" href="{% static 'css/loc.css' %}">
+           <script type="text/javascript" src="{% static 'js/loc.js' %}"></script>
+    </head>
+    <body>
+        <!-- HAMBURGER MENU -->
+            <div class="header" id="header">
+                <div class="logo">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a>
+                </div>
+                <div class="menubtn" id="menubtn" onclick="toggleMenu()">
+                    <div class="p">
+                        <p id="bar1"></p>
+                        <p id="bar2"></p>
+                        <p id="bar3">  </p>
+                    </div>
+                </div>
+    
+                <div class="innerheader" id="innerheader">
+                            <div class="items"><a href="#home"> Home </a></div>
+                            <div class="items"><a href="#apply">Apply Now</a></div>
+                            <div class=" items"><a href="#prizes">Prizes</a></div>
+                            <div class=" items"><a href="#guidelines">Guidelines</a></div>
+                            <div class=" items"><a href="#schedule">Schedule</a></div>
+                            <div class=" items"><a href="#domain">Domain</a></div>
+                            <div class="items"><a href="#faq">FAQs</a></div>
+                            <div class="items contact"><a href="#sponsors">Sponsors</a></div>
+                            <div class="items member"><a href="#" class="membertext">Apply Now</a></div>
+    
+                        </div><!--closes innerheader-->
+    
+            </div> <!--closes header-->
+       
+
+        <div class="sidenavbar" id="sideheaderNav">
+            <div class="side_item side_home  active_sidebar"><a href="#home" class="active_header_text">Home</a></div>
+            <div class="side_item side_apply"><a href="#apply">Apply Now</a></div>
+            <div class="side_item side_prizes"><a href="#prizes">Prizes</a></div>
+            <div class="side_item side_guidelines"><a href="#guidelines">Guidelines</a></div>
+            <div class="side_item side_schedule"><a href="#schedule">Schedule</a></div>
+            <div class="side_item side_domain"><a href="#domain">Domain</a></div>
+            <div class="side_item side_faqs"><a href="#faq">FAQs</a></div>
+            <div class="side_item side_sponsors"><a href="#sponsors">Sponsors</a></div>
+            <div class="side_item side_contact"><a href="#contact">Contact Us</a></div>
+        </div>
+
+
+          <div class="body_banner" id="home">
+              <div class="loc">
+                  <h1>
+                    <span class="loc_header"  data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">LOC 3.0</span>
+                    <div class="blobs_1"></div>
+                    <div class="blobs_2"></div>
+                    <div class="blobs_3"></div>
+                    <div class="blobs_4"></div>
+                    <div class="blobs_5"></div>
+                    <div class="blobs_6"></div>
+                    <div class="blobs_7"></div>
+                </h1>
+                  <span class="loc_date"  data-aos="fade-in" data-aos-delay="50" data-aos-duration="300">20th - 21st March, 2021</span>
+
+
+              </div>
+            <div class="clock-container" >
+                <div id="clockdiv" class="clockdiv"  data-aos="fade-left" data-aos-delay="100" data-aos-duration="500">
+                    <div class="clock_box">
+                        <span class="days"></span>
+                        <div class="smalltext">DAYS</div>
+                        <div class="smalltext smallscreen">DAYS</div>
+                     </div>
+
+                     <div class="collons collons_first">
+                        <!-- <span class="smalltext">:</span> -->
+                        <div class="smalltext"><h1>:</h1></div>
+                     </div>
+
+
+                     <div class="clock_box">
+                      <span class="hours"></span>
+                      <div class="smalltext">HOURS</div>
+                      <div class="smalltext smallscreen">HRS</div>
+                     </div>
+
+                     <div class="collons">
+                        <!-- <span class="smalltext">:</span> -->
+                        <div class="smalltext "><h1>:</h1></div>
+                     </div>
+
+
+                     <div class="clock_box" >
+                          <span class="minutes"></span>
+                       <div class="smalltext">MINUTES</div>
+                       <div class="smalltext smallscreen">MIN</div>
+                     </div>
+
+                     <div class="collons">
+                        <!-- <span class="smalltext">:</span> -->
+                        <div class="smalltext "><h1>:</h1></div>
+                     </div>
+
+
+                     <div class="clock_box" >
+                     <span class="seconds"></span>
+                      <div class="smalltext">SECONDS</div>
+                      <div class="smalltext smallscreen">SEC</div>
+                     </div>
+                </div>
+              </div>
+          </div>
+
+
+        <div class="row row-cols-2 setting" id="apply"  style="width: 100%; padding:10% 10% 1% 10%;">
+
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="left-side"  data-aos="fade-right" data-aos-delay="0" data-aos-duration="300">
+                    <img src="{% static 'images/left-info2.png' %}"  alt="" style="width:100%" height="100%">
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-6 ">
+                <div class="visit_blob"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
+                    <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 350">
+                    <path d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z"/>
+                    </svg>
+                  </div>
+
+                <div class="right-side">
+                    <div class="right-text-head">
+                        <h2  data-aos="fade-in" data-aos-delay="150" data-aos-duration="300">You’re stuck at home but your ideas don’t have to be. Write some 
+                            Lines Of Code!
+                            </h2>
+                        <p  data-aos="fade-in" data-aos-delay="150" data-aos-duration="300"><strong>Lines Of Code (LOC)</strong> hackathon is DJ-ACM’s annual hackathon where teams of developers  participate to generate high-value actionable business ideas and product concepts.</p>
+                    </div>
+
+                <div class=""  >
+                    <div 
+                        class="apply-button" 
+                        data-hackathon-slug="lines-of-code-1" 
+                        data-button-theme="light"
+                        style="height: 44px; width: 312px"
+                    ></div>
+                </div>
+
+
+
+            </div>
+
+            </div>
+
+        </div>
+
+        <div class="lastyearstats-container">
+            <div class="stats" data-aos="fade-in" data-aos-delay="300" data-aos-duration="600">
+                <div class='row' data-aos="fade-down" data-aos-delay="600" data-aos-duration="300">
+                    <div class="col-sm-3">
+                        <img src="{% static 'images/Group.png' %}"/>
+                        <h2>
+                            <span class="counter" data-count="2700">0</span>+
+                        </h2>
+                        <h4>Hackers</h4>
+                    </div>
+                    <div class="col-sm-3">
+                        <img src="{% static 'images/Vector.png' %}"/>
+                        <h2>
+                            <span class="counter" data-count="750">0</span>+
+                        </h2>
+                        <h4>Registrations</h4>
+                    </div>
+                    <div class="col-sm-3">
+                        <img src="{% static 'images/noto-v1_money-bag.png' %}"/>
+                        <h2>
+                            <span class="counter" data-count="4">0</span> Lakhs+
+                        </h2>
+                        <h4>Worth Prizes</h4>
+                    </div>
+                    <div class="col-sm-3">
+                        <img src="{% static 'images/Vector2.png' %}"/>
+                        <h2>
+                            <span class="counter" data-count="27">0</span>
+                        </h2>
+                        <h4>Colleges</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prizes -->
+       <div class="prize_box">
+        <div class="prize-container" id="prizes"  data-aos="fade-left" data-aos-delay="0" data-aos-duration="300">
+            <h1 class="font" >Prizes</h1>
+            <div class="prizes" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">
+                <div class="row setting" style="width: 100%;">
+                    <div class="col-sm-4" data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">
+                        <div class="rank">
+                            <h1>1</h1>
+                        </div>
+                        <span class="iconify" data-icon="vaadin:trophy" data-inline="false"></span>
+                        <!-- <img src="gold-cup.png" alt="" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"> -->
+                        <h2>₹ 20,000</h2>
+                    </div>
+                    <div class="col-sm-4" data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">
+                        <div class="rank">
+                            <h1>2</h1>
+                        </div>
+                        <span class="iconify" data-icon="vaadin:trophy" data-inline="false"></span>
+                        <!-- <img src="silver-cup.png" alt="" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"> -->
+                        <h2>₹ 12,500</h2>
+                    </div>
+                    <div class="col-sm-4" data-aos="fade-in" data-aos-delay="100" data-aos-duration="400">
+                        <div class="rank">
+                            <h1>3</h1>
+                        </div>
+                        <span class="iconify" data-icon="vaadin:trophy" data-inline="false"></span>
+                        <!-- <img src="bronze-cup.png" alt="" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"> -->
+                        <h2>₹ 7,500</h2>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+       </div> 
+       
+
+        <div class="guidelines-container" id="guidelines">
+            <h1 class="font"  data-aos="fade-left" data-aos-delay="0" data-aos-duration="300">Guidelines</h1>
+            <div class="guidelines" style="margin:0">
+                <div class="row setting" style="width: 100%; margin:0">
+                    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12" >
+                        <div class="guide-box">
+                            <div class="numbering-guide" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">1</div>
+                            <h1 data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">Registration will be done through Devfolio. All teams must also submit their team for review</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12" >
+                        <div class="guide-box">
+                            <div class="numbering-guide" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">2</div>
+                            <h1 data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">Each team should contain 2-4 members.</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12 ">
+                        <div class="guide-box">
+                            <div class="numbering-guide" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">3</div>
+                            <h1 data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">Teams will be shortlisted on the basis of their Devfolio profile.</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
+                        <div class="guide-box">
+                            <div class="numbering-guide" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">4</div>
+                            <h1 data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">Every shortlisted team must RSVP on Devfolio for their team to participate in the hackathon.</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
+                        <div class="guide-box">
+                            <div class="numbering-guide" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">5</div>
+                            <h1 data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">Each team should provide the new GitHub link of their project at the start of the hackathon.</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
+                        <div class="guide-box">
+                            <div class="numbering-guide" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">6</div>
+                            <h1 data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">No commits should be made after the event completion.</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
+                        <div class="guide-box">
+                            <div class="numbering-guide" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">7</div>
+                            <h1 data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">Problem statement will be released prior to the event and teams have to work on only one PS.</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
+                        <div class="guide-box">
+                            <div class="numbering-guide" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">8</div>
+                            <h1 data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">Plagiarism/clones of the project are strictly prohibited.</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
+                        <div class="guide-box">
+                            <div class="numbering-guide" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">9</div>
+                            <h1 data-aos="fade-in" data-aos-delay="0" data-aos-duration="300">Mentoring and assistance will be provided during the hackathon</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="schedule" id="schedule">
+            <h1 class="font schedule_font"  data-aos="fade-left" data-aos-delay="0" data-aos-duration="300">Schedule</h1>
+            <div class="schedule_content"data-aos="fade-in" data-aos-delay="700" data-aos-duration="1000" >
+    
+                <div class="track_line"></div>
+    
+                <div class="schedule_row">
+                    <div class="left"><span class="schedule_active">1</span></div>
+                    <div class="date">4th March</div>
+                    <div class="right"><span>-</span><span class="schedule_text"> Registration Begins</span></div>
+                </div>
+                <div class="schedule_row">
+                    <div class="left"><span class="schedule_active">2</span></div>
+                    <div class="date">15th March</div>
+                    <div class="right">- Registration Ends</div>
+                </div>
+                <div class="schedule_row">
+                    <div class="left"><span>3</span></div>
+                    <div class="date">16th March</div>
+                    <div class="right"><span>-</span><span class="schedule_text"> Shortlisted Teams Out</span> </div>
+                </div>
+                <div class="schedule_row">
+                    <div class="left"><span>4</span></div>
+                    <div class="date">19th March</div>
+                    <div class="right">- Problem Statements Released</div>
+                </div>
+                <div class="schedule_row">
+                    <div class="left"><span>5</span></div>
+                    <div class="date">20th March</div>
+                    <div class="right">- Hack Day</div>
+                </div>
+    
+    
+            </div>
+        </div>
+
+        <div class="domain-container" id="domain">
+            <h1 class="font schedule_font"  data-aos="fade-left" data-aos-delay="0" data-aos-duration="300">Domain</h1>
+            <div class="domains" >
+                <div class="row setting " style="width:100%; margin:0" >
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" data-aos="flip-left" data-aos-delay="0" data-aos-duration="500">
+                        <div class="domain-card">
+                            <span class="iconify" data-icon="vaadin:mobile-browser" data-inline="false"></span>
+                            <h1  data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">Web & App</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" data-aos="flip-left" data-aos-delay="0" data-aos-duration="500">
+                        <div class="domain-card">
+                            <span class="iconify" data-icon="carbon:machine-learning-model" data-inline="false"></span>
+                            <h1  data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">ML / AI</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" data-aos="flip-left" data-aos-delay="0" data-aos-duration="500">
+                        <div class="domain-card">
+                            <span class="iconify" data-icon="carbon:iot-platform" data-inline="false"></span>
+                            <h1 data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">IOT</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" data-aos="flip-left" data-aos-delay="0" data-aos-duration="500">
+                        <div class="domain-card">
+                            <span class="iconify" data-icon="simple-icons:hive-blockchain" data-inline="false"></span>
+                            <h1 data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">Blockchain</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="row setting" id="sponsors">
+            <h1 class="font"  data-aos="fade-left" data-aos-delay="0" data-aos-duration="300">Sponsors</h1>
+            {% for sponsor in sponsors %}
+              <div class="col-lg-2.4 col-md-4 sponsor-column text-center" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">
+                <h3 class="partner-head">{{ sponsor.partner_type }}</h3>
+                  <a href="{{sponsor.url}}" target="_blank"><img class="sponsor" style="border-radius: 10px" src="{{sponsor.logo.url}}">
+                </a>
+            </div>
+            {% endfor %}
+                <!-- <div class="col-lg-3 col-md-4  text-center"><a href="https://www.djacm.co.in/"><img class="sponsor" style="border-radius: 10px" src="{% static 'images/acm-white-logo.png' %}"></a></div>
+      
+                <div class="col-lg-3 col-sm-4  text-center"><a href="#"><img class="sponsor" style="border-radius: 10px" src="{% static 'images/left-info2.png' %}"></a></div>
+               <div class="col-lg-3 col-sm-4  text-center"><a href="https://balsamiq.com/"><img class="sponsor" style="border-radius: 10px" src="https://cdn.iconscout.com/icon/free/png-512/devfolio-1649779-1399882.png"></a></div>
+      
+      
+                <div class="col-lg-3 col-sm-4  text-center"><a href=""><img class="sponsor styleInfo" style="border-radius: 10px" src="{% static 'images/acm-white-logo.png' %}"></a></div>
+                <div class="col-lg-3 col-sm-4  text-center"><a href="https://www.linode.com/"><img class="sponsor" style="border-radius: 10px" src="{% static 'images/logo2.png' %}"></a></div>
+      
+                <div class="col-lg-3 col-sm-4  text-center"><a href="https://cloudsploit.com/"><img class="sponsor" style="border-radius: 10px" src="{% static 'images/acm-white-logo.png' %}"></a></div>
+      
+                <div class="col-lg-3 col-sm-4  text-center"><a href="https://www.thesouledstore.com/"><img class="sponsor" style="border-radius: 10px" src="{% static 'images/logo2.png' %}"></a></div>
+      
+                <div class="col-lg-3 col-sm-4  text-center "><a href="https://www.xinfin.org/"><img class="sponsor" style="border-radius: 10px" src="{% static 'images/acm-white-logo.png' %}"></a></div>
+       -->
+      
+          </div>
+          <!-- without loop sponsor template -->
+          <!-- <div id="custom-type-sponsors">
+            <h3 class="partner-head">Gifting Partner</h3>
+            <div class="row">
+                <div class="col-md-4 col-xs-12"></div>
+                <div class="col-md-4 col-xs-12 text-center">
+                    <a href="https://giftingsolutionsindia.com/">
+                        <img class="sponsor" style="border-radius: 10px" src="{% static 'images/custom-sponsor/gifting_solution.jpeg' %}">
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-12"></div>
+            </div>
+          </div> -->
+          
+          
+          <div id="faq">
+            <h2 class="font faqSpace" style="font-size: 40px; padding-top: 40px;" data-aos="fade-left" data-aos-delay="0" data-aos-duration="300">Frequently Asked Questions</h2>
+            <p class="faqSpace"  data-aos="fade-right" data-aos-delay="100" data-aos-duration="300">Can’t find the answers to what you are looking for? 
+                <a href="#contact" style="text-decoration: none;"><span class="faq-p-span"  data-aos="fade-in" data-aos-delay="200" data-aos-duration="300">Reach out to our team.</span></a>
+            </p>
+            <div class="faqContainer">
+                <button class="collapsible" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">
+                    <span class="numbering-faq">1</span>What is a Hackathon?
+                </button>
+                <div class="contents">
+                    <p style="margin-top: 10px;">A hackathon is a social coding event where programmers, designers and developers collaborate to solve a problem and compete for prizes. </p>
+                </div>
+                <!--<button class="collapsible">What are the problem statements for the hackathon?</button>-->
+                <!--<div class="contents">-->
+                <!--    <p style="margin-top: 10px;">The problem statements will be declared soon. Once you’ve registered we’ll keep you posted with all details.</p>-->
+                <!--</div>-->
+                <button class="collapsible" data-aos="fade-left" data-aos-delay="0" data-aos-duration="400">
+                    <span class="numbering-faq">2</span>Is this hackathon an online event or offline?
+                 </button>
+                <div class="contents">
+                    <p style="margin-top: 10px;">LoC  will be an online event.</p>
+                </div>
+    
+                <button class="collapsible" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">
+                    <span class="numbering-faq">3</span>What are the eligibility criteria? Are there any prerequisites or required skills?
+                </button>
+                <div class="contents">
+                    <p style="margin-top: 10px;">This competition is open to all university students so do send in your application to attend ! While experience in programming and software development is beneficial, this can be a great opportunity to network and learn. </p>
+                </div>
+    
+                <button class="collapsible" data-aos="fade-left" data-aos-delay="0" data-aos-duration="400">
+                    <span class="numbering-faq">4</span>How many members are allowed in one team for this Hackathon?
+                </button>
+                <div class="contents">
+                    <p style="margin-top: 10px;">LoC allows 2 to 4 members per team</p>
+                </div>
+                <button class="collapsible" data-aos="fade-right" data-aos-delay="0" data-aos-duration="400">
+                    <span class="numbering-faq">5</span>How much does this cost?
+                </button>
+                <div class="contents">
+                    <p style="margin-top: 10px;">LoC is FREE for all participants if your team is selected! </p>
+                </div>
+                <button class="collapsible" data-aos="fade-left" data-aos-delay="0" data-aos-duration="400">
+                    <span class="numbering-faq">6</span>Can I start working on my submission before the event or use something that I have built previously?
+                </button>
+                <div class="contents">
+                    <p style="margin-top: 10px;">The submission for LoC has to be made during the duration of the event in its entirety. Using prior work can lead to disqualification. </p>
+                </div>
+                <button class="collapsible" data-aos="fade-left" data-aos-delay="0" data-aos-duration="400">
+                    <span class="numbering-faq">7</span>How will I know about the platform and where the event is being held?
+                </button>
+                <div class="contents">
+                    <p style="margin-top: 10px;">Since the event is being held online, the information about the platform timing & other specific details will be conveyed to the short listed teams via mail. </p>
+                </div>
+                <!--
+                <button class="collapsible"><span class="numbering-faq">7</span>What is the format for the 2 rounds?</button>
+                <div class="contents">
+                    <p style="margin-top: 10px;">The two rounds shall be held on the same date. Round 1 is a simple coding puzzle and will be used to allot domains to the teams.Round 2 is a 24 hour hackathon.</p>
+                </div>
+            -->
+            </div>
+        </div>
+
+    <div class="mapMarker  mapsDiv" id="contact">
+        <div class="col-sm-6 map_left"  >
+
+            <!-- <h3 class="text_header" data-aos="fade-down" data-aos-delay="0" data-aos-duration="200">Co-Organizers</h3>
+
+
+                <div class="text_coordinator" data-aos="fade-left" data-aos-delay="200" data-aos-duration="400">
+                     <span class="branchHead" >Dhruvi Khankhoje</span> -->
+                    <!-- <span class="line" ></span>
+                    <span class="email_coordinator" >meithnavlakha@gmail.com</span> -->
+                <!-- </div> -->
+
+                <!-- <div class="text_coordinator" data-aos="fade-left" data-aos-delay="200" data-aos-duration="400">
+                     <span class="branchHead" >Pruthav Jhaveri</span> -->
+                    <!-- <span class="line" ></span>
+                    <span class="email_coordinator" >meithnavlakha@gmail.com</span> -->
+                <!-- </div> -->
+
+            <h3 class="text_header" data-aos="fade-down" data-aos-delay="0" data-aos-duration="200">Contact Us</h3>
+            <div class=" text_coordinator number" data-aos="fade-left" data-aos-delay="200" data-aos-duration="400">
+                <span class="branchHead" >Dhruvi Khankhoje</span>
+                <div><span class="branchHead" ><number>+91 98206 92210</number></span></div>
+            </div>
+            <div class="text_coordinator number" data-aos="fade-left" data-aos-delay="200" data-aos-duration="400"> 
+                <span class="branchHead" >Pruthav Jhaveri</span>
+                <div><span class="branchHead" ><number>+91 99203 01508</number></span></div>
+            </div>
+            <div class="text_coordinator">
+                <a href="https://djacm.co.in">
+                    <button class="visit-button" href="djacm.co.in"> Visit Our Website </button>
+                </a>
+                
+            </div>
+
+        </div>
+
+        <div class="col-sm-6 mapId map_right" style="overflow: hidden;" id="mapId">
+            <iframe class="Gmap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d942.4994801090171!2d72.83743607483443!3d19.107747162267845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x75f29a4205098f99!2sDwarkadas+J+Sanghvi+College+of+Engineering!5e0!3m2!1sen!2sus!4v1397913464271"></iframe>
+
+        </div>
+      </div>
+
+    </div>
+
+    <footer id="footer" class="footer-distributed " style="padding-top: 80px;padding-bottom: 10px;">
+
+        <div class="row" style="color:white;line-height: 2;">
+
+            <div class="col-md-3 col-xs-12 footerModify text-center">
+                <div class="footerTitle">
+                    About us
+                </div>
+                <div class="footerLogo">
+                    <a class="" >
+                        <img class="styleFootLogo" width="50%" src="{% static 'images/acm-white-logo.png' %}"/>
+                    </a>
+                </div>
+
+                <div>
+                    Don't let us convince you about our success. Let our three consecutive Best Student Chapter of the Year awards do the talking.
+                </div>
+
+            </div>
+            <div class="col-md-3 col-xs-12 footerModify text-center">
+                <div class="footerTitle text-center">
+                    Navigation
+                </div>
+                <div class="row">
+                    <div class=" col-xs-6 col-md-6 col-lg-6 text-center">
+
+                            <a href="#home" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Home</a>
+                            <a href="#domain" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Domains</a>
+                            <a href="#schedule" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Schedule</a>
+
+
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-lg-6 text-center">
+                        <a href="#sponsors" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Sponsors</a>
+                        <a href="#prizes" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Prizes</a>
+                        <a href="#faq" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>FAQ</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-xs-12 footerModify  text-center">
+                <div class="footerTitle">
+                    Location
+                </div>
+                <div>
+                    <ul style="list-style-type:none;padding:0 ">
+                        <li class="widget_anpstext">
+
+                            No.U-15,
+                            J.V.P.D. Scheme,
+                            Bhaktivedanta Swami Marg,
+                            Opp.Cooper Hospital
+                            Vile Parle (West),
+
+                            Mumbai-400 056.
+                            India
+                        </li>
+
+
+                        <li class="widget_anpstext">
+                            coreacm@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12 footerModify text-center">
+                <div class="footerTitle">
+                    Follow us
+                </div>
+                <div>
+                    <a class="mediaLink" href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></a>
+                    <a class="mediaLink" href="https://djacm.co.in"><i class="fa fa-globe"></i></a>
+                    <a class="mediaLink" href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+                    <a class="mediaLink" href="https://www.linkedin.com/company/dj-sanghvi-acm/"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">Made with  <span class="fa fa-heart " style="color: red;"></span> by DJACM Infotech team</div>
+        </div>
+
+
+    </footer>
+
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <!--Scrolling Effect-->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+         AOS.init({
+
+             offset: 100, // offset (in px) from the original trigger point
+             delay: 10, // values from 0 to 3000, with step 50ms
+             duration: 600, // values from 0 to 3000, with step 50ms
+            });
+        </script>
+
+ <!-- STOP-WATCH TIMER -->
+<script>
+// var final = new Date(2021, 1, 22, 23, 59, 59).getTime();
+// setInterval(() => {
+//   var present = new Date().getTime();
+//   var remainingTime = final - present;
+//   var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+//   var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//   var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+//   var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+// }, 1000);
+
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+var deadline = new Date(2021, 2, 20, 0, 0, 0);
+initializeClock('clockdiv', deadline);
+    </script>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+var j;
+
+for (j = 0; j < coll.length; j++) {
+  coll[j].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      for(var k = 0; k < j; k++){
+        document.getElementsByClassName("collapsible")[k].nextElementSibling.style.maxHeight=null;
+        document.getElementsByClassName("collapsible")[k].classList.remove("active");
+        content.style.maxHeight = content.scrollHeight + "px";
+        this.classList.add("active");
+      }
+    }
+  });
+}
+    </script>
+    
+    <!-- counter for stats -->
+    <script>
+        $('.counter').each(function() {
+            var $this = $(this),
+                countTo = $this.attr('data-count');
+            
+            $({ countNum: $this.text()}).animate({
+                countNum: countTo
+            },
+
+            {
+                duration: 8000,
+                easing:'linear',
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                }
+
+            });  
+        });
+    </script>
+    <!--Sticky Scrollbar -->
+<script>
+    window.onscroll = function() { StickyHeader() };
+  </script>
+
+  <!--JQuery Menu for small screen-->
+  <script>
+   $(document).ready(function(){
+        $("#menubtn").click(function(){
+          $("#innerheader").slideToggle("activemenu");
+          $(".header").toggleClass("activemenu");
+          $(".logo").toggleClass("activelogo");
+
+        });
+
+        $(".items").click(function(){
+          $("#innerheader").slideToggle("activemenu");
+          $(".header").toggleClass("activemenu");
+          $(".logo").toggleClass("activelogo");
+
+        });
+      });
+
+   </script>
+
+<!-- SideHeader OnScroll  -->
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    // Cache selectors
+var lastId,
+ topMenu = $("#sideheaderNav"),
+ topMenuHeight = topMenu.outerHeight()+1,
+ // All list items
+ menuItems = topMenu.find("a"),
+ // Anchors corresponding to menu items
+ scrollItems = menuItems.map(function(){
+   var item = $($(this).attr("href"));
+    if (item.length) { return item; }
+ });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+400;
+  $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+  }, 200);
+  e.preventDefault();
+});
+
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+   
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+   
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("active_sidebar")
+         .end().filter("[href=#" + id + "]").parent().addClass("active_sidebar");
+        
+         menuItems
+         .removeClass("active_header_text")
+         .end().filter("[href=#" + id + "]").addClass("active_header_text");
+
+   }                   
+});
+
+</script>
+
+<!-- SIDE_NAVBAR -->
+    <script>
+        var ob = document.getElementsByClassName("side_item") ;
+
+        for(var k =0 ; k<ob.length ; k++){
+            ob[k].addEventListener("click", function(){
+                for(var m =0 ; m<ob.length ; m++){
+                    ob[m].classList.remove("active_sidebar") ;
+                }
+                this.classList.add("active_sidebar") ;
+
+             });
+        }
+    </script>
+    <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
+    </body>
+</html>

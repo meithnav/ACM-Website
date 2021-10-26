@@ -1,0 +1,382 @@
+body{
+  background-color: #0A0E2A;
+  text-align: center;
+  color: white;
+  /* font-family: 'Montserrat'; */
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #00FFFF ;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00E6FF;
+  }
+
+
+h2{
+  color: #3CF7FB;
+}
+
+h6{
+  color:white;
+}
+
+p{
+  color:grey;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  color: white;
+  background-color: #0A0E2A;
+}
+
+/*HEADER*/
+
+.banner{
+  display: block;
+  width: 100%;
+  height: 4.0rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+   /* border: 0.1rem solid rgb(119, 0, 255);   */
+   /* overflow: hidden; */
+   transform: translateY(-0.3rem);
+
+}
+
+.banner .header{
+  display: flow-root ;
+  position: sticky;
+  width: 100%;
+  height: 100%;
+  background-color:  rgba(0, 0, 0, 0.308) ;
+  overflow: hidden;
+   /* border: 0.1rem solid rgb(0, 255, 42);  */
+  /* z-index: 1; */
+
+
+}
+
+.banner .header .logo{
+  width: 9.0rem;
+  height: calc(100% - 0rem);
+    /* border: 0.1rem solid red;    */
+   float: left;
+
+}
+
+.banner .header .logo a img{
+  width: 100%;
+  height: 100%;
+}
+
+.banner .header .innerheader{
+
+  width: fit-content;
+  height: calc(100% - 0rem);
+  float: right;
+  margin-right: 3.0rem;
+  /* border: 0.1rem solid rgb(0, 255, 0);  */
+  overflow: hidden;
+}
+
+.banner .header .innerheader .items{
+  float: left;
+  width: 8rem;
+  height: calc(100% - 0.5rem);
+ /* border: 0.1rem solid rgb(0, 255, 157);  */
+  margin: 0.7rem 0.1rem;
+  /* margin-top: 0rem; */
+
+}
+
+.banner .header .innerheader .contact{
+  margin-right: 3.0rem;
+}
+.banner .header .innerheader .items a{
+
+  display: block;
+  width: 100%;
+  height: calc(100% - 1.2rem);
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-family: 'Prompt', sans-serif;
+   /* border: 0.1rem solid rgb(0, 174, 255);  */
+   padding-top: 0.4rem;
+}
+
+
+.banner .header .innerheader .items a:hover{
+
+  background-color: rgba(209, 215, 252, 0.082);
+  border-radius: 1.0rem;
+  text-decoration: none;
+}
+
+.banner .header .innerheader .contact{
+  margin-right: 0.8rem;
+}
+
+.banner .header .innerheader .member{
+
+  background-color: rgb(253, 84, 75);
+  border-radius: 1.0rem;
+  width: 9.0rem;
+  margin-top: 0.7rem;
+  height: calc(100% - 1.7rem);
+  /* border: 1px solid green; */
+}
+
+.banner .header .innerheader .member .membertext{
+  font-size: 1.0rem;
+  width: 100%;
+  height: 100%;
+
+}
+.banner .header .innerheader .items .membertext:hover{
+  background-color: rgb(250, 66, 57);
+}
+
+
+
+
+/*RESPONSIVE*/
+
+@media(max-width : 1000px){
+
+  html{
+      font-size: 55% ;
+  }
+
+}
+
+@media(max-width : 830px){
+
+  html{
+      font-size: 45% ;
+  }
+
+}
+
+@media(max-width : 675px){
+
+  html{
+      font-size: 40% ;
+  }
+
+}
+
+@media(max-width : 600px){
+
+  html{
+      font-size: 30% ;
+  }
+
+}
+
+@media(max-width : 455px){
+
+  html{
+      font-size: 25% ;
+  }
+
+}
+
+
+@media(max-width : 389px){
+
+  html{
+      font-size: 22% ;
+  }
+
+}
+
+
+@media(max-width : 356px){
+
+  html{
+      font-size: 20% ;
+  }
+
+}
+
+@media(max-width : 323px){
+  html{
+      font-size: 16% ;
+  }
+
+}
+
+
+
+/*closes header*/
+
+
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  border-bottom-color: white;
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  text-decoration: underline;
+  text-decoration-color:#F74B42;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  text-decoration: underline;
+  text-decoration-color:#F74B42;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+
+  border-top: none;
+}
+
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.tablinks{
+  color: #3CF7FB;
+  font-size: 1.5rem;
+
+}
+
+.event_head{
+  color:white;
+  text-align: center;
+  margin: 50px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.event_query{
+  text-align: center;
+  color: #3CF7FB;
+}
+
+.event_queryleft{
+  text-align: left;
+  padding: 12% 8% 8% 2%;
+  margin-left:60px;
+  font-size: 1.2rem;
+  border-left-color: #F74B42;
+  border-left-width: thin;
+  border-left-style: solid;
+
+}
+
+.event_queryright{
+  text-align: left;
+  padding: 12% 8% 8% 2%;
+  margin-left:60px;
+  font-size: 1.2rem;
+  border-right-color: #F74B42;
+  border-right-width: thin;
+  border-right-style: solid;
+}
+
+.col-event{
+  text-align: left;
+  padding: 7%;
+}
+
+.know_more{
+  background-color: #F74B42;
+  color:white;
+  border-radius: 20px;
+
+}
+.progress-container {
+  width: 100%;
+  height: 7px;
+  background: #0A0E2A;
+  position: sticky;
+  top:0;
+  z-index: 1;
+}
+
+.progress-bar {
+  height: 7px;
+  background: #F74B42;
+  width: 0%;
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  width:100%;
+}
+
+.col-md-6{
+  text-align: center;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

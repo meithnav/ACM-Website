@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+    <link rel="stylesheet" href="{% static 'css/if_form2.css' %}">
+	<link rel="stylesheet" href="{% static 'css/custom-bs.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/line-icons/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/quill.snow.css' %}">
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800;900&display=swap" rel="stylesheet">
+ <!-- Font Awesome4 -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/JobProfile.css' %}"> 
+</head>
+<body>
+<nav class="navbar sticky-top  navbar-expand-lg navbar-light " style="border-bottom: 2px solid black;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">INTERNSHIP FAIR</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link middle" href="{% url 'if_home' %}"  data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link middle " href="{% url 'if_form' %}" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">Registration Form</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link middle" href="{% url 'job_profile' %}" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">Job Profiles</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="title1">
+  Registration Form
+</div>
+<div class="wrapper2">
+  <div class="wrapper">
+      <form id="mainform" action="#" method="post" class="form">
+        {% csrf_token %}
+        {% if message %}
+        <div class="inputfield3">
+          <p style="text-align: center;font-size: 12px;color:red">{{message}}</p>
+        </div>
+        {% endif %}
+        <div class="inputfield">
+          <label>Full Name</label>
+          <input name="name" type="text" class="input">
+        </div>
+        <div class="inputfield">
+          <label>SAP ID</label>
+          <input name="sap" type="text" class="input">
+        </div>  
+        <div class="inputfield">
+          <label>Gender</label>
+          <div class="custom_select">
+            <select name="gender">
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="inputfield">
+          <label>Email Address</label>
+          <input name="email" type="email" class="input">
+        </div> 
+        <div class="inputfield">
+          <label>Phone Number</label>
+          <input name="phone" type="text" class="input">
+        </div>
+        <div class="inputfield">
+          <label>Whatsapp Number</label>
+          <input name="whatsapp" type="text" class="input">
+        </div>
+        <div class="inputfield">
+          <label>Resume Drive Link</label>
+          <input name="resume" type="url" class="input">
+        </div>  
+        <div class="inputfield">
+          <label>Department</label>
+          <div class="custom_select">
+            <select name="department">
+              <option value="">Select</option>
+              <option value="Computer Engineering">Computer Engineering</option>
+              <option value="Information Technology">Information Technology</option>
+              <option value="Electronics & Telecommunication Engineering">Electronics & Telecommunication</option>
+              <option value="Electronics Engineering">Electronics Engineering</option>
+              <option value="Mechanical Engineering">Mechanical Engineering</option>
+              <option value="Chemical Engineering">Chemical Engineering</option>
+              <option value="Production Engineering">Production Engineering</option>
+            </select>
+          </div>
+        </div>
+        <div class="inputfield">
+          <label>Year</label>
+          <div class="custom_select">
+            <select name="year">
+              <option value="">Select</option>
+              <option value="Second Year">S.E.</option>
+              <option value="Third Year">T.E.</option>
+              <option value="Fourth Year">B.E.</option>
+            </select>
+          </div>
+        </div>
+        <div class="inputfield">
+          <label>Company List:</label>
+        </div>
+        <div class="row companylist">
+          {%for company,name,positionType,position in companies%}
+          <div class="col-md-4 inputfield2 terms">
+            <label class="check">
+              <input name ="{{company}}"type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            &nbsp;&nbsp;
+            <p>Company = <span>{{name}}</span>
+            <!-- <br>Position Type = <span>{{positionType}}</span></p> -->
+            <br>Position = <span>{{position}}</span></p>
+          </div>
+          {% endfor %}
+        </div>
+        <br>
+        <div class="inputfield">
+          <button id="submitbtn" type="submit" value="Register" class="btn">SUBMIT</button>
+        </div>
+      </form>
+  </div>
+</div>	
+<footer id="footer" class="footer-distributed " style="padding-top: 80px;padding-bottom: 10px;">
+            
+  <div class="row" style="color:white;line-height: 2;">
+
+      <div class="col-md-3 col-xs-12 footerModify text-center">
+          <div class="footerTitle">
+              About us
+          </div>
+          <div class="footerLogo">
+              <a class="" >
+                  <img class="styleFootLogo" width="50%" src="{% static 'acm-white-logo.png' %}"/>
+              </a> 
+          </div>
+      
+          <div>
+              Don't let us convince you about our success. Let our three consecutive Best Student Chapter of the Year awards do the talking.
+          </div>
+
+      </div>
+      <div class="col-md-3 col-xs-12 footerModify text-center">
+          <div class="footerTitle text-center">
+              Navigation
+          </div>
+          <div class="row">
+              <div class=" col-xs-6 col-md-6 col-lg-6 text-center">
+              
+                      <a href="#home" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Home</a>
+                      <a href="#domain" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Problems</a>
+                      <a href="#schedule" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Schedule</a>
+                      
+              
+              </div>
+              <div class="col-md-6 col-xs-6 col-lg-6 text-center">
+                  <a href="#sponsors" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Sponsors</a>
+                  <a href="#prize" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Prizes</a>
+                  <a href="#faq" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>FAQ</a>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="col-md-3 col-xs-12 footerModify  text-center">
+          <div class="footerTitle">
+              Location
+          </div>
+          <div>
+              <ul style="list-style-type:none;padding:0 ">
+                  <li class="widget_anpstext">
+                      
+                      No.U-15,
+                      J.V.P.D. Scheme,
+                      Bhaktivedanta Swami Marg,
+                      Opp.Cooper Hospital
+                      Vile Parle (West),
+                      
+                      Mumbai-400 056.
+                      India
+                  </li>
+              
+                 
+                  <li class="widget_anpstext">
+                      coreacm@gmail.com
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="col-md-3 col-xs-12 footerModify text-center">
+          <div class="footerTitle">
+              Follow us
+          </div>
+          <div>
+              <a class="mediaLink facebook" href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></a>
+              <a class="mediaLink " href="https://www.djacm.co.in" ><i class="fa fa-globe"></i></a>
+              <a class="mediaLink instagram" href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+          </div>
+      </div>
+      <div class="col-md-12 text-center">Made with  <span class="fa fa-heart " style="color: red;"></span> by DJACM INFOTECH team</div>
+  </div>
+  
+  
+</footer>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/stickyfill.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/quill.min.js' %}"></script>
+    
+    
+    <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+    
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    -->
+    <!-- Scrolling Effect  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+
+        offset: 100, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 600, // values from 0 to 3000, with step 50ms
+      });
+    </script>
+	
+</body>
+</html>

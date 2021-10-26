@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+      <!-- META TAGS FOR SEO -->
+
+        <meta name="keywords" content="djacm , djscoe acm, acm, dj acm, djscoe student chapter, events, computing, resources, world, students ">
+        <meta name="description" content="DJSCOE-ACM has established itself as a successful committee in terms of the number of members who have become a part of the ACM family and in terms of the seminars/workshops that have been conducted.">
+        <meta name="author" content="DJSCOE-ACM">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="google-site-verification" content="0iXdl6xLt6MOIy6RSAZ5h3giWMn7Yuyhv2Ahld1h8pg" />
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--Font Awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Header Font-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<!--Scrolling Effect-->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!--Favicon-->
+<link rel="shortcut icon" href="{% static 'images/acm-black-logo.png' %}" type="image/x-icon">
+<!--YOUR FILE CSS-->
+<link rel="stylesheet" href="{% static 'css/resources.css' %}">
+<!--Header js-->
+<script type="text/javascript" src="{% static 'js/pageLayout.js' %}"></script>
+<!--HEADER CSS-->
+<link rel="stylesheet" href="{% static 'css/pageLayout.css' %}">
+
+<title>DJACM - PPT</title>
+
+</head>
+<body>
+
+  <!-- HEADER  -->
+  <div class="banner">
+    <div class="header" id="header">
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a>
+        </div>
+        <div class="menubtn" id="menubtn">
+            <div class="p">
+                <p id="bar1"></p>
+                <p id="bar2"></p>
+                <p id="bar3">  </p>
+            </div>
+        </div>
+
+        <div class="innerheader" id="innerheader">
+                    <div class="items"><a href="{% url 'home' %}"> Home </a></div>
+                    <div class="items"><a href="{% url 'events' %}"> Events </a></div>
+                    <div class="items"><a href="{% url 'teams' %}"> Committee </a></div>
+                    <div class="items">
+                        <div class="dropdown " >
+                            <button class="dropbtn">Resources</button>
+                            <div class="dropdown-content">
+                                <a href="{% url 'resources' %}">PPT</a>
+                                <a href="{% url 'ascii' %}">ASCII</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items"><a href="{% url 'blog' %}"> Blogs </a></div>
+                    <!-- <div class="items"><a href=""> Blogs </a></div> -->
+                    <div class="items contact"><a href="{% url 'contact' %}"> Contact Us </a></div>
+                    <!-- <div class="items member"><a href="{% url 'submit' %}" class="membertext"> Be a Member</a></div> -->
+                    <div class="items member"><a href="{% url 'if_home' %}" class="membertext">IF</a></div>
+                </div><!--closes innerheader-->
+
+    </div> <!--closes header-->
+  </div>
+
+    <!--Resources-->
+    <div class="resources">
+
+       <!--Chapter-Wise  div-->
+      <div class="chapter">
+           <div class="header"> OS </div>
+           <div class="content">
+               <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212873&amp;authkey=%21AGhkFsQQysz1Mjg&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Operating Systems Overview</div>
+            </div>
+               <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212878&amp;authkey=%21AOboSJ6bOMM4P_s&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Processes</div>
+            </div>
+               <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212877&amp;authkey=%21ACQ5lKQLIEGWzAw&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Threads</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212882&amp;authkey=%21AKo8px3Mn9o1Uk4&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Concurrency</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212880&amp;authkey=%21AGLMBblmbLqBss4&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1"width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Deadlocks</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212881&amp;authkey=%21APAlT2Kygv-dbHY&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Memory Management</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212884&amp;authkey=%21AI9X7WE9uwi4zm4&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">IO Management</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212885&amp;authkey=%21AOoPG5gSLAgusEU&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Uniprocessor Scheduling</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212883&amp;authkey=%21AMgaEB8r-XGKPYU&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">File Management</div>
+            </div>
+
+        </div>
+      </div> <!--closes chapter-->
+
+
+      <div class="chapter">
+          <div class="header"> DBMS </div>
+          <div class="content">
+            <div class="items">
+               <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212889&amp;authkey=%21AKNIRgYfk9iuMc8&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Advance SQL</div>
+            </div>
+            <div class="items">
+               <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212890&amp;authkey=%21AAupnJYYmvNN6Uk&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+               <div class="title">Basic SQL</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212891&amp;authkey=%21ABEGFFwBN-VJV9U&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Intermediate SQL</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212893&amp;authkey=%21AOBE6cSIIW79v1s&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Aggregate GRP by Nested</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212892&amp;authkey=%21AOjDVQBrVfHWgRM&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">EN Ch07 ER EER</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212894&amp;authkey=%21AGdurPCvbMk36aQ&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Normalization</div>
+            </div>
+            <div class="items">
+                <iframe src="https://onedrive.live.com/embed?resid=2DC42B99C240EA8%212895&amp;authkey=%21ALQLfbHqnCB2p34&amp;em=2&amp;wdAr=1.3333333333333333&amp;Embed=1" width="100%" height="327px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                <div class="title">Transaction Management</div>
+            </div>
+
+          </div>
+      </div> <!--closes chapter-->
+
+    </div>
+
+
+    <footer>
+
+      <div class="innerfooter">
+          <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a></div>
+
+          <div class="footerbox">
+              <div class="parts involved">
+                  <h2>Get Involved</h2>
+                  <ul>
+                    <li><a href="{% url 'resources' %}"> PPT </a></li>
+                    <li><a href="{% url 'blog' %}"> Blogs </a></li>
+                    <!-- <li><a href=""> Blogs </a></li> -->
+                    <li><a href="{% url 'events' %}"> Events </a></li>
+                    <li><a href="{% url 'contact' %}"> Contact Us </a></li>
+                  </ul>
+              </div>
+              <div class="parts sociallinks">
+                  <h2>Stay Connected</h2>
+                  <div class="icons">
+                    <a href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></i></a>
+                    <a href="https://in.linkedin.com/company/dj-sanghvi-acm"><i class="fa fa-linkedin"></i></i></a>
+                  </div>
+              </div>
+              <div class="parts subscribe">
+                  <h2>Subscribe To NewsLetter</h2>
+                 <div class="emailinput">
+                    <input type="email" class="email" placeholder="Enter your Email Address">
+                    <button>Join</button>
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+
+      <div class="copyright"> <i class="fa fa-copyright"></i> 2021 DJSCE ACM -- All Rights Reserved</div>
+    </footer>
+
+
+
+<!--Sticky Header-->
+<script>
+    window.onscroll = function() { StickyHeader() };
+</script>
+
+<!--JQuery Menu for small screen-->
+<script>
+  $(document).ready(function(){
+      $("#menubtn").click(function(){
+        $("#innerheader").slideToggle("activemenu");
+        $(".header").toggleClass("activemenu");
+        $(".logo").toggleClass("activelogo");
+
+      });
+    });
+</script>
+
+
+
+</body>
+</html>

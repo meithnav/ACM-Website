@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+      <!-- META TAGS FOR SEO -->
+
+      <meta name="keywords" content="djacm , djscoe acm, acm, dj acm, djscoe student chapter , events, computing, resources, world, students">
+      <meta name="description" content="DJSCOE-ACM has established itself as a successful committee in terms of the number of members who have become a part of the ACM family and in terms of the seminars/workshops that have been conducted.">
+      <meta name="author" content="DJSCOE-ACM">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="google-site-verification" content="0iXdl6xLt6MOIy6RSAZ5h3giWMn7Yuyhv2Ahld1h8pg" />
+
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ <!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--Font Awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Header Font-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<!--Arrow Font-->
+<link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+<!--ROW H2 Font-->
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+<!--Subtext:  Nunito Font-->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+<!--Favicon-->
+<link rel="shortcut icon" href="{% static 'images/acm-black-logo.png' %}" type="image/x-icon">
+<!--Scrolling Effect-->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!--CSS-->
+  <link rel="stylesheet" href="{% static 'css/knowmore.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pageLayout.css' %}">
+<!-- HEADER JS -->
+  <script type="text/javascript" src="{% static 'js/pageLayout.js' %}"></script>
+
+  <title>DJACM - ABOUT {{event.title}}</title>
+</head>
+<body>
+  <body>
+
+    <!-- HEADER  -->
+    <div class="banner">
+      <div class="header" id="header">
+          <div class="logo">
+              <a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a>
+          </div>
+          <div class="menubtn" id="menubtn">
+              <div class="p">
+                  <p id="bar1"></p>
+                  <p id="bar2"></p>
+                  <p id="bar3">  </p>
+              </div>
+          </div>
+
+          <div class="innerheader" id="innerheader">
+                      <div class="items"><a href="{% url 'home' %}"> Home </a></div>
+                      <div class="items"><a href="{% url 'events' %}"> Events </a></div>
+                      <div class="items"><a href="{% url 'teams' %}"> Committee </a></div>
+                      <div class="items">
+                          <div class="dropdown " >
+                              <button class="dropbtn">Resources</button>
+                              <div class="dropdown-content">
+                                  <a href="{% url 'resources' %}">PPT</a>
+                                  <a href="{% url 'ascii' %}">ASCII</a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="items"><a href="{% url 'blog' %}"> Blogs </a></div>
+                      <!-- <div class="items"><a href=""> Blogs </a></div> -->
+                      <div class="items contact"><a href="{% url 'contact' %}"> Contact Us </a></div>
+                      <!-- <div class="items member"><a href="{% url 'submit' %}" class="membertext"> Be a Member</a></div> -->
+                      <div class="items member"><a href="{% url 'if_home' %}" class="membertext">IF</a></div>
+                  </div><!--closes innerheader-->
+
+      </div> <!--closes header-->
+    </div>
+
+  <!-- The Modal/Lightbox -->
+  <div id="myModal" class="myModal">
+    <span class="close cursor" >&times;</span>
+    <div class="modal_content">
+
+   {% for p in photos%}
+      <div class="mySlides">
+        <div class="numbertext">{{forloop.counter}} / {{photos|length}}</div>
+        <img src="{{p.pic.url}}" style="width:100%">
+      </div>
+      {% endfor %}
+
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+     <!-- Thumbnail image controls -->
+     <div class="mycolumn">
+      <div class="row">
+        <img class="demo" src="{{one.pic.url}}" onclick="currentSlide(1)" alt="Nature">
+      </div>
+
+      <div class="row">
+        <img class="demo" src="{{two.pic.url}}" onclick="currentSlide(2)" alt="Snow">
+      </div>
+
+      <div class="row">
+        <img class="demo" src="{{three.pic.url}}" onclick="currentSlide(3)" alt="Mountains">
+      </div>
+
+      <div class="row">
+        <img class="demo" src="{{four.pic.url}}" onclick="currentSlide(4)" alt="Lights">
+      </div>
+
+      <div class="row">
+        <img class="demo" src="{{five.pic.url}}" onclick="currentSlide(5)" alt="Lights">
+      </div>
+    </div>
+  </div>
+
+
+    <div class="main">
+
+        <h1 class="event_head" data-aos="fade-in" data-aos-delay="200"  data-aos-duration="1000">{{event.title}}</h1>
+        {% if event.reg_link %}
+        <div class="registration">
+            <a href="{{event.reg_link}}" data-aos="fade-in" data-aos-delay="200"  data-aos-duration="1000">Register Here</a>
+        </div>
+        {% endif %}
+        <!--Preview Gallery-->
+        <div class="previewGallery" >
+          <div class="left" >
+            <!-- <div class="top"> -->
+              <img src="{{one.pic.url}}" class="openModal"data-aos="fade-right" onclick="currentSlide(1)"  data-aos-delay="200" data-aos-duration="1000" data-aos-offset="0">
+            <!-- </div> -->
+            <!-- <div class="bottom">
+              <img src="{{five.pic.url}}" alt="" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+            </div> -->
+            <!-- <img src="{{one.pic.url}}" alt="" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"> -->
+          </div>
+          <div class="right" >
+            <div class="top">
+              <div class='left'><img src="{{two.pic.url}}" onclick=" currentSlide(3)" class="openModal" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="0"></div>
+              <div class='right'><img src="{{three.pic.url}}" onclick="currentSlide(4)" class="openModal"  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="0"></div>
+            </div>
+            <div class="bottom">
+
+              <div><img src="{{four.pic.url}}" onclick="currentSlide(2)" class="openModal" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="0"></div>
+
+              <div>
+                <img src="{{five.pic.url}}" onclick="currentSlide(5)"class="openModal" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="0">
+                <div class="mymodalbox" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="0">
+                  <a href='#gallery'><h2>VIEW GALLERY</h2>
+                    <span>></span></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div><!--closes Preview Gallery-->
+
+        <!--Tabs-->
+        <div class="tab">
+          <div class="tablinks active" onclick="openCity(event, 'Details')" id="defaultOpen" data-aos="fade-in" data-aos-delay="200">Details</div>
+          <div class="tablinks " onclick="openCity(event, 'Gallery')"  data-aos="fade-in" data-aos-delay="200">Gallery</div>
+
+        </div>
+
+        <!--Events txt-->
+        <div  id="Details" class="txt tabcontent">
+            <div class="row">
+                <div class="ques right" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
+                  <h1 >WHAT IS THIS EVENT ABOUT?</h1>
+                </div>
+
+                <div class="subtext left" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+                  <h6>
+                    {{event.about}}
+                  </h6>
+                </div>
+            </div><!--closes row-->
+
+            <div class="row">
+             <div class="ques left" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+                <h1>WHEN IS IT HAPPENING?</h1>
+              </div>
+
+              <div class="subtext right" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
+                <h6 class='date'>
+                  {{event.when}}
+                </h6>
+              </div>
+           </div><!--closes row-->
+
+           <div class="row">
+            <div class="ques right" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
+               <h1>WHAT'S IN IT FOR YOU?</h1>
+             </div>
+
+             <div class="subtext left" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+              <h6>
+                {{event.you}}
+              </h6>
+             </div>
+          </div><!--closes row-->
+
+
+        </div><!--closes Events txt-->
+
+        <!--Expanded Gallery-->
+        <a name="gallery">
+      <div id="Gallery" class="gallery">
+
+          {% for p in photos%}
+
+          <div class="img" >
+            <img src="{{p.pic.url}}" onclick="currentSlide('{{forloop.counter}}')" class="openModal" alt="">
+          </div>
+          {% endfor %}
+
+
+      </div>
+      </a>
+
+  </div><!--closes main-->
+
+  <!--FOOTER-->
+<footer>
+
+  <div class="innerfooter">
+      <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a></div>
+
+      <div class="footerbox">
+          <div class="parts involved">
+              <h2>Get Involved</h2>
+              <ul>
+                <li><a href="{% url 'resources' %}"> PPT </a></li>
+                <li><a href="{% url 'blog' %}"> Blogs </a></li>
+                <!-- <li><a href=""> Blogs </a></li> -->
+                <li><a href="{% url 'events' %}"> Events </a></li>
+                <li><a href="{% url 'contact' %}"> Contact Us </a></li>
+              </ul>
+          </div>
+          <div class="parts sociallinks">
+              <h2>Stay Connected</h2>
+              <div class="icons">
+                <a href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></i></a>
+                <a href="https://in.linkedin.com/company/dj-sanghvi-acm"><i class="fa fa-linkedin"></i></i></a>
+              </div>
+          </div>
+          <div class="parts subscribe">
+              <h2>Subscribe To NewsLetter</h2>
+             <div class="emailinput">
+                <input type="email" class="email" placeholder="Enter your Email Address">
+                <button>Join</button>
+              </div>
+
+          </div>
+      </div>
+
+  </div>
+
+  <div class="copyright"> <i class="fa fa-copyright"></i> 2021 DJSCE ACM -- All Rights Reserved</div>
+</footer>
+
+
+
+
+<!-- Sticky Header -->
+ <script>
+    window.onscroll = function() { StickyHeader() };
+</script>
+
+<!--JQuery Menu for small screen-->
+<script>
+ $(document).ready(function(){
+      $("#menubtn").click(function(){
+        $("#innerheader").slideToggle("activemenu");
+        $(".header").toggleClass("activemenu");
+        $(".logo").toggleClass("activelogo");
+
+      });
+    });
+</script>
+
+<!---tab switch----->
+<script>
+function openCity(evt, cityName) {
+// Declare all variables
+var i, tabcontent, tablinks;
+
+// Get all elements with class="tabcontent" and hide them
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+tabcontent[i].style.display = "none";
+}
+
+
+
+
+// Get all elements with class="tablinks" and remove the class "active"
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tablinks.length; i++) {
+tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+
+// Show the current tab, and add an "active" class to the button that opened the tab
+document.getElementById(cityName).style.display = "grid";
+evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+
+</script>
+
+<!-- OPEN / CLOSE MODAL BOX -->
+<script>
+$(document).ready(function(){
+
+  $(".openModal").click(function(){
+    $("#myModal").fadeIn() ;
+  });
+
+  $(".close").click(function(){
+    $("#myModal").fadeOut() ;
+  });
+
+});
+</script>
+
+<!--Scrolling Effect-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+
+        offset: 150, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 600, // values from 0 to 3000, with step 50ms
+    });
+  </script>
+
+
+</body>
+</html>

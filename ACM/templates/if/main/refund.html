@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, th {  
+        border: 1px solid #ddd;
+        text-align: left;
+        }
+
+        table {
+        border-collapse: collapse;
+        /* width: 100%; */
+        }
+
+        th, td {
+        padding: 5px;
+        text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <button id="download">DOWNLOAD</button>
+    <form method="post">
+    {% csrf_token %}
+    <button type="submit" id="submit">SAVE</button>
+    <table id="listtable">
+        <tr>
+          <th>Sr. No</th>
+          <th>Full Name</th>
+          <th>Amount Paid</th>
+          <th>Member</th>
+          <th>Refund Amount</th>
+          <th>Receipt</th>
+          <th>Checked</th>
+        </tr>
+        {% for id,name,actual_amount,member,refund_amount,url,refund_saved in refund %}
+        <tr>
+          <td><a href="{% url 'refund_detail' id %}">{{forloop.counter}}</a></td>
+          <td>{{name}}</td>
+          <td style="background-color:lightgreen">{{actual_amount}}</td>
+          <td>{{member}}</td>
+          <td ><input id="r{{id}}" name="r{{id}}" type="number" value="{{refund_amount}}"></td>
+          {% if url %}
+          <td> <a href="http://127.0.0.1:8000{{url}}">Click Here</a> </td>
+          {% else %}
+          <td>{{url}}</td>
+          {% endif %}
+          {% if refund_saved %}
+          <td><input id="{{id}}" type="checkbox" name="{{id}}" checked></td>
+          {% else %}
+          <td><input id="{{id}}" type="checkbox" name="{{id}}"></td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    </form>
+</body>
+</html>
+<script src="{% static 'js/html2pdf.js' %}"></script>
+<script>
+  window.onload = function(){
+    document.getElementById("download")
+    .addEventListener("click",()=>{
+      const receipt = this.document.getElementById("listtable");
+      html2pdf().from(receipt).save()
+    })
+  }
+</script>

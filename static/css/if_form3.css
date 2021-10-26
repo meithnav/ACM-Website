@@ -1,0 +1,293 @@
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap'); */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  /* background:rgb(0, 3, 36); */
+  /* background: #e1e2e4; */
+  background-image: url(../images/hero2.png);
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 1;
+  background-position: center;
+  /* padding: 0 10px; */
+}
+
+.title1{
+  /* background: rgba(175, 253, 230, 0.95); */
+  overflow: hidden;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  font-size: 50px;
+  font-weight: 700;
+  /* margin-bottom: 25px; */
+  /* color: rgb(255, 67, 57); */
+  color: #052517;
+  text-transform: uppercase;
+  text-align: center;
+  /* border-bottom: 2px solid black; */
+}
+.wrapper2{
+  padding: 0 10px;
+}
+.wrapper{
+  max-width: 1000px;
+  width: 100%;
+  /* background: rgba(23, 22, 54, 0.952); */
+  background: #fff;
+  margin: 20px auto;
+  box-shadow: 5px 5px 15px rgba(59, 251, 254, 0.25);
+  border-radius: 25px;
+  padding: 30px;
+  /* padding: 30px 10px; */
+  border: 2px solid rgba(11, 243, 173, 0.95);
+}
+
+.wrapper .title{
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: rgba(11, 243, 173, 0.95);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wrapper .form{
+  width: 100%;
+}
+
+.wrapper .form .inputfield{
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .form .inputfield2{
+    /* width: 100%; */
+    margin-bottom: 15px;
+    /* display: flex; */
+    align-items: center;
+    /* border: 2px solid #757575; */
+    /* border: 2px solid white; */
+  }
+.wrapper .form .companylist{
+  display: flex;
+}
+  .wrapper .form .inputfield3{
+    width: 100%;
+    margin-bottom: 15px;
+    align-items: center;
+    text-align: center;
+  }
+
+.wrapper .form .inputfield label{
+   width: 40%;
+   color: #052517;
+   margin-right: 10px;
+  font-size: 15px;
+}
+
+.wrapper .form .inputfield .input{
+  width: 100%;
+  outline: none;
+  border: 1px solid rgba(23, 22, 54, 0.952);
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.wrapper .form .inputfield .textarea{
+  width: 100%;
+  height: 125px;
+  resize: none;
+}
+
+.wrapper .form .inputfield .custom_select{
+  position: relative;
+  width: 100%;
+  height: 37px;
+  border: 1px solid rgba(23, 22, 54, 0.952);
+  border-radius: 1px;
+}
+
+.wrapper .form .inputfield .custom_select:before{
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid;
+  border-color: #d5dbd9 transparent transparent transparent;
+  pointer-events: none;
+}
+
+.wrapper .form .inputfield .custom_select select{
+  -webkit-appearance: none;
+  -moz-appearance:   none;
+  appearance:        none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  padding: 4px 10px 8px 10px;
+  font-size: 15px;
+  border: 1px solid #d5dbd9;
+  border-radius: 3px;
+}
+
+.wrapper .form .inputfield .input:focus,
+.wrapper .form .inputfield .textarea:focus,
+.wrapper .form .inputfield .custom_select select:focus{
+  /* border: 2px solid rgba(11, 243, 173, 0.95); */
+  border: 2px solid #3af5b6;
+}
+
+.wrapper .form .inputfield3 p{
+  text-align: center;
+   font-size: 12px;
+}
+
+.wrapper .form .inputfield2 p{
+    width: 67%;
+    font-size: 14px;
+    color: #052517;
+    /* border: 2px solid red; */
+ }
+ .wrapper .form .inputfield2 p span{
+  color: #3af5b6;
+}
+
+.wrapper .form .inputfield2 .check{
+  /* width: 30%; */
+  height: 15px;
+  float: left;
+  margin-left: auto;
+  margin-right: 0;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  /* border: 2px solid springgreen; */
+}
+.wrapper .form .inputfield2 .check input[type="checkbox"]{
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1; */
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  display: block;
+}
+/* .wrapper .form .inputfield2 .check .checkmark{
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  display: block;
+  position: relative;
+}
+.wrapper .form .inputfield2 .check .checkmark:before{
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 5px;
+  height: 2px;
+  border: 2px solid;
+  border-color: transparent transparent #fff #fff;
+  transform: rotate(-45deg);
+  display: none;
+}
+.wrapper .form .inputfield2 .check input[type="checkbox"]:checked ~ .checkmark{
+  background: black;
+}
+
+.wrapper .form .inputfield2 .check input[type="checkbox"]:checked ~ .checkmark:before{
+  display: block;
+} */
+
+.wrapper .form .inputfield .btn{
+  width: 100%;
+   padding: 8px 10px;
+  font-size: 15px; 
+  border: 0px;
+  background:  #5cbdb8;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+.wrapper .form .inputfield .btn:disabled{
+  width: 100%;
+   padding: 8px 10px;
+  font-size: 15px; 
+  border: 0px;
+  background:  rgb(255, 255, 255);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+
+.wrapper .form .inputfield .btn:hover{
+  background: rgba(0, 209, 146, 0.95);
+}
+
+/* .wrapper .form .inputfield:last-child{
+  margin-bottom: 0;
+} */
+
+@media (max-width:450px) {
+  .title1{
+    font-size: 40px;
+  }
+  .wrapper .form .inputfield{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper .form .inputfield label{
+    margin-bottom: 5px;
+  }
+  .wrapper .form .inputfield.terms{
+    flex-direction: row;
+  }
+  .wrapper .form .inputfield2 p{
+      width: 100%;
+  }
+}
+
+/*SCROLLBAR*/
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00FFFF ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00E6FF;
+}
+
+.hamburger {
+  border:none !important;
+}
+
+.hamburger:focus {
+outline: none !important;
+}
+
+.conditions {
+margin-left: 10px;
+margin-bottom:0 !important;
+width: 100% !important;
+}

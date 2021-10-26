@@ -1,0 +1,1414 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    user-select: none;
+}
+
+input, button,select,option{
+    outline: none;
+}
+
+html{
+
+background-color: rgb(0, 3, 36);
+height: fit-content;
+overflow-x: hidden;
+font-size: 62.5% ;
+
+}
+
+
+/* Rmove Arrows --> Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+body{
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+
+/* border: 0.1rem solid red;  */
+}
+
+.box{
+    display: flow-root;
+    width: 80%;
+    height: fit-content;
+   /* border: 0.1rem solid red; */
+    margin: 4rem auto;
+    margin-top: 13rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.box .payment{
+    display: flow-root;
+    width: 90%;
+    height: fit-content;
+   /* border: 0.1rem solid rgb(200, 255, 0);  */
+    margin: 0rem auto;
+    padding: auto;
+}
+
+.payment .left{
+    width:calc(80% - 0.5rem) ;
+    height: 100%;
+    display: block;
+  /* border: 0.1rem solid rgb(51, 255, 0);  */
+    /* float: left; */
+    margin: 0rem auto;
+    overflow: hidden;
+
+}
+
+.payment .right{
+    width:calc(45% - 0.5rem) ;
+    height: 100%;
+   /* border: 0.1rem solid rgb(255, 230, 0); */
+    /* float: right; */
+    margin-left: 0rem;
+    overflow: hidden;
+    display: none;
+}
+
+
+.payment .paymentForm{
+    width:calc(90% - 0rem) ;
+    height: fit-content;
+    display: block;
+    margin: 0rem auto;
+    overflow: hidden;
+}
+
+
+.payment .left .outerbox{
+    width: fit-content;
+    position: relative;
+    height: fit-content;
+    margin: 3.0rem auto;
+    background-color: rgb(23, 22, 54);
+    border-radius: 1.5rem;
+    padding: 3.0rem 2.0rem;
+
+}
+
+.payment .left .outerbox .info{
+
+    width: fit-content;
+    position: relative;
+    height: fit-content;
+    border-radius: 1.5rem;
+    border: 0.3rem solid cyan;
+    padding: 3.0rem 4.0rem;
+
+}
+
+.payment .left .outerbox .info h1{
+    color: white;
+    width: 100%;
+    height: 4.0rem;
+    text-align: left;
+    padding-left: 0.5rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    padding-top: 1.0rem;
+    font-family: 'Prompt', sans-serif;
+}
+
+.payment .left .outerbox .info .points{
+    width: 100%;
+    height: fit-content;
+    margin-top: 3.0rem;
+    margin-bottom: 3.0rem;
+    margin-left: 0.2rem ;
+    margin-right: 0.2rem ;
+
+   /* border: 0.1rem solid red; */
+}
+
+.payment .left .outerbox .info .points h2{
+    color: white;
+    width: 100%;
+    height: fit-content;
+    padding: 0.9rem;
+    text-align: left;
+    font-size: 2.4rem;
+    font-family: Roboto ,'Prompt', sans-serif;
+    font-weight: 700;
+    /* border: 0.1rem solid rgb(0, 255, 0); */
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.payment .left .outerbox .info .points .tickIcon{
+    display: inline-block;
+    width: 6%;
+    height: 100%;
+    /* border: 0.1rem solid red; */
+
+}
+.payment .left .outerbox .info .points h2 .headertxt{
+    display: inline-block;
+    width: calc(100% - 12%);
+    height: 100%;
+    /* border: 0.1rem solid rgb(0, 38, 255); */
+
+}
+.payment .left .outerbox .info .points .tickIcon i{
+    margin-right: 0.3rem;
+    color: rgb(1, 9, 14);
+    /* border: 0.1rem solid red; */
+    background-color: aqua;
+    border-radius: 50%;
+    padding: 0.2rem;
+
+}
+
+.payment .left .outerbox .info .points p{
+    display: block;
+    color: white;
+    width: calc( 100% - 2rem);
+    height: fit-content;
+    text-align: left;
+    font-size: 1.9rem;
+    font-weight: 500;
+    font-family: 'Nunito', sans-serif;
+    padding: 1.0rem 1.3rem;
+    margin-left: 2rem;
+}
+
+
+/* RIGHT SIDE */
+
+.payment .right form{
+    width: fit-content;
+    position: relative;
+    height: fit-content;
+    margin: 3.0rem auto;
+    background-color: rgb(4, 4, 15);
+    border-radius: 1.5rem;
+    padding: 2.0rem 4.0rem;
+    /* border: 0.1rem solid red; */
+
+
+}
+
+.payment .right form .row{
+
+    width: 100%;
+    height: fit-content;
+    margin: 1.0rem auto;
+    padding-bottom: 1.0rem;
+    overflow: hidden;
+
+    /* border: 0.1rem solid red; */
+
+}
+
+.payment .right form .row:first-of-type{
+    margin-top: 1.0rem;
+}
+
+.payment .right form .row label{
+    width: 100%;
+    display: block;
+    color: white;
+    font-size: 2.3rem;
+    font-weight: 500;
+    font-family: 'Prompt', sans-serif;
+    text-transform: uppercase;
+
+}
+
+.payment .right form .row input ,.payment .right form .row select{
+    display: block;
+    background: none;
+    border: 0.1rem solid cyan;
+    width: 27rem;
+    height: 3.5rem;
+    margin-top: 0.5rem;
+    color: white;
+    padding-left: 1.0rem;
+    font-size: 1.5rem;
+    border-radius: 0.6rem;
+
+}
+
+.payment .right form .row select{
+    width: 27.0rem;
+    height: 3.8rem;
+}
+
+.payment .right form .row select option{
+    display: block;
+    background-color: rgb(4, 4, 15);
+    /* width: 100%; */
+    height: 3.6rem;
+    border-bottom: 0.1rem solid rgb(205, 206, 211);
+    border-radius: 0.5rem;
+
+}
+
+.payment .right form .row .pay{
+
+    width: 8.0rem;
+    height: 5.0rem;
+    display: block;
+    background-color: rgb(250, 58, 48) ;
+    font-size: 2.2rem;
+    font-family: 'Prompt', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 1.0rem;
+    margin: 1.0rem auto;
+    margin-top: 3.0rem;
+}
+
+.payment .right form .pay:hover{
+    cursor: pointer;
+}
+.payment .right form .pay:focus{
+    outline: none;
+
+}
+
+.points .registration{
+  width: 100%;
+  height: fit-content;
+
+}
+
+.points .registration a{
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  color:white;
+  border-radius: 1.0rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+  margin: 1rem auto;
+  font-size: 1.7rem;
+  font-family: sans-serif;
+  background-color: #F74B42;
+  margin-top: 0rem;
+}
+
+/*RESPONSIVE*/
+
+@media(max-width : 1130px){
+
+    html{
+        font-size: 55% ;
+
+        }
+
+    }
+
+@media(max-width : 1000px){
+
+        html{
+            font-size: 55% ;
+        }
+
+        .payment .left{
+            width:calc(80% - 0rem) ;
+        }
+        .points .registration a{
+          border-radius: 1.0rem;
+          padding: 0.8rem 1rem;
+          margin: 1rem auto;
+          font-size: 2rem;
+          margin-top: 0rem;
+        }
+
+
+        .payment .paymentForm{
+            width:calc(90% - 0.rem) ;
+            height: fit-content;
+        }
+
+
+        .payment .right{
+            width:calc(45% - 0.5rem) ;
+        }
+
+        .payment .right form .row label{
+            display: block;
+            color: white;
+            font-size: 2.3rem;
+            font-weight: 500;
+            font-family: 'Prompt', sans-serif;
+            text-transform: uppercase;
+
+        }
+
+        .payment .right form .row input ,.payment .right form .row select{
+
+            background: none;
+            border: 0.1rem solid cyan;
+            width: 22.0rem;
+            height: 3.5rem;
+            margin-top: 0.5rem;
+            color: white;
+            padding-left: 1.0rem;
+            font-size: 1.5rem;
+            border-radius: 0.6rem;
+
+        }
+
+        .payment .right form .row select{
+            width: 23.5rem;
+            height: 3.8rem;
+        }
+
+
+
+    }
+
+@media(max-width : 970px){
+
+    html{
+        font-size: 48% ;
+
+        }
+        .payment .left{
+            width:calc(90% - 0.5rem) ;
+        }
+
+    .payment .right{
+            width:calc(45% - 0.5rem) ;
+        }
+
+    .payment .left .outerbox .info h1{
+        font-size: 3.5rem;
+        margin-bottom: 6rem;
+    }
+
+    .payment .left .outerbox .info .points{
+        margin-bottom: 3rem;
+        margin-top: 5rem;
+
+    }
+
+
+    .payment .left .outerbox .info .points h2{
+        font-size: 3rem;
+        padding-left: 0rem;
+    }
+
+    .payment .left .outerbox .info .points p{
+        font-size: 2.5rem;
+
+    }
+
+    .payment .left .outerbox .info .points .tickIcon{
+        width: 9%;
+
+    }
+    .payment .left .outerbox .info .points h2 .headertxt{
+        width: calc(100% - 12%);
+        padding-left: 2rem;
+
+    }
+
+    .payment .left .outerbox .info{
+        border-radius: 1.5rem;
+        border: 0.5rem solid cyan;
+        padding: 4.0rem 5.0rem;
+
+    }
+
+}
+
+
+@media(max-width : 830px){
+
+    html{
+        font-size: 45% ;
+    }
+    .points .registration a{
+      border-radius: 1.0rem;
+      padding: 0.8rem 1rem;
+      margin: 1rem auto;
+      font-size: 2.5rem;
+      margin-top: 0rem;
+    }
+}
+
+@media(max-width : 740px){
+
+    /*BOX*/
+
+    .box{
+            width: 90% ;
+           /* border: 0.1rem solid red; */
+            margin: 5.0rem auto;
+            margin-top: 17rem;
+            overflow: hidden;
+        }
+
+    .box .payment{
+            display: flow-root;
+            width: 95%;
+            height: fit-content;
+           /* border: 0.1rem solid rgb(200, 255, 0);  */
+            margin: 0rem auto;
+            padding: auto;
+        }
+
+        .payment .left{
+            width:calc(95% - 0rem) ;
+            height: 100%;
+          /* border: 0.1rem solid rgb(51, 255, 0);  */
+            float: none;
+            display: block;
+            margin: 0rem auto;
+            overflow: hidden;
+
+        }
+        .payment .paymentForm{
+            width:calc(95% - 0rem) ;
+        }
+
+        .payment .paymentForm iframe{
+            height: 3400px;
+
+        }
+
+
+        .payment .right{
+            width:calc(90% - 0rem) ;
+            height: 100%;
+          /*  border: 0.1rem solid rgb(255, 230, 0); */
+            float: none;
+            display: block;
+            margin: 0rem auto;
+            overflow: hidden;
+        }
+
+
+
+        /*LEFT*/
+
+        .payment .left .outerbox{
+            padding: 4.0rem 5.0rem;
+            border-radius: 2.0rem;
+
+        }
+        .payment .left .outerbox .info{
+            border: 0.5rem solid cyan;
+            padding: 3.0rem 4.0rem;
+            border-radius: 2.0rem;
+
+        }
+
+        .payment .left .outerbox .info h1{
+            height: fit-content;
+            padding-left: 1rem;
+            font-size: 4rem;
+            margin-bottom: 5rem;
+            /* border: 0.1rem solid red; */
+        }
+
+        .payment .left .outerbox .info .points{
+            height: fit-content;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            margin-left: 0.2rem ;
+            margin-right: 0.2rem ;
+            overflow: hidden;
+
+           /* border: 0.1rem solid rgb(255, 0, 157); */
+        }
+
+        .payment .left .outerbox .info .points h2{
+            height: fit-content;
+            font-size: 3.5rem;
+            padding: 2rem 0rem;
+            /* border: 0.1rem solid rgb(157, 255, 0); */
+        }
+
+        .payment .left .outerbox .info .points h2 i{
+            margin-right: 0.3rem;
+            padding: 0.2rem;
+
+        }
+
+        .payment .left .outerbox .info .points p{
+            display: block;
+            height: fit-content ;
+            width: calc(100% - 7rem);
+            font-size: 2.5rem;
+            padding: 1.0rem 1.5rem;
+            margin: 0rem auto;
+            /* border: 0.1rem solid red; */
+        }
+
+    /* RIGHT SIDE */
+
+    .payment .right form .row{
+        margin: 2.0rem auto;
+        padding: 1.5rem 4.0rem;
+        width: calc(100% - 8rem);
+        /* border: 0.1rem solid red;  */
+    }
+
+    .payment .right form .row:first-of-type{
+        margin-top: 3.0rem;
+    }
+
+    .payment .right form .row label{
+        font-size: 3.2rem;
+    }
+
+    .payment .right form .row input ,.payment .right form .row select{
+        width: 45.0rem;
+        height: 5.5rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1.4rem;
+        font-size: 3rem;
+        border-radius: 1.3rem;
+        border: 0.4rem solid cyan;
+
+    }
+
+    .payment .right form .row select{
+        width: 47.0rem;
+        height: 6rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1.4rem;
+        overflow: hidden;
+        font-size: 2em;
+    }
+
+    .payment .right form .row select option{
+        background-color: rgb(4, 4, 15);
+        width: 100%;
+        height: 5.8rem;
+        border-bottom: 0.1rem solid rgb(205, 206, 211);
+        border-radius: 0.5rem;
+
+    }
+
+    .payment .right form .row .pay{
+
+        width: 20.0rem;
+        height: 7.5rem;
+        font-size: 4rem;
+        margin: 1.0rem auto;
+        margin-top: 1.5rem;
+        border-radius: 3rem;
+    }
+
+}
+
+@media(max-width : 695px){
+
+    html{
+        font-size: 40% ;
+    }
+    .points .registration a{
+      border-radius: 1.0rem;
+      padding: 0.8rem 1rem;
+      margin: 1rem auto;
+      font-size: 3rem;
+      margin-top: 0rem;
+    }
+
+    /*BOX*/
+
+    .box{
+        width: 100% ;
+        /* border: 0.1rem solid red; */
+         margin: 5.0rem auto;
+         margin-top: 25rem;
+         overflow: hidden;
+     }
+
+ .box .payment{
+         display: flow-root;
+         width: 95%;
+         height: fit-content;
+        /* border: 0.1rem solid rgb(200, 255, 0);  */
+         margin: 0rem auto;
+         padding: auto;
+     }
+
+     .payment .left{
+         width:calc(95% - 0rem) ;
+         height: 100%;
+       /* border: 0.1rem solid rgb(51, 255, 0);  */
+         float: none;
+         display: block;
+         margin: 0rem auto;
+         overflow: hidden;
+
+     }
+
+     .payment .right{
+         width:calc(90% - 0rem) ;
+         height: 100%;
+       /*  border: 0.1rem solid rgb(255, 230, 0); */
+         float: none;
+         display: block;
+         margin: 0rem auto;
+         overflow: hidden;
+     }
+
+
+
+     /*LEFT*/
+
+     .payment .left .outerbox{
+         padding: 4.0rem 5.0rem;
+         border-radius: 2.0rem;
+
+     }
+     .payment .left .outerbox .info{
+         border: 0.5rem solid cyan;
+         padding: 4.0rem 6.0rem;
+         border-radius: 2.0rem;
+
+     }
+
+     .payment .left .outerbox .info h1{
+         height: fit-content;
+         padding-left: 1rem;
+         font-size: 4.8rem;
+         margin-bottom: 5rem;
+         /* border: 0.1rem solid red; */
+     }
+
+     .payment .left .outerbox .info .points{
+         height: fit-content;
+         margin-top: 1rem;
+         margin-bottom: 1rem;
+         margin-left: 0.2rem ;
+         margin-right: 0.2rem ;
+         overflow: hidden;
+
+        /* border: 0.1rem solid rgb(255, 0, 157); */
+     }
+
+     .payment .left .outerbox .info .points h2{
+         height: fit-content;
+         font-size: 4rem;
+         padding: 2rem 0rem;
+         margin : 2rem 0;
+         /* border: 0.1rem solid rgb(157, 255, 0); */
+     }
+
+     .payment .left .outerbox .info .points h2 i{
+         margin-right: 0.3rem;
+         padding: 0.2rem;
+
+     }
+
+     .payment .left .outerbox .info .points .tickIcon{
+        width:11%;
+
+    }
+    .payment .left .outerbox .info .points h2 .headertxt{
+        width: calc(100% - 12%);
+        padding-left: 2rem;
+
+    }
+
+     .payment .left .outerbox .info .points p{
+         display: block;
+         height: fit-content ;
+         width: calc(100% - 5rem);
+         font-size: 3.7rem;
+         padding: 1.0rem 1.5rem;
+         margin: 1.5rem auto;
+         /* border: 0.1rem solid red; */
+     }
+
+ /* RIGHT SIDE */
+
+ .payment .right form{
+     padding: 3rem 6rem;
+ }
+
+ .payment .right form .row{
+     margin: 2.0rem auto;
+     padding: 1.5rem 4.0rem;
+     width: calc(100% - 8rem);
+     /* border: 0.1rem solid red;  */
+ }
+
+ .payment .right form .row:first-of-type{
+     margin-top: 3.0rem;
+ }
+
+ .payment .right form .row label{
+     font-size: 4rem;
+ }
+
+ .payment .right form .row input ,.payment .right form .row select{
+     width: 46.0rem;
+     height: 7rem;
+     margin-top: 1rem;
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+     padding-left: 1.4rem;
+     font-size: 3rem;
+     border-radius: 1.5rem;
+     border: 0.4rem solid cyan;
+
+ }
+
+ .payment .right form .row select{
+     width: 46.0rem;
+     height: 7rem;
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+     padding-left: 1.4rem;
+     overflow: hidden;
+     font-size: 3rem;
+ }
+
+ .payment .right form .row select option{
+     background-color: rgb(4, 4, 15);
+     width: 100%;
+     height: 5.8rem;
+     border-bottom: 0.1rem solid rgb(205, 206, 211);
+     border-radius: 0.5rem;
+
+ }
+
+ .payment .right form .row .pay{
+
+     width: 20.0rem;
+     height: 7rem;
+     font-size: 3.5rem;
+     margin: 1.0rem auto;
+     margin-top: 1.5rem;
+     border-radius: 3rem;
+ }
+
+
+}
+
+@media(max-width : 545px){
+
+    html{
+        font-size: 25% ;
+
+        }
+        .points .registration a{
+          border-radius: 1.5rem;
+          padding: 1.2rem 1.5rem;
+          margin: 1rem auto;
+          font-size: 4rem;
+          margin-top: 0rem;
+        }
+
+    /*BOX*/
+
+    .box{
+
+           /* border: 0.1rem solid red; */
+            margin: 5.0rem auto;
+            margin-top: 25rem;
+            overflow: hidden;
+        }
+
+    .box .payment{
+            display: flow-root;
+            width: 95%;
+            height: fit-content;
+           /* border: 0.1rem solid rgb(200, 255, 0);  */
+            margin: 0rem auto;
+            padding: auto;
+        }
+
+        .payment .left{
+            width:calc(98% - 0rem) ;
+            height: 100%;
+          /* border: 0.1rem solid rgb(51, 255, 0);  */
+            float: none;
+            display: block;
+            margin: 0rem auto;
+            overflow: hidden;
+
+        }
+
+        .payment .paymentForm iframe{
+            height: 3600px;
+
+        }
+
+        .payment .right{
+            width:calc(90% - 0rem) ;
+            height: 100%;
+          /*  border: 0.1rem solid rgb(255, 230, 0); */
+            float: none;
+            display: block;
+            margin: 0rem auto;
+            overflow: hidden;
+        }
+
+
+
+        /*LEFT*/
+
+        .payment .left .outerbox{
+            padding: 4.0rem 5.0rem;
+            border-radius: 2.0rem;
+
+        }
+        .payment .left .outerbox .info{
+            border: 0.6rem solid cyan;
+            padding: 5.0rem 7.0rem;
+            border-radius: 2.0rem;
+
+        }
+
+        .payment .left .outerbox .info h1{
+            height: fit-content;
+            padding-left: 1rem;
+            font-size: 5.3rem;
+            margin-bottom: 5rem;
+            /* border: 0.1rem solid red; */
+        }
+
+        .payment .left .outerbox .info .points{
+            height: fit-content;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            margin-left: 0.2rem ;
+            margin-right: 0.2rem ;
+            overflow: hidden;
+
+           /* border: 0.1rem solid rgb(255, 0, 157); */
+        }
+
+        .payment .left .outerbox .info .points h2{
+            height: fit-content;
+            font-size: 4.8rem;
+            padding: 2rem 0rem;
+            margin: 2rem 0;
+            /* border: 0.1rem solid rgb(157, 255, 0); */
+        }
+
+        .payment .left .outerbox .info .points h2 i{
+            margin-right: 0.3rem;
+            padding: 0.2rem;
+
+        }
+
+        .payment .left .outerbox .info .points p{
+            display: block;
+            height: fit-content ;
+            width: calc(100% - 0rem);
+            font-size: 3.8rem;
+            padding: 1.0rem 1.5rem;
+            margin: 2rem auto;
+            /* border: 0.1rem solid red; */
+        }
+
+    /* RIGHT SIDE */
+
+    .payment .right form .row{
+        margin: 2.0rem auto;
+        padding: 1.5rem 4.0rem;
+        width: calc(100% - 8rem);
+        /* border: 0.1rem solid red;  */
+    }
+
+    .payment .right form .row:first-of-type{
+        margin-top: 3.0rem;
+    }
+
+    .payment .right form .row label{
+        font-size: 4.6rem;
+    }
+
+    .payment .right form .row input ,.payment .right form .row select{
+        width: 40.0rem;
+        height: 7rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1.4rem;
+        font-size: 3rem;
+        border-radius: 2rem;
+        border: 0.4rem solid cyan;
+
+    }
+
+    .payment .right form .row select{
+        width: 40.0rem;
+        height: 7rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1.4rem;
+        overflow: hidden;
+        font-size: 3rem;
+    }
+
+    .payment .right form .row select option{
+        background-color: rgb(4, 4, 15);
+        width: 100%;
+        height: 5.8rem;
+        border-bottom: 0.1rem solid rgb(205, 206, 211);
+        border-radius: 0.5rem;
+
+    }
+
+    .payment .right form .row .pay{
+
+        width: 25.0rem;
+        height: 9rem;
+        font-size: 5rem;
+        margin: 1.0rem auto;
+        margin-top: 1.5rem;
+        border-radius: 3rem;
+    }
+
+}
+
+
+@media(max-width : 389px){
+
+    html{
+        font-size: 25% ;
+
+        }
+
+    /*BOX*/
+
+    .box{
+
+           /* border: 0.1rem solid red; */
+            margin: 5.0rem auto;
+            margin-top: 24rem;
+            overflow: hidden;
+        }
+
+    .box .payment{
+            display: flow-root;
+            width: 95%;
+            height: fit-content;
+           /* border: 0.1rem solid rgb(200, 255, 0);  */
+            margin: 0rem auto;
+            padding: auto;
+        }
+
+        .payment .left{
+            width:calc(95% - 0rem) ;
+            height: 100%;
+          /* border: 0.1rem solid rgb(51, 255, 0);  */
+            float: none;
+            display: block;
+            margin: 0rem auto;
+            overflow: hidden;
+
+        }
+
+
+        .payment .right{
+            width:calc(95% - 0rem) ;
+            height: 100%;
+          /*  border: 0.1rem solid rgb(255, 230, 0); */
+            float: none;
+            display: block;
+            margin: 0rem auto;
+            overflow: hidden;
+        }
+
+
+
+        /*LEFT*/
+
+        .payment .left .outerbox{
+            padding: 4.0rem 5.0rem;
+            border-radius: 2.0rem;
+
+        }
+        .payment .left .outerbox .info{
+            border: 0.5rem solid cyan;
+            padding: 3.0rem 4.0rem;
+            border-radius: 2.0rem;
+
+        }
+
+        .payment .left .outerbox .info h1{
+            height: fit-content;
+            padding-left: 1rem;
+            font-size: 4.5rem;
+            margin-bottom: 5rem;
+            /* border: 0.1rem solid red; */
+        }
+
+        .payment .left .outerbox .info .points{
+            height: fit-content;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            margin-left: 0.2rem ;
+            margin-right: 0.2rem ;
+            overflow: hidden;
+
+           /* border: 0.1rem solid rgb(255, 0, 157); */
+        }
+
+        .payment .left .outerbox .info .points h2{
+            height: fit-content;
+            font-size: 4rem;
+            padding: 2rem 0rem;
+            /* border: 0.1rem solid rgb(157, 255, 0); */
+        }
+
+        .payment .left .outerbox .info .points h2 i{
+            margin-right: 0.3rem;
+            padding: 0.2rem;
+
+        }
+
+        .payment .left .outerbox .info .points p{
+            display: block;
+            height: fit-content ;
+            width: calc(100% - 7rem);
+            font-size: 3.0rem;
+            padding: 1.0rem 1.5rem;
+            margin: 0rem auto;
+            /* border: 0.1rem solid red; */
+        }
+
+    /* RIGHT SIDE */
+
+    .payment .right form{
+        padding: 5rem 6rem;
+    }
+
+    .payment .right form .row{
+        margin: 2.0rem auto;
+        padding: 1.5rem 4.0rem;
+        width: calc(100% - 8rem);
+        /* border: 0.1rem solid red;  */
+    }
+
+    .payment .right form .row:first-of-type{
+        margin-top: 3.0rem;
+    }
+
+    .payment .right form .row label{
+        font-size: 5.5rem;
+    }
+
+    .payment .right form .row input ,.payment .right form .row select{
+        width: 42.0rem;
+        height: 7rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1.4rem;
+        font-size: 3rem;
+        border-radius: 1.5rem;
+        border: 0.4rem solid cyan;
+
+    }
+
+    .payment .right form .row select{
+        width: 42.0rem;
+        height: 7rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1.4rem;
+        overflow: hidden;
+        font-size: 3rem;
+    }
+
+    .payment .right form .row select option{
+        background-color: rgb(4, 4, 15);
+        width: 100%;
+        height: 5.8rem;
+        border-bottom: 0.1rem solid rgb(205, 206, 211);
+        border-radius: 0.5rem;
+
+    }
+
+    .payment .right form .row .pay{
+
+        width: 20.0rem;
+        height: 9rem;
+        font-size: 5rem;
+        margin: 1.0rem auto;
+        margin-top: 1.5rem;
+        border-radius: 3rem;
+    }
+
+}
+
+@media(max-width : 365px){
+
+    html{
+        font-size: 20% ;
+    }
+
+    .payment .left .outerbox .info h1{
+        height: fit-content;
+        padding-left: 1rem;
+        font-size: 6rem;
+        margin-bottom: 5rem;
+        /* border: 0.1rem solid red; */
+    }
+
+    .payment .left .outerbox .info .points{
+        height: fit-content;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        margin-left: 0.2rem ;
+        margin-right: 0.2rem ;
+        overflow: hidden;
+
+       /* border: 0.1rem solid rgb(255, 0, 157); */
+    }
+
+    .payment .left .outerbox .info .points h2{
+        height: fit-content;
+        font-size: 5rem;
+        padding: 2rem 0rem;
+        /* border: 0.1rem solid rgb(157, 255, 0); */
+    }
+
+    .payment .left .outerbox .info .points h2 i{
+        margin-right: 0.3rem;
+        padding: 0.2rem;
+
+    }
+
+    .payment .left .outerbox .info .points p{
+        display: block;
+        height: fit-content ;
+        width: calc(100% - 7rem);
+        font-size: 4.0rem;
+        padding: 1.0rem 1.5rem;
+        margin: 0rem auto;
+        /* border: 0.1rem solid red; */
+    }
+
+        /* RIGHT SIDE */
+        .payment .right form{
+            padding: 5rem 8rem;
+            border-radius: 3rem;
+        }
+
+        .payment .right form .row{
+            margin: 2.0rem auto;
+            padding: 1.5rem 4.0rem;
+            width: calc(100% - 8rem);
+            /* border: 0.1rem solid red;  */
+        }
+
+        .payment .right form .row:first-of-type{
+            margin-top: 3.0rem;
+        }
+
+        .payment .right form .row label{
+            font-size: 5rem;
+        }
+
+        .payment .right form .row input ,.payment .right form .row select{
+            width: 55.0rem;
+            height: 6rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 1.4rem;
+            font-size: 4rem;
+            border-radius: 2rem;
+            border: 0.4rem solid cyan;
+
+        }
+
+        .payment .right form .row select{
+            width: 58.0rem;
+            height: 9.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 1.4rem;
+            overflow: hidden;
+            font-size: 4em;
+        }
+
+        .payment .right form .row select option{
+            background-color: rgb(4, 4, 15);
+            width: 100%;
+            height: 5.8rem;
+            border-bottom: 0.1rem solid rgb(205, 206, 211);
+            border-radius: 0.5rem;
+
+        }
+
+        .payment .right form .row .pay{
+
+            width: 26.0rem;
+            height: 10rem;
+            font-size: 5.5rem;
+            margin: 1.0rem auto;
+            margin-top: 1.5rem;
+            border-radius: 3rem;
+        }
+
+}
+
+@media(max-width : 326px){
+
+    html{
+        font-size: 20% ;
+    }
+    .points .registration a{
+      border-radius: 2rem;
+      padding: 1.5rem 3rem;
+      margin: 1rem auto;
+      font-size: 6.5rem;
+      margin-top: 0rem;
+    }
+
+    .box{
+        margin: 4rem auto;
+        margin-top: 35rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .payment .paymentForm iframe{
+        height: 3850px;
+
+    }
+
+    .payment .left .outerbox .info{
+        border-radius: 3rem;
+        border: 1.0rem solid cyan;
+        padding: 4.0rem 5.0rem;
+
+    }
+
+    .payment .left .outerbox .info h1{
+        height: fit-content;
+        padding-left: 1rem;
+        font-size: 8rem;
+        margin-bottom: 5rem;
+        /* border: 0.1rem solid red; */
+    }
+
+    .payment .left .outerbox .info .points{
+        height: fit-content;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        margin-left: 0.2rem ;
+        margin-right: 0.2rem ;
+        overflow: hidden;
+
+       /* border: 0.1rem solid rgb(255, 0, 157); */
+    }
+
+    .payment .left .outerbox .info .points h2{
+        height: fit-content;
+        font-size: 6rem;
+        padding: 2rem 0rem;
+        /* border: 0.1rem solid rgb(157, 255, 0); */
+    }
+
+    .payment .left .outerbox .info .points h2 i{
+        margin-right: 0.3rem;
+        padding: 0.2rem;
+
+    }
+
+    .payment .left .outerbox .info .points p{
+        display: block;
+        height: fit-content ;
+        width: calc(100% - 7rem);
+        font-size: 5.0rem;
+        padding: 1.0rem 1.5rem;
+        margin: 0rem auto;
+        /* border: 0.1rem solid red; */
+    }
+
+        /* RIGHT SIDE */
+        .payment .right form{
+            padding: 6rem 9.5rem;
+            border-radius: 3rem;
+        }
+
+        .payment .right form .row{
+            margin: 2.0rem auto;
+            padding: 1.5rem 4.0rem;
+            width: calc(100% - 8rem);
+            /* border: 0.1rem solid red;  */
+        }
+
+        .payment .right form .row:first-of-type{
+            margin-top: 3.0rem;
+        }
+
+        .payment .right form .row label{
+            font-size: 7rem;
+        }
+
+        .payment .right form .row input ,.payment .right form .row select{
+            width: 60.0rem;
+            height: 8rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 1.4rem;
+            font-size: 4rem;
+            border-radius: 2rem;
+            border: 0.4rem solid cyan;
+
+        }
+
+        .payment .right form .row select{
+            width: 60.0rem;
+            height: 11rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 1.4rem;
+            overflow: hidden;
+            font-size: 4em;
+        }
+
+        .payment .right form .row select option{
+            background-color: rgb(4, 4, 15);
+            width: 100%;
+            height: 5.8rem;
+            border-bottom: 0.1rem solid rgb(205, 206, 211);
+            border-radius: 0.5rem;
+
+        }
+
+        .payment .right form .row .pay{
+
+            width: 28.0rem;
+            height: 12.0rem;
+            font-size: 7rem;
+            margin: 1.0rem auto;
+            margin-top: 1.5rem;
+            border-radius: 3rem;
+        }
+
+}

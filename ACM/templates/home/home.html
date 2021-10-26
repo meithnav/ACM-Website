@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- META TAGS FOR SEO -->
+
+        <meta name="keywords" content="djacm , djscoe acm, acm, dj acm, djscoe student chapter , events, computing, resources, world, students">
+        <meta name="description" content="DJSCOE-ACM has established itself as a successful committee in terms of the number of members who have become a part of the ACM family and in terms of the seminars/workshops that have been conducted.">
+        <meta name="author" content="DJSCOE-ACM">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="google-site-verification" content="0iXdl6xLt6MOIy6RSAZ5h3giWMn7Yuyhv2Ahld1h8pg" />
+
+
+
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!--Font Awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Header Font-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<!--maintext Font-->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<!--subtext Font-->
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet">
+<!--popup Font-->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<!--About Us Font-->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap" rel="stylesheet">
+<!--OpenPopup Font-->
+<link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+<!--Scrolling Effect-->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!--Favicon-->
+<link rel="shortcut icon" href="{% static 'images/acm-black-logo.png' %}" type="image/x-icon">
+
+<!--Home CSS-->
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<!--Home js-->
+<script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+
+<title>DJACM - HOME</title>
+</head>
+<body>
+
+<!--BANNER & HEADER-->
+<div class="banner">
+  <video class ='banner-video' autoplay loop muted playsinline preload='yes'>
+    <source src="{% static 'video/acm_sample_video_4.mp4' %}" type='video/mp4'>
+    <source src="{% static 'video/acm_sample_video_4.webm' %}" type='video/webm'>
+    <source src="{% static 'video/acm_sample_video_4.ogv' %}" type='video/ogg'>
+    <source src="{% static 'images/banner1.jpg' %}" alt="">
+  </video>
+        <div class="header" id="header">
+            <div class="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a>
+            </div>
+            <div class="menubtn" id="menubtn">
+                <div class="p">
+                    <p id="bar1"></p>
+                    <p id="bar2"></p>
+                    <p id="bar3">  </p>
+                </div>
+            </div>
+
+            <div class="innerheader" id="innerheader">
+                        <!-- <div class="items"><a href="{% url 'home' %}"> Home </a></div> -->
+                        <div class="items"><a href="{% url 'events' %}"> Events </a></div>
+                        <div class="items"><a href="{% url 'teams' %}"> Committee </a></div>
+                        <div class="items dropdownitem">
+                            <div class="dropdown" >
+                                <button class="dropbtn">
+                                    Resources<!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="{% url 'resources' %}">PPT</a>
+                                    <a href="{% url 'ascii' %}">ASCII</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="items"><a href="{% url 'blog' %}"> Blogs </a></div>
+                        <!-- <div class="items"><a href=""> Blogs </a></div> -->
+                        <div class="items contact"><a href="{% url 'contact' %}"> Contact Us </a></div>
+                        <!-- <div class="items member"><a href="{% url 'submit' %}" class="membertext"> Be a Member</a></div> -->
+                        <div class="items member"><a href="{% url 'if_home' %}" class="membertext">IF</a></div>
+                    </div><!--closes innerheader-->
+
+        </div> <!--closes header-->
+        <div class="imgtext">
+                <div class="maintext" id="maintext"></div>
+                <div class="subtext" id="subtext"> Dwarkadas J. Sanghvi College of Engineering </div>
+                <!-- <video class ='banner-image' src="{% static 'video/acm_sample_video_4.mp4' %}" autoplay loop muted>
+                </video> -->
+            <div class="sociallinks">
+                <div class="links instagram">
+                    <a href="https://www.instagram.com/djsanghvi_acm/?hl=en"> <i class="fa fa-instagram"></i> </a>
+                </div>
+                <div class="links facebook">
+                    <a href="https://www.facebook.com/djscoe.acm.5"> <i class="fa fa-facebook"></i> </a>
+                </div>
+                <div class="links linkedin">
+                    <a href="https://in.linkedin.com/company/dj-sanghvi-acm"><i class="fa fa-linkedin"></i> </a>
+                </div>
+            </div>
+        <!--Upcoming Events -->
+        <div class="popupbox" id="outerpopup" >
+            <div class="popup" id="popupbox">
+                <div class="close" onclick="closepopup()"> <i class="fa fa-close"></i></div>
+                <div class="vertical-txt"><h1> UPCOMING <br> EVENTS</h1></div>
+
+                <div class="eventstxt">
+
+                  {% for e in events %}
+                    <div class="events">
+                        <span>{{e.title}}</span> <date>{{e.date}}</date>
+                        <div class="moreinfo">
+                            <a href="{% url 'event_detail' e.title %}"><i> For more details...</i></a>
+                        </div>
+                    </div>
+                  {% endfor %}
+
+                </div>
+
+            </div><!--closes popup-->
+
+        </div><!--closes Upcoming Events -->
+
+            <div class="openpopup" id="openpopupbox" onclick="openpopup()"><<</div>
+
+        </div><!--closes imgtext-->
+</div><!--closes banner-->
+
+
+<!--MAIN BODY-->
+<div class="mainbody">
+    <div class="aboutus" data-aos="fade-in">
+        <a id="aboutus"></a>
+        <h1 data-aos="fade-in">About Us</h1>
+        <div class="content">
+            <div class="content-left" data-aos="fade-left" data-aos-delay="200">
+                <p>ACM, the world's largest educational and scientific computing society, delivers resources that advance computing as a science and a profession. Since its inception in our college in 2007-2008, DJSCOE-ACM has established itself as a successful committee, not only in terms of the number of members who have become a part of the ACM family but also in terms of the activities and seminars/workshops that have been conducted.
+                </p>
+                <p class="quote">Don't let us convince you about our success. Let our three consecutive Best Student Chapter of the Year awards do the talking.
+                </p>
+
+            </div>
+            <div class="content-right" data-aos="fade-up" data-aos-delay="200" >
+                <div class="box">
+                    <img src="{% static 'images/aboutus.jpeg' %}" alt="About us pic" >
+                </div>
+            </div>
+        </div>
+    </div><!---closes about us-->
+
+    <div class="vision" data-aos="fade-in">
+        <h1  data-aos="flip-in" data-aos-delay="300" data-aos-duration="600"> Our Vision</h1>
+        <p  data-aos="flip-left" data-aos-delay="300" data-aos-duration="600" >
+            To impart high quality education, promote research culture and inculcate ethical values to develop/produce professionally competent engineers capable of meeting global challenges
+        </p>
+
+    </div><!--closes vision-->
+
+    <div class="mission" data-aos="fade-in"  >
+        <h2 data-aos="fade-in"  >Our Mission</h2>
+
+        <div class="missioncard" >
+            <div class="parts"  data-aos="fade-up" data-aos-delay="100">
+                <div class="image">
+                    <!-- <img src="./images/aboutus.jpg" alt=""> -->
+                    <div class="missionlogo"> <img src="{% static 'images/mission1.png' %}" data-aos="fade-in" data-aos-delay="200" alt=""> </div>
+                </div>
+
+                <div class="txt" data-aos="fade-left" data-aos-delay="150">
+                    Encourage research aptitude and analytical approach to prepare students for facing technological challenges in computing field.
+                </div>
+            </div>
+
+            <div class="parts"  data-aos="fade-up" data-aos-delay="100">
+                <div class="image">
+                    <!-- <img src="./images/aboutus.jpg" alt=""> -->
+                    <div class="missionlogo"> <img src="{% static 'images/mission2.png' %}" data-aos="fade-in" data-aos-delay="200" alt="">  </div>
+                </div>
+                <div class="txt"  data-aos="fade-left" data-aos-delay="150">
+                    Develop professionals, equipped with soft skills, ethical and social values for betterment of society.
+                </div>
+            </div>
+
+            <div class="parts"  data-aos="fade-up" data-aos-delay="100">
+                <div class="image">
+                    <!-- <img src="./images/aboutus.jpg" alt=""> -->
+                    <div class="missionlogo"> <img src="{% static 'images/mission3.png' %}" data-aos="fade-in" data-aos-delay="200" alt=""> </div>
+                </div>
+                <div class="txt" data-aos="fade-left" data-aos-delay="150">
+                    Create awareness about sustainability concerns and ongoing trends in computing field.
+                </div>
+            </div>
+
+            <div class="parts"  data-aos="fade-up" data-aos-delay="100">
+                <div class="image">
+                    <!-- <img src="./images/aboutus.jpg" alt=""> -->
+                    <div class="missionlogo"> <img src="{% static 'images/mission4.png' %}" data-aos="fade-in" data-aos-delay="200" alt="">  </div>
+                </div>
+                <div class="txt" data-aos="fade-left" data-aos-delay="150">
+                    To nurture and provide a collaborative environment for enabling aspiring technocrats to meet industry expectations.
+                </div>
+            </div>
+
+            <div class="parts"  data-aos="fade-up" data-aos-delay="100">
+                <div class="image">
+                    <!-- <img src="./images/aboutus.jpg" alt=""> -->
+                    <div class="missionlogo"> <img src="{% static 'images/mission5.png' %}" data-aos="fade-in" data-aos-delay="200" alt="">  </div>
+                </div>
+                <div class="txt" data-aos="fade-left" data-aos-delay="150">
+                    Provide competent faculty and systematic modern approach in teaching-learning with state-of-art infrastructure.
+                </div>
+            </div>
+
+        </div>
+
+    </div><!--closes mission-->
+
+    <div class="works">
+        <h1 data-aos="fade-in" >What We Do </h1>
+       <div class="cardlist">
+           <div class="card" data-aos="flip-left" data-aos-delay="100" data-aos-duration="600">
+               <div class="logo">
+                   <!-- <i class="fa fa-book" aria-hidden="true"></i> -->
+                   <img src="{% static 'images/material-group.png' %}" alt="" data-aos="fade-right" data-aos-duration="1000"  data-aos-offset="250" data-aos-delay="1000">
+                </div>
+               <div class="subtext">
+                   <h2  data-aos="fade-left"  data-aos-delay="100" data-aos-duration="1000">Learning Materials</h2>
+
+                    <span  data-aos="fade-left"  data-aos-delay="3000" data-aos-duration="1000" data-aos-offset="250" data-aos-offset="250" >
+                       Know about the latest trends in the world of technology through our magazine and newsletter.
+                    </span>
+               </div>
+           </div><!--closes card-->
+
+           <div class="card"  data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
+            <div class="logo">
+                <!-- <i class="fa fa-code" aria-hidden="true"></i> -->
+                <img src="{% static 'images/expert-group.png' %}" alt="" data-aos="fade-right" data-aos-duration="1000"  data-aos-offset="250" data-aos-delay="1000">
+            </div>
+            <div class="subtext">
+                <h2  data-aos="fade-left"  data-aos-delay="100" data-aos-duration="1000">Expert Lectures</h2>
+
+                 <span  data-aos="fade-left"  data-aos-delay="3000" data-aos-duration="1000" data-aos-offset="250" >
+                    We conduct guest lectures to enlighten our members with knowledge.
+                 </span>
+            </div>
+        </div>
+
+        <div class="card"  data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
+            <div class="logo">
+                <!-- <i class="fa fa-cog" aria-hidden="true"></i> -->
+                <img src="{% static 'images/workshop-group.png' %}" alt=""  data-aos="fade-right" data-aos-duration="1000"  data-aos-offset="250" data-aos-delay="1000">
+            </div>
+            <div class="subtext">
+                <h2  data-aos="fade-left"  data-aos-delay="100" data-aos-duration="1000">Workshops</h2>
+
+                 <span  data-aos="fade-left"  data-aos-delay="3000" data-aos-duration="1000" data-aos-offset="250" >
+                    What's better than a 'hands-on' learning experience.
+                 </span>
+            </div>
+        </div>
+        <div class="card"  data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
+            <div class="logo">
+                <!-- <i class="fa fa-industry" aria-hidden="true"></i> -->
+                <img src="{% static 'images/industry-group.png' %}" alt="" data-aos="fade-right" data-aos-duration="1000"  data-aos-offset="250" data-aos-delay="1000">
+            </div>
+            <div class="subtext">
+                <h2  data-aos="fade-left"  data-aos-delay="100" data-aos-duration="1000">Industrial Visits</h2>
+
+                 <span  data-aos="fade-left"  data-aos-delay="3000" data-aos-duration="1000" data-aos-offset="250" >
+                    We arrange for a day long experience in the real industry world.
+                 </span>
+            </div>
+        </div>
+       </div><!--closes cardlist-->
+
+    </div><!--closes works-->
+
+    <div class="events">
+        <a id="events"></a>
+        <h2 data-aos="fade-in" >Events</h2>
+        <span>
+            <!-- <h3 data-aos="fade-up" data-aos-delay="0" ></h3> -->
+            <h3 class="active" data-aos="fade-up" data-aos-delay="0"> <a href="#">2020</a></h3>
+            <!-- <h3 data-aos="fade-up" data-aos-delay="0" ></h3> -->
+        </span>
+          <!-- Tab content -->
+            <div class="grid">
+                <div class="left">
+                    <div class="ltop" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+                        <div class="modal">
+                            <h1>{{event1.title}}</h1>
+                            <p>{{event1.summary}}<span><a href="{% url 'event_detail' event1.title %}">MORE..</a></span>
+                            </p>
+                        </div>
+                        <!-- <img src="{{event1.image.url}}" alt=""> -->
+                        <a href="{% url 'event_detail' event1.title %}"><img src="{{event1.image.url}}" alt=""></a>
+                    </div>
+                    <div class="lbottom" data-aos="fade-right" data-aos-delay="50" data-aos-duration="800">
+                      <div class="modal">
+                          <h1>{{event2.title}}</h1>
+                          <p>{{event2.summary}}<span><a href="{% url 'event_detail' event2.title %}">MORE..</a></span>
+                          </p>
+                      </div>
+                      <a href="{% url 'event_detail' event2.title %}"><img src="{{event2.image.url}}" alt=""></a>
+                        <!-- <div class="lbottom1" data-aos="fade-right" data-aos-delay="50" data-aos-duration="800">
+                            <div class="modal">
+                                <a href="#"><h1>Event Header</h1></a>
+
+                            </div>
+                            <a href="#"><img src="./images/banner.jpg" alt=""></a>
+                        </div>
+
+                        <div class="lbottom2" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
+                            <div class="modal">
+                               <a href="#"><h1>Event Header</h1></a>
+
+                            </div>
+                            <a href="#"><img src="./images/banner1.jpg" alt=""></a>
+                        </div> -->
+                    </div>
+
+                </div>
+
+                <div class="right">
+                    <div class="rtop" data-aos="fade-left" data-aos-delay="100"  data-aos-duration="800">
+                      <div class="modal">
+                          <h1>{{event3.title}}</h1>
+                          <p>{{event3.summary}}<span><a href="{% url 'event_detail' event3.title %}">MORE..</a></span>
+                          </p>
+                      </div>
+                      <a href="{% url 'event_detail' event3.title %}"><img src="{{event3.image.url}}" alt=""></a>
+                    </div>
+                    <div class="rbottom" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
+                      <div class="modal">
+                          <h1>{{event4.title}}</h1>
+                          <p>{{event4.summary}}<span><a href="{% url 'event_detail' event4.title %}">MORE..</a></span>
+                          </p>
+                      </div>
+                      <a href="{% url 'event_detail' event4.title %}"><img src="{{event4.image.url}}" alt=""></a>
+                    </div>
+                </div>
+
+            </div>
+
+
+          <!-- <div id="2019" class="tabcontent">
+            <div class="grid">
+                <div class="left">
+                    <div class="ltop" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+                        <div class="modal">
+                            <h1>Event Header</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla earum dolorem odio
+                            voluptate consequuntur quaerat illo mollitia modi?<span><a href="#">MORE..</a></span>
+                            </p>
+                        </div>
+                        <a href="#"><img src="{% static 'images/aboutus.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="lbottom">
+
+                        <div class="lbottom1" data-aos="fade-right" data-aos-delay="50" data-aos-duration="800">
+                            <div class="modal">
+                                <a href="#"><h1>Event Header</h1></a>
+
+                            </div>
+                            <a href="#"><img src="{% static 'images/banner.jpg' %}" alt=""></a>
+                        </div>
+
+                        <div class="lbottom2" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
+                            <div class="modal">
+                               <a href="#"><h1>Event Header</h1></a>
+
+                            </div>
+                            <a href="#"><img src="{% static 'images/banner1.jpg' %}" alt=""></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="right">
+                    <div class="rtop" data-aos="fade-left" data-aos-delay="100"  data-aos-duration="800">
+                        <div class="modal">
+                            <h1>Event Header</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla earum dolorem odio
+                            <span><a href="#">MORE..</a></span>
+                            </p>
+                        </div>
+                        <a href="#"><img src="{% static 'images/event1.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="rbottom" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
+                        <div class="modal">
+                            <h1>Event Header</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla earum dolorem odio
+                                quas voluptate consequuntur quaerat illo mollitia modi?<span><a href="#">MORE..</a></span>
+                            </p>
+                        </div>
+                        <a href="#"><img src="{% static 'images/event2.jpg' %}" alt=""></a>
+                    </div>
+                </div>
+
+            </div>
+
+          </div>
+
+          <div id="2018" class="tabcontent">
+            <div class="grid">
+                <div class="left">
+                    <div class="ltop" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+                        <div class="modal">
+                            <h1>Event Header</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla earum dolorem odio
+                            voluptate consequuntur quaerat illo mollitia modi?<span><a href="#">MORE..</a></span>
+                            </p>
+                        </div>
+                        <a href="#"><img src="{% static 'images/aboutus.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="lbottom">
+
+                        <div class="lbottom1" data-aos="fade-right" data-aos-delay="50" data-aos-duration="800">
+                            <div class="modal">
+                                <a href="#"><h1>Event Header</h1></a>
+
+                            </div>
+                            <a href="#"><img src="{% static 'images/banner.jpg' %}" alt=""></a>
+                        </div>
+
+                        <div class="lbottom2" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
+                            <div class="modal">
+                               <a href="#"><h1>Event Header</h1></a>
+
+                            </div>
+                            <a href="#"><img src="{% static 'images/banner1.jpg' %}" alt=""></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="right">
+                    <div class="rtop" data-aos="fade-left" data-aos-delay="100"  data-aos-duration="800">
+                        <div class="modal">
+                            <h1>Event Header</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla earum dolorem odio
+                            <span><a href="#">MORE..</a></span>
+                            </p>
+                        </div>
+                        <a href="#"><img src="{% static 'images/event1.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="rbottom" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
+                        <div class="modal">
+                            <h1>Event Header</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla earum dolorem odio
+                                quas voluptate consequuntur quaerat illo mollitia modi?<span><a href="#">MORE..</a></span>
+                            </p>
+                        </div>
+                        <a href="#"><img src="{% static 'images/event2.jpg' %}" alt=""></a>
+                    </div>
+                </div>
+
+            </div>
+
+          </div> -->
+        <!-- </span> -->
+
+
+    </div> <!--closes events -->
+
+</div><!--closes mainbody-->
+
+<!--FOOTER-->
+<footer>
+
+    <div class="innerfooter">
+        <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a></div>
+
+        <div class="box">
+            <div class="parts involved">
+                <h2>Get Involved</h2>
+                <ul>
+                  <li><a href="{% url 'resources' %}"> PPT </a></li>
+                  <li><a href="{% url 'blog' %}"> Blogs </a></li>
+                  <!-- <li><a href=""> Blogs </a></li> -->
+                  <li><a href="{% url 'events' %}"> Events </a></li>
+                  <li><a href="{% url 'contact' %}"> Contact Us </a></li>
+                </ul>
+            </div>
+            <div class="parts sociallinks">
+                <h2>Stay Connected</h2>
+                <div class="icons">
+                  <a href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></i></a>
+                  <a href="https://in.linkedin.com/company/dj-sanghvi-acm"><i class="fa fa-linkedin"></i></i></a>
+                </div>
+            </div>
+            <div class="parts subscribe">
+                <h2>Subscribe To NewsLetter</h2>
+
+               <div class="emailinput">
+                  <input type="email" class="email" placeholder="Enter your Email Address">
+                  <button>Join</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copyright"> <i class="fa fa-copyright"></i> 2021 DJSCE ACM -- All Rights Reserved</div>
+</footer>
+
+</body>
+
+<!--Scrolling Effect-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+
+        offset: 150, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 600, // values from 0 to 3000, with step 50ms
+    });
+  </script>
+
+
+  <script>
+
+//Loads the popup(upcoming events) after 3s on page load.
+    window.onload = function() {
+       setTimeout(openpopup , 3000);
+    };
+
+//MainTxt typewriter
+     typeWriter() ;
+
+//StickyHeader
+window.onscroll = function() { StickyHeader() };
+
+  </script>
+
+<!--JQuery Menu for small screen-->
+<script>
+    $(document).ready(function(){
+      $("#menubtn").click(function(){
+        $("#innerheader").slideToggle("activemenu");
+        $(".header").toggleClass("activemenu");
+        $(".logo").toggleClass("activelogo");
+
+      });
+    });
+</script>
+
+</html>

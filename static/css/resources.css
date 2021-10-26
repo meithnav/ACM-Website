@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    user-select: none;
+}
+
+input, button,select,option{
+    outline: none;
+}
+
+html{
+
+    background-color: rgb(0, 3, 36);
+    height: fit-content;
+    overflow-x: hidden;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    }
+
+body{
+        width: 100%;
+        height: fit-content;
+        overflow-x: hidden;
+    /* border: 0.1rem solid red;  */
+ }
+
+.resources{
+    width: 90%;
+    height: fit-content;
+    margin: 15rem auto;
+    /* border: 0.1rem solid red; */
+}
+
+.resources .chapter{
+    width: 100%;
+    height: fit-content;
+    margin: 2rem 0rem;
+}
+
+.resources .chapter .header{
+    font-size: 5rem;
+    color: white;
+    padding: 2rem 0rem;
+    text-align: center;
+    font-family: sans-serif;
+    overflow: hidden;
+
+}
+
+.resources .chapter .content{
+    display: flow-root;
+    width: fit-content;
+    height: fit-content;
+    margin: 0rem auto;
+    overflow: hidden;
+}
+
+.resources .chapter .content .items{
+
+    width: calc(33% - 6rem);
+    height: fit-content;
+    float: left;
+    /* margin: 2rem auto; */
+    margin: 1rem 2rem;
+    padding: 1rem;
+    overflow: hidden;
+    /* border: 0.1rem solid  yellowgreen; */
+}
+.resources .chapter .content .items .title{
+    width: 100%;
+    height: fit-content;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    padding-top: 1rem;
+
+}
+
+@media(max-width : 1000px){
+    html{
+        font-size: 55% ;
+    }
+
+    .resources .chapter .content .items{
+
+        width: calc(50% - 6rem);
+        margin: 1rem 2rem;
+        padding: 1rem;
+        /* border: 0.1rem solid  yellowgreen; */
+    }
+    .resources .chapter .content .items .title{
+        width: 100%;
+        font-size: 2.5rem;
+        padding-top: 1rem;
+
+    }
+
+
+}
+
+@media(max-width : 695px){
+    html{
+        font-size: 30% ;
+    }
+    .resources{
+        margin: 15rem auto ;
+    }
+
+    .resources .chapter{
+        margin: 5rem auto ;
+    }
+
+    .resources .chapter .header{
+        font-size: 8rem;
+        padding: 2rem 0rem;
+
+    }
+
+    .resources .chapter .content .items{
+
+        width: calc(90% - 0rem);
+        margin: 5rem auto ;
+        padding: 1rem;
+        float: none;
+
+        /* border: 0.1rem solid  yellowgreen; */
+    }
+    .resources .chapter .content .items .title{
+        width: 100%;
+        font-size: 3.5rem;
+        padding-top: 3rem;
+
+    }
+
+
+}
+
+@media(max-width : 465px){
+
+    html{
+        font-size: 25% ;
+    }
+
+    .resources{
+        margin: 20rem auto;
+        width: calc(100% - 2rem) ;
+    }
+
+    .resources .chapter{
+        margin: 10rem auto;
+    }
+
+    .resources .chapter .header{
+        font-size: 10rem;
+        padding: 2rem 0rem;
+
+    }
+
+    .resources .chapter .content .items{
+
+        width: calc(80% - 0rem);
+        margin-left: 0rem;
+        margin: 8rem auto ;
+        padding: 1rem;
+        float: none;
+
+        /* border: 0.1rem solid  yellowgreen; */
+    }
+    .resources .chapter .content .items .title{
+        width: 100%;
+        font-size: 5rem;
+        padding-top: 3rem;
+        /* border: 0.1rem solid  yellowgreen; */
+    }
+
+}
+
+@media(max-width : 365px){
+
+    html{
+        font-size: 20% ;
+    }
+
+    .resources{
+        margin: 20rem auto;
+        width: calc(100% - 2rem) ;
+    }
+
+
+    .resources .chapter .header{
+        font-size: 17rem;
+        padding-top: 4rem;
+
+    }
+
+    .resources .chapter .content .items .title{
+        font-size: 7rem;
+        padding-top: 5rem;
+        /* border: 0.1rem solid  yellowgreen; */
+    }
+
+}
+
+
+@media(max-width : 326px){
+    html{
+        font-size: 16% ;
+    }
+
+    .resources{
+        margin: 30rem auto;
+        width: calc(100% - 2rem) ;
+    }
+
+}

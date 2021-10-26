@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="{% static 'css/if_form.css' %}">
+</head>
+<body>
+
+<div class="title1">
+  Internship Fair Form
+</div>
+<div class="wrapper">
+    <form id="mainform" action="#" method="post" class="form">
+      {% csrf_token %}
+      <div class="inputfield3">
+        {% if message %}
+          {% if success %}
+            <p style="text-align: center;font-size: 12px;color:lightgreen">{{message}}</p>
+          {% else %}
+            <p style="text-align: center;font-size: 12px;color:red">{{message}}</p>
+          {% endif %}
+        {% endif %}
+      </div>
+      <div class="inputfield">
+        <label>Full Name</label>
+        <input name="name" type="text" class="input">
+      </div>
+      <div class="inputfield">
+        <label>SAP ID</label>
+        <input name="sap" type="text" class="input">
+      </div>  
+      <div class="inputfield">
+        <label>Gender</label>
+        <div class="custom_select">
+          <select name="gender">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="inputfield">
+        <label>Email Address</label>
+        <input name="email" type="email" class="input">
+      </div> 
+      <div class="inputfield">
+        <label>Phone Number</label>
+        <input name="phone" type="text" class="input">
+      </div>
+      <div class="inputfield">
+        <label>Whatsapp Number</label>
+        <input name="whatsapp" type="text" class="input">
+      </div>
+      <div class="inputfield">
+        <label>Resume Drive Link</label>
+        <input name="resume" type="url" class="input">
+      </div>  
+      <div class="inputfield">
+        <label>Department</label>
+        <div class="custom_select">
+          <select name="department">
+            <option value="">Select</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics & Telecommunication Engineering">Electronics & Telecommunication</option>
+            <option value="Electronics Engineering">Electronics Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Chemical Engineering">Chemical Engineering</option>
+            <option value="Production Engineering">Production Engineering</option>
+          </select>
+        </div>
+      </div>
+      <div class="inputfield">
+        <label>Year</label>
+        <div class="custom_select">
+          <select name="year">
+            <option value="">Select</option>
+            <option value="Second Year">S.E.</option>
+            <option value="Third Year">T.E.</option>
+            <option value="Fourth Year">B.E.</option>
+          </select>
+        </div>
+      </div>
+      <div class="inputfield">
+        <label>Company List:</label>
+      </div>
+      {%for company,name,positionType,position in companies%}
+      <div class="inputfield2 terms">
+        <label class="check">
+          <input name ="{{company}}"type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        &nbsp;&nbsp;
+        <p>Company = <span>{{name}}</span>
+        <!-- <br>Position Type = <span>{{positionType}}</span></p> -->
+        <br>Position = <span>{{position}}</span></p>
+      </div>
+      {%endfor%}
+      <br>
+      <div class="inputfield">
+        <button id="submitbtn" type="submit" value="Register" class="btn">SUBMIT</button>
+      </div>
+    </form>
+</div>	
+<script>
+  $(document).ready(function () {
+      $("#mainform").submit(function (e) {
+          e.preventDefault();
+          $("#submitbtn").attr("disabled", true);
+          return true;
+      });
+  });
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Internship Fair</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="{% static 'css/if.css' %}">
+         <!--JQuery-->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Scrolling Effect -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- Font Awesome4 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Gothic+A1:wght@200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar sticky-top  navbar-expand-lg navbar-light ">
+            <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'if_home' %}" >INTERNSHIP FAIR</a>
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link middle" href="{% url 'if_home' %}"  >Home</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link middle " href="{% url 'if_form' %}">Registration Form</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link middle" href="{% url 'job_profile' %}">Job Profiles</a>
+                </li>
+              </ul>
+            </div>
+            
+          </nav>
+
+        <!-- Hero Section -->
+          <div class="bannerhero">
+            <!-- <div class="top-container-back">
+              <img src="{% static 'images/hero.png' %}" alt="">
+            </div> -->
+  
+  
+            <div class="top-container ">
+                <img src="{% static 'images/acm-white-logo.png' %}" alt="" width="105px" height="100px">
+              <h1 data-aos="fade-center">INTERNSHIP FAIR</h1>
+              <br>
+              <h2 class="animate__animated animate__zoomInUp animate__delay-1s ">9<sup>th</sup> April, 2021 - 10<sup>th</sup> April, 2021</h2>
+            </div>
+          </div>
+          
+
+        <!-- ------------------------ -->
+          
+          <div class="row middle-container" style="width: 100%;">
+              <div class="col-md-12 col-lg-6 col-sm-12 left-img" style="display: flex;align-items: center;" >
+                <img src="{% static 'images/objects.png' %}" alt="" width="100%" height="fit-content">
+              </div>
+              <div class="col-md-12 col-lg-6 col-sm-12 right-txt" >
+                <h1>About Internship Fair</h1>
+                <br>
+                <p style="text-align: justify;">DJ-ACM will be organising its Annual Internship Fair (IF) on 9th and 10th of April 2021, which will be held virtually this year. The Internship Fair aids in the creation of a structured path from education to employment and serves as a platform for companies that are currently looking to fill both technical and/or non-technical internship positions.The Internship fair welcomes on board reputed companies with commendable corporate philosophies and provides students with an opportunity to get hands-on work experience. These companies support DJ-ACM’s 'learning by doing' ethos by giving the next generation of engineers an opportunity to explore diverse domains.</p>
+                    <br>
+                <a href="{% url 'job_profile' %}"><button class="btn btn-primary">View Job Profiles</button></a>
+              </div>
+         
+              
+          </div>
+
+          <div class="schedule-container" id="schedule">
+            <div class="text-center schedule_markerdiv" style="width: 100%; margin: 0;">
+              <div class="bar"></div>
+             
+           
+
+              <div class="schedule_items">
+                <div class="circle-point">01</div>
+                <img src="{% static 'images/point.png' %}" alt="">
+                <div class="beads"></div> 
+                <div class="details">
+                  <div class="bar_sm"></div>
+                  <h6>3<sup>rd</sup> April</h6>
+                  <p>Registration Begins</p>
+                </div>
+              </div>
+              <div class="schedule_items">
+                <div class="circle-point">02</div>
+                <img src="{% static 'images/point.png' %}" alt="">
+                <div class="beads"></div> 
+                <div class="bar_sm"></div>
+                <div class="details">
+                  <h6>6<sup>th</sup> April</h6>
+                  <p>Registration Ends</p>
+                </div>
+              </div>
+              <div class="schedule_items">
+                <div class="circle-point">03</div>
+                <img src="{% static 'images/point.png' %}" alt="">
+                <div class="beads"></div>
+                <div class="bar_sm"></div> 
+                <div class="details">
+                  <h6>7<sup>th</sup> April (Evening)</h6>
+                  <p>Interview Schedule Out</p>
+                </div>
+              </div>
+              <div class="schedule_items">
+                <div class="circle-point">04</div>
+                <img src="{% static 'images/point.png' %}" alt="">
+                <div class="beads"></div>
+                <div class="bar_sm"></div> 
+                <div class="details">
+                  <h6>9<sup>th</sup> April - 10<sup>th</sup> April</h6>
+                  <p>Interviews</p>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+
+      <br><br><br>
+      
+      <div class="companies" id="companies">
+      <h1>Offering Companies</h1>
+        <br><br>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {% for cnt in range %}
+            {% if forloop.counter == 1 %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ cnt }}" class="active"></li>
+            {% else %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ cnt }}"></li>
+            {%  endif %}
+            {% endfor %}
+          <!--
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+         
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          -->
+        </ol>
+        <div class="carousel-inner">
+            {% for col in cols %}
+            {% if forloop.counter == 1 %}
+          <div class="carousel-item active">
+              {% else %}
+              <!--
+            <div class="row text-center">
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://www.threco.com/"><img src="https://static.wixstatic.com/media/1d20df_c3c38eea3ad8492a800f9f1c82132c8a~mv2.png/v1/fill/w_311,h_131,al_c,q_85,usm_0.66_1.00_0.01/Logopng.webp" alt="Threco"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://www.careernaksha.com/"><img src="https://d2t0yxygbqzqe9.cloudfront.net/assets/images/logo.png" alt="Career naksha"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://mathrithms.com/"><img src="https://mathrithms.com/assets/images/mathrithms-192x192.png" alt="Career naksha"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://www.modernizing-spaces.com/"><img src="{% static 'images/IF_company/ms_cube.jpg' %}" alt="Career naksha"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://yocket.in/"><img src="{% static 'images/IF_company/yocket-f.png' %}" alt="Career naksha"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://monk-e.in/"><img src="https://instagram.fbom2-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/55807162_613092942487951_7581259125177130520_n.jpg?tp=1&_nc_ht=instagram.fbom2-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=Sp7mlkPRZZUAX-8PXwJ&ccb=7-4&oh=2ca7206ab50f20ba94a5301b9c63a1a6&oe=6088F6A0&_nc_sid=4f375e" alt="Career naksha"></a></div></div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row text-center">
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://strideahead.in/"><img src="{% static 'images/IF_company/stripe.png' %}" alt="Threco"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://www.skyindya.com/"><img src="{% static 'images/IF_company/sky.png' %}" alt="Career naksha"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://www.tydideas.com/"><img src="{% static 'images/IF_company/tyd.png' %}" alt="Career naksha"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://www.phionike.com/"><img src="{% static 'images/IF_company/phionike.png' %}" alt="Career naksha"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://www.cyphware.com/"><img src="{% static 'images/IF_company/cyph.png' %}" alt="Career naksha"></a></div></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://www.linkedin.com/company/embedos-engineering/?originalSubdomain=in"><img src="{% static 'images/IF_company/embedos.png' %}" alt="Career naksha"></a></div></div>
+            </div>
+          </div>
+          -->
+          <div class="carousel-item">
+              {% endif %}
+            <div class="row text-center">
+                {% for company in col %}
+                <div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="{% url 'job_single' company.id %}"><img src="{{ company.logo.url }}" alt="{{ company.Company_name }}"></a></div></div>
+                {% endfor %}
+              <!--<div class="col-md-4 col-sm-6 col-xs-12"><div class="company-card"><a href="https://cppsecrets.com/index.php"><img src="{% static 'images/IF_company/cpp.png' %}" alt="Threco"></a></div></div>
+              -->
+            </div>
+          </div>
+            {% endfor %}
+          <br><br>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      
+    </div>
+
+  <!-- Testimony -->
+
+    <div class="companies testimony" id="testimony">
+        <br><br>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+
+          <div class="carousel-item slide_testimony active">
+              <p class="description">
+                ACM's annual internship fair has been an incredible stepping stone to land an internship! There were opportunities in multiple domains to gain real world experience. Highly recommend!
+              </p>
+              <div class="author">
+                <div class="authinfo">
+                  <span class="authname">Ankit Gupta</span>
+                  <h6>BE Computer Engineering</h6>
+                </div>
+              </div>
+            </div><!--closes slide-->
+            <div class="carousel-item slide_testimony ">
+              <p class="description">
+                I am genuinely grateful to the ACM Team for organizing the IF that helped me land an internship at a Global Payments Company that I wouldn't have had a chance at if I would have applied to them directly. The process was so effective that each student got at least one internship offer and could boost their profile.
+              </p>
+              <div class="author">
+                <div class="authinfo">
+                  <span class="authname">Harshil Jhaveri</span>
+                  <h6>BE Computer Engineering</h6>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item slide_testimony ">
+              <p class="description">
+                My first internship was with ACM's IF. The experience I gained there is what I leveraged to move forward professionally- do not underestimate the power of contributing to a relevant  real world project.
+              </p>
+              <div class="author">
+                <div class="authinfo">
+                  <span class="authname">Nishay Madhani</span>
+                  <h6>BE Computer Engineering</h6>
+                </div>
+              </div>
+            </div>
+            <!--closes slide-->
+
+            <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a> -->
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mapMarker row mapsDiv" id="contact"> 
+      <div class="col-lg-6 map_left"  >
+
+          <!-- <h3 class="text_header" >Co-Organizers</h3>
+         
+              <div class="text_coordinator">
+                  <span class="branchHead" >Meith Navlakha</span> 
+                  <span class="line" ></span> 
+                  <span class="email_coordinator" >meithnavlakha@gmail.com</span> 
+              </div>
+              <div class="text_coordinator">
+                  <span class="branchHead" >Meith Navlakha</span> 
+                  <span class="line" ></span> 
+                  <span class="email_coordinator" >meithnavlakha@gmail.com</span> 
+              </div> -->
+         
+          <h3 class="text_header">Contact Us</h3>
+          <div class=" text_coordinator number">
+            <span class="branchHead" >Dhruvi Khankhoje</span>
+            <div><span class="branchHead" ><number>+91 98206 92210</number></span></div>
+          </div>
+          <div class="text_coordinator number">
+            <span class="branchHead" >Pruthav Jhaveri</span>
+            <div><span class="branchHead" ><number>+91 99203 01508</number></span></div>
+          </div>
+
+          <a href="{% url 'home' %}" class="homebtn">Visit Website</a>
+
+         
+      </div>
+
+      <div class="col-lg-6 mapId map_right" style="overflow: hidden;" id="mapId">
+          <iframe class="Gmap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d942.4994801090171!2d72.83743607483443!3d19.107747162267845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x75f29a4205098f99!2sDwarkadas+J+Sanghvi+College+of+Engineering!5e0!3m2!1sen!2sus!4v1397913464271"></iframe>
+  
+      </div>
+    </div>
+
+    </div>
+
+    <footer id="footer" class="footer-distributed " style="padding-top: 80px;padding-bottom: 10px;">
+            
+      <div class="row" style="color:white;line-height: 2;">
+
+          <div class="col-md-3 col-xs-12 footerModify text-center">
+              <div class="footerTitle">
+                  About us
+              </div>
+              <div class="footerLogo">
+                  <a class="" >
+                      <img class="styleFootLogo" width="50%" src="{% static 'images/acm-white-logo.png' %}"/>
+                  </a> 
+              </div>
+          
+              <div>
+                  Don't let us convince you about our success. Let our three consecutive Best Student Chapter of the Year awards do the talking.
+              </div>
+
+          </div>
+          <div class="col-md-3 col-xs-12 footerModify text-center">
+              <div class="footerTitle text-center">
+                  Navigation
+              </div>
+              <div class="row">
+                  <div class=" col-xs-12 col-md-12 col-lg-12 text-center">
+                  
+                          <a href="{% url 'job_profile' %}" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Job Profiles</a>
+                          <!-- <a href="#domain" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Problems</a>
+                          <a href="#schedule" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Schedule</a> -->
+                          <a href="{% url 'if_form' %}" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Registration</a>
+                  
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="col-md-3 col-xs-12 footerModify  text-center">
+              <div class="footerTitle">
+                  Location
+              </div>
+              <div>
+                  <ul style="list-style-type:none;padding:0 ">
+                      <li class="widget_anpstext">
+                          
+                          No.U-15,
+                          J.V.P.D. Scheme,
+                          Bhaktivedanta Swami Marg,
+                          Opp.Cooper Hospital
+                          Vile Parle (West),
+                          
+                          Mumbai-400 056.
+                          India
+                      </li>
+                  
+                     
+                      <li class="widget_anpstext">
+                          coreacm@gmail.com
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-md-3 col-xs-12 footerModify text-center">
+              <div class="footerTitle">
+                  Follow us
+              </div>
+              <div>
+                  <a class="mediaLink facebook" href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></a>
+                  <a class="mediaLink " href="https://www.djacm.co.in" ><i class="fa fa-globe"></i></a>
+                  <a class="mediaLink instagram" href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+              </div>
+          </div>
+          <div class="col-md-12 text-center">Made with  <span class="fa fa-heart " style="color: red;"></span> by DJACM INFOTECH team</div>
+      </div>
+      
+      
+  </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+         <!--Scrolling Effect--> 
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({
+    
+            offset: 100, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 600, // values from 0 to 3000, with step 50ms
+          });
+        </script>
+    </body>
+</html>

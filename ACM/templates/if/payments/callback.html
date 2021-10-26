@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="{% static 'css/callback.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="title1">
+  {% ifequal STATUS 'SUCCESS' %}
+  <h3 style="color: green;"><i class="fa fa-check-circle"></i> TRANSACTION SUCCESSFUL</h3>
+  {% else %}
+  <h3 style="color: red;"><i class="fa fa-times-circle"></i> TRANSACTION FAILED</h3>
+  {% endifequal %}
+</div>
+<div class="downloadbtn">
+  <button class="dbtn" id="download">DOWNLOAD RECEIPT</button>
+</div>
+<div id="editor"></div>
+<div class="wrapper2">
+<div id = "receipt" class="wrapper">
+    <div class="form">
+      <div class="inputfield2">
+        <h2>TRANSACTION RECEIPT</h2>
+        <!-- <label></label> -->
+      </div>
+      <br>
+      <div class="inputfield">
+        <label>Transaction Status:</label>
+        {% ifequal STATUS 'SUCCESS' %}
+        <label style="color: green;">{{STATUS}}</label>
+        {% else %}
+        <label style="color: red;">{{STATUS}}</label>
+        {% endifequal %}
+      </div>
+      <div class="inputfield">
+        <label>Transaction Amount:</label>
+        <label>{{TXNAMOUNT}}</label>
+      </div>
+      <div class="inputfield">
+        <label>SAP ID:</label>
+        <label>{{SAP_ID}}</label>
+      </div>
+      <div class="inputfield">
+        <label>Name:</label>
+        <label>{{FULL_NAME}}</label>
+      </div>
+      <div class="inputfield">
+        <label>ACM Member:</label>
+        <label>{{MEMBER_OF_ACM}}</label>
+      </div>
+      <div class="inputfield">
+        <label>Number of Companies chosen:</label>
+        <label>{{NO_OF_COMPANIES}}</label>
+      </div>
+      <div class="inputfield">
+        <label>MID:</label>
+        <label>{{MID}}</label>
+      </div>
+      <div class="inputfield">
+        <label>TRANSACTION ID:</label>
+        <label>{{TXNID}}</label>
+      </div>
+      <div class="inputfield">
+        <label>ORDER ID:</label>
+        <label>{{ORDERID}}</label>
+      </div>
+      <div class="inputfield">
+        <label>BANK TRANSACTION ID:</label>
+        <label>{{BANKTXNID}}</label>
+      </div>
+      <div class="inputfield">
+        <label>TRANSACTION DATE:</label>
+        <label>{{TXNDATE}}</label>
+      </div>
+      <div class="inputfield">
+        <label>BANK NAME:</label>
+        <label>{{BANKNAME}}</label>
+      </div>
+    </div>
+</div>	
+</div>
+<script src="{% static 'js/html2pdf.js' %}"></script>
+<script>
+  window.onload = function(){
+    document.getElementById("download")
+    .addEventListener("click",()=>{
+      const receipt = this.document.getElementById("receipt");
+      var opt={
+        margin:1,
+        filename: 'Internship Fair Receipt.pdf',
+        image: {type:'jpeg',quality:0.98},
+        html2canvas : {scale: 2},
+        jsPDF: {unit: 'in', format:'letter',orientation:'portrait'}
+      }
+      html2pdf().from(receipt).set(opt).save()
+    })
+  }
+</script>
+	
+</body>
+</html>

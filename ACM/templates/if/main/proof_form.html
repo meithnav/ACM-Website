@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="{% static 'css/callback.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="title1">
+  <h3 style="color: green;">APPLICATION DETAILS</h3>
+</div>
+<div class="downloadbtn">
+  <button class="dbtn" id="download"><i class="fa fa-download" aria-hidden="true"></i> DOWNLOAD DETAILS</button>
+</div>
+<div id="editor"></div>
+<div class="wrapper2">
+<div id = "receipt" class="wrapper">
+    <div class="form">
+      <div class="inputfield2">
+        <h2>APPLICATION RECEIPT</h2>
+      </div>
+      <br>
+      <div class="inputfield">
+        <label>Name:</label>
+        <label>{{FULL_NAME}}</label>
+      </div>
+      <div class="inputfield">
+        <label>SAP ID:</label>
+        <label>{{SAP_ID}}</label>
+      </div>
+      <div class="inputfield">
+        <label>Number of Categories:</label>
+        <label>{{NO_OF_COMPANIES}}</label>
+      </div>
+      <div class="inputfield">
+        <label>Number of Roles:</label>
+        <label>{{NO_OF_INTERVIEWS}}</label>
+      </div>
+      <div class="inputfield">
+        <label>Amount:</label>
+        <label>₹ {{AMOUNT}}</label>
+      </div>
+      <div class="inputfield2">
+        <h4>LIST OF INTERVIEWS</h4>
+      </div>
+      <br>
+      <table class="table">
+          <thead>
+              <th>NAME</th>
+              <th>CATEGORY</th>
+              <th>POSITION</th>
+          </thead>
+          <tbody>
+              {% for name,positionType,position in COMPANIES%}
+              <tr>
+                  <td data-label="NAME">{{name}}</td>
+                  <td data-label="CATEGORY">{{positionType}}</td>
+                  <td data-label="POSITION">{{position}}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+    </div>
+</div>	
+</div>
+<script src="{% static 'js/html2pdf.js' %}"></script>
+<script>
+  window.onload = function(){
+    document.getElementById("download")
+    .addEventListener("click",()=>{
+      const receipt = this.document.getElementById("receipt");
+      var opt={
+        margin:1,
+        filename: 'Internship Fair Receipt.pdf',
+        image: {type:'jpeg',quality:0.98},
+        html2canvas : {scale: 2},
+        jsPDF: {unit: 'in', format:'letter',orientation:'portrait'}
+      }
+      html2pdf().from(receipt).set(opt).save()
+    })
+  }
+</script>
+	
+</body>
+</html>

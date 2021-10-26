@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <title>DJACM - ABOUT BLOG</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Load icon library -->
+           <!--JQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Header Font-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <!--Scrolling Effect-->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!--Favicon-->
+        <link rel="shortcut icon" href="{% static 'images/acm-black-logo.png' %}" type="image/x-icon">
+
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/pageLayout.css' %}">
+        <script type="text/javascript" src="{% static 'js/pageLayout.js' %}"></script>
+
+
+    </head>
+    <body>
+
+        <div class="banner">
+            <div class="header" id="header">
+                <div class="logo">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a>
+                </div>
+                <div class="menubtn" id="menubtn">
+                    <div class="p">
+                        <p id="bar1"></p>
+                        <p id="bar2"></p>
+                        <p id="bar3">  </p>
+                    </div>
+                </div>
+
+                <div class="innerheader" id="innerheader">
+                            <div class="items"><a href="{% url 'home' %}"> Home </a></div>
+                            <div class="items"><a href="{% url 'events' %}"> Events </a></div>
+                            <div class="items"><a href="{% url 'teams' %}"> Committee </a></div>
+                            <div class="items">
+                                <div class="dropdown " >
+                                    <button class="dropbtn">Resources</button>
+                                    <div class="dropdown-content">
+                                        <a href="{% url 'resources' %}">PPT</a>
+                                        <a href="{% url 'ascii' %}">ASCII</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items"><a href="{% url 'blog' %}"> Blogs </a></div>
+                            <!-- <div class="items"><a href=""> Blogs </a></div> -->
+                            <div class="items contact"><a href="{% url 'contact' %}"> Contact Us </a></div>
+                            <!-- <div class="items member"><a href="{% url 'submit' %}" class="membertext"> Be a Member</a></div> -->
+                            <div class="items member"><a href="{% url 'if_home' %}" class="membertext">IF</a></div>
+                        </div><!--closes innerheader-->
+
+            </div> <!--closes header-->
+          </div>
+
+        <div class="backImg">
+
+            <div class="background-img">
+                <img src="{{blog.main_img.url}}" alt="">
+              </div>
+
+              <div class="blog-search-container">
+                  <br><br>
+                  <!-- <form class="example" action="action_page.php" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </form> -->
+                    <h1 >{{blog.title}}</h1>
+                    <br><br>
+                    <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">By {{blog.author}} </p>
+              </div>
+
+        </div>
+
+        <div class="row">
+            <div class="column-left col-md-8 col-sm-8">
+                {{blog.content | safe}}
+            </div>
+
+            <div class="column-right col-md-4 col-sm-4">
+                <div class="right-quote">
+                    <div class="person-img" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">
+                      <img src="{{blog.author.photo.url}}" alt="">
+                    </div>
+                    <br>
+                    <h2 data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">{{blog.author}}</h2>
+                    <br>
+                    <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">{{blog.author.detail}}</p>
+                    <br>
+                    <a href="{{blog.author.facebook}}"><i class="fa fa-facebook" aria-hidden="true" style="margin-right:14px;"></i></a>
+                    <a href="{{blog.author.instagram}}"><i class="fa fa-instagram" aria-hidden="true" style="margin-right:14px;"></i></a>
+                    <a href="{{blog.author.linkedin}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+                <br><br><br>
+                <div class="right-popular">
+                    <h2 data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">Trending Blogs</h2>
+                    <br><br>
+                    {% for blog in trending_blogs %}
+                    <div class="row pop-blog-card">
+                        <div class="col-md-3">
+                            <div class="pop-blog-img" >
+                              <img src="{{blog.main_img.url}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-9" data-aos="fade-left" data-aos-delay="200" data-aos-duration="700" >
+
+                            <h4><a href="{% url 'blog_detail' blog.title %}">{{blog.title}}</a></h5>
+
+                            <p>{{blog.short_summary}}<p>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    {% endfor %}
+                    <!-- <div class="row">
+                        <div class="col-md-3">
+                            <div class="pop-blog-img" >
+                            </div>
+                        </div>
+                        <div class="col-md-9" data-aos="fade-left" data-aos-delay="200" data-aos-duration="700">
+                            <h4>The Great Escape</h5>
+                            <p>oasc insain isavon niascniaon niasnicn iaosincoain <p>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="pop-blog-img" >
+                            </div>
+                        </div>
+                        <div class="col-md-9" data-aos="fade-left" data-aos-delay="200" data-aos-duration="700">
+                            <h4>The Great Escape</h5>
+                            <p>oasc insain isavon niascniaon niasnicn iaosincoain <p>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="pop-blog-img" >
+                            </div>
+                        </div>
+                        <div class="col-md-9" data-aos="fade-left" data-aos-delay="200" data-aos-duration="700">
+                            <h4>The Great Escape</h5>
+                            <p>oasc insain isavon niascniaon niasnicn iaosincoain <p>
+                        </div>
+                    </div> -->
+
+
+
+                </div>
+            </div>
+        </div>
+
+    <footer>
+
+        <div class="innerfooter">
+                <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a></div>
+
+                <div class="footerbox">
+                    <div class="parts involved">
+                        <h2>Get Involved</h2>
+                        <ul>
+                          <li><a href="{% url 'resources' %}"> PPT </a></li>
+                          <li><a href="{% url 'blog' %}"> Blogs </a></li>
+                          <!-- <li><a href=""> Blogs </a></li> -->
+                          <li><a href="{% url 'events' %}"> Events </a></li>
+                          <li><a href="{% url 'contact' %}"> Contact Us </a></li>
+                     </ul>
+                 </div>
+                     <div class="parts sociallinks">
+                      <h2>Stay Connected</h2>
+                     <div class="icons">
+                     <a href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+                     <a href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></i></a>
+                     <a href="https://in.linkedin.com/company/dj-sanghvi-acm"><i class="fa fa-linkedin"></i></i></a>
+                     </div>
+                 </div>
+                  <div class="parts subscribe">
+                    <h2>Subscribe To NewsLetter</h2>
+                    <div class="emailinput">
+                        <input type="email" class="email" placeholder="Enter your Email Address">
+                        <button>Join</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copyright"> <i class="fa fa-copyright"></i> 2021 DJSCE ACM -- All Rights Reserved</div>
+    </footer>
+
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!--Scrolling Effect-->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+         AOS.init({
+
+             offset: 100, // offset (in px) from the original trigger point
+             delay: 0, // values from 0 to 3000, with step 50ms
+             duration: 600, // values from 0 to 3000, with step 50ms
+            });
+        </script>
+
+
+<!--Sticky Scrollbar -->
+<script>
+    window.onscroll = function() { StickyHeader() };
+  </script>
+
+  <!--JQuery Menu for small screen-->
+  <script>
+   $(document).ready(function(){
+        $("#menubtn").click(function(){
+          $("#innerheader").slideToggle("activemenu");
+          $(".header").toggleClass("activemenu");
+          $(".logo").toggleClass("activelogo");
+
+        });
+      });
+  </script>
+
+
+
+    </body>
+<!-- =======
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <meta name="keywords" content="djacm , djscoe acm, acm, dj acm, djscoe student chapter , events, computing, resources, world, students">
+    <meta name="description" content="DJSCOE-ACM has established itself as a successful committee in terms of the number of members who have become a part of the ACM family and in terms of the seminars/workshops that have been conducted.">
+    <meta name="author" content="DJSCOE-ACM">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google-site-verification" content="0iXdl6xLt6MOIy6RSAZ5h3giWMn7Yuyhv2Ahld1h8pg" />
+</head>
+<body>
+    {% for blog in blogs %}
+    <p>{{ blog.title }}</p>
+    <p>{{ blog.author }}</p>
+    <img src="{{ blog.main_img.url }}" alt="{{ blog.title }}">
+    <p>{{ blog.content }}</p>
+    <p>{{ blog.date }}</p>
+    {% for image in images %}
+    {% if image.blog.title == blog.title %}
+    <img src="{{ image.img.url }}" alt="{{ image.blog.title }}">
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</body> -->
+
+</html>

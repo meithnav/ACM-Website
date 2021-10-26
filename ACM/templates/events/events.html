@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>DJACM - EVENTS</title>
+
+
+      <!-- META TAGS FOR SEO -->
+
+      <meta name="keywords" content="djacm , djscoe acm, acm, dj acm, djscoe student chapter, events, computing, resources, world, students ">
+      <meta name="description" content="DJSCOE-ACM has established itself as a successful committee in terms of the number of members who have become a part of the ACM family and in terms of the seminars/workshops that have been conducted.">
+      <meta name="author" content="DJSCOE-ACM">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="google-site-verification" content="0iXdl6xLt6MOIy6RSAZ5h3giWMn7Yuyhv2Ahld1h8pg" />
+
+
+
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!--Font Awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Scrolling Effect-->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!--Header Font-->
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--ROW H2 Font-->
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+  <!--StyleSheet-->
+<link rel="stylesheet" href="{% static 'css/events.css' %}">
+<!-- Page Layout -->
+<link rel="stylesheet" href="{% static 'css/pageLayout.css' %}">
+<script type="text/javascript" src="{% static 'js/pageLayout.js' %}"></script>
+<!--Favicon-->
+<link rel="shortcut icon" href="{% static 'images/acm-black-logo.png' %}" type="image/x-icon">
+<!-- <script type="text/javascript" src="{% static 'js/pageLayout.js' %}"></script> -->
+</head>
+
+
+<body>
+  <!-- HEADER  -->
+  <div class="banner">
+    <div class="header" id="header">
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a>
+        </div>
+        <div class="menubtn" id="menubtn">
+            <div class="p">
+                <p id="bar1"></p>
+                <p id="bar2"></p>
+                <p id="bar3">  </p>
+            </div>
+        </div>
+
+        <div class="innerheader" id="innerheader">
+                    <div class="items"><a href="{% url 'home' %}"> Home </a></div>
+                    <div class="items"><a href="{% url 'events' %}"> Events </a></div>
+                    <div class="items"><a href="{% url 'teams' %}"> Committee </a></div>
+                    <div class="items">
+                        <div class="dropdown " >
+                            <button class="dropbtn">Resources</button>
+                            <div class="dropdown-content">
+                                <a href="{% url 'resources' %}">PPT</a>
+                                <a href="{% url 'ascii' %}">ASCII</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items"><a href="{% url 'blog' %}"> Blogs </a></div>
+                    <!-- <div class="items"><a href=""> Blogs </a></div> -->
+                    <div class="items contact"><a href="{% url 'contact' %}"> Contact Us </a></div>
+                    <!-- <div class="items member"><a href="{% url 'submit' %}" class="membertext"> Be a Member</a></div> -->
+                    <div class="items member"><a href="{% url 'if_home' %}" class="membertext">IF</a></div>
+                </div><!--closes innerheader-->
+
+    </div> <!--closes header-->
+  </div>
+
+  <div class="box">
+    <!--HEADING-->
+    <div class="event_head">
+      <h1 data-aos="fade-in" data-aos-duration="500" >Our Events</h1>
+    </div>
+
+    <!--EVENTS GRID-->
+    <div class="grid">
+
+      <!--Loop1-->
+      {% for e in events %}
+      {% if forloop.counter0|divisibleby:2 %}
+      <div class="row" >
+        <div class="pic left">
+          <img src="{{e.image.url}}" class="event_image" data-aos="fade-right" data-aos-duration="500"  data-aos-offset="250" data-aos-delay="500">
+        </div>
+        <div class="text">
+          <h2 data-aos="fade-left" data-aos-duration="500"  data-aos-delay="100">{{e.title}}</h2>
+          <h6 data-aos="fade-left" data-aos-duration="500" data-aos-delay="300">
+            {{e.summary}}
+          </h6>
+          <p data-aos="fade-left" data-aos-duration="500" data-aos-delay="600">{{e.when}}</p>
+          <a href="{% url 'event_detail' e.title %}" data-aos="fade-up" data-aos-duration="500"  data-aos-offset="100" data-aos-delay="650">Know more</a>
+
+        </div>
+      </div>
+      {% else %}
+      <div class="row" >
+        <div class="pic right">
+          <img src="{{e.image.url}}" alt="event image" class="event_image" data-aos="fade-left" data-aos-duration="500"  data-aos-offset="100" data-aos-delay="500">
+        </div>
+
+        <div class="text left">
+          <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="100">{{e.title}}</h2>
+          <h6 data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">{{e.summary}}</h6>
+          <p data-aos="fade-right" data-aos-duration="500" data-aos-delay="700">{{e.when}}</p>
+          <a href="{% url 'event_detail' e.title %}" data-aos="fade-up" data-aos-duration="500"  data-aos-offset="100" data-aos-delay="650">Know more</a>
+
+        </div>
+      </div>
+
+      {% endif %}
+      {% endfor %}
+
+
+      <!--closes Loop1-->
+
+
+
+    </div>
+
+  </div>
+
+  <!--FOOTER-->
+<footer>
+
+  <div class="innerfooter">
+      <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a></div>
+
+      <div class="footerbox">
+          <div class="parts involved">
+              <h2>Get Involved</h2>
+              <ul>
+                <li><a href="{% url 'resources' %}"> PPT </a></li>
+                <li><a href="{% url 'blog' %}"> Blogs </a></li>
+                <!-- <li><a href=""> Blogs </a></li> -->
+                <li><a href="{% url 'events' %}"> Events </a></li>
+                <li><a href="{% url 'contact' %}"> Contact Us </a></li>
+              </ul>
+          </div>
+          <div class="parts sociallinks">
+              <h2>Stay Connected</h2>
+              <div class="icons">
+                <a href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></i></a>
+                <a href="https://in.linkedin.com/company/dj-sanghvi-acm"><i class="fa fa-linkedin"></i></i></a>
+              </div>
+          </div>
+          <div class="parts subscribe">
+              <h2>Subscribe To NewsLetter</h2>
+             <div class="emailinput">
+                <input type="email" class="email" placeholder="Enter your Email Address">
+                <button>Join</button>
+              </div>
+
+          </div>
+      </div>
+
+  </div>
+
+  <div class="copyright"> <i class="fa fa-copyright"></i> 2021 DJSCE ACM -- All Rights Reserved</div>
+</footer>
+
+
+  <!--Scrolling Effect-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+
+        offset: 150, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 600, // values from 0 to 3000, with step 50ms
+    });
+  </script>
+
+<!--Sticky Scrollbar -->
+<script>
+  window.onscroll = function() { StickyHeader() };
+</script>
+
+<!--JQuery Menu for small screen-->
+<script>
+ $(document).ready(function(){
+      $("#menubtn").click(function(){
+        $("#innerheader").slideToggle("activemenu");
+        $(".header").toggleClass("activemenu");
+        $(".logo").toggleClass("activelogo");
+
+      });
+    });
+</script>
+
+</body>
+
+</html>

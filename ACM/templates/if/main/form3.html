@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+  <link rel="stylesheet" href="{% static 'css/if_form3.css' %}">
+	<link rel="stylesheet" href="{% static 'css/custom-bs.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/line-icons/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/quill.snow.css' %}">
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800;900&display=swap" rel="stylesheet">
+ <!-- Font Awesome4 -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/JobProfile.css' %}"> 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+</head>
+<body onload="positionChanger()">
+  <nav class="navbar sticky-top  navbar-expand-lg navbar-light " style="border-bottom: 2px solid black;">
+    <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="{% url 'if_home' %}" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">INTERNSHIP FAIR</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link middle" href="{% url 'if_home' %}"  >Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link middle " href="{% url 'if_form' %}" >Registration Form</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link middle" href="{% url 'job_profile' %}" >Job Profiles</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="title1">
+  Registration Form
+</div>
+<div class="wrapper2">
+  <div class="wrapper">
+    <h5 class="text-center">Instructions</h5>
+    <div>
+      <ol>
+        <li><b>The Registration form can only be filled by students of DJSCE.</b></li>
+        <li><b>Registrations are open till 6th April, 5pm</b></li>
+        <li>The registration form can only be filled once with your SAPID- please go through the list of internships, corresponding job descriptions and other conditions for all companies thoroughly and fill the form carefully!</li>
+        <li>The form asks for a drive link to your resume, so please make sure that you have your resume ready and uploaded on the drive while you are applying. Do ensure  that the link is not private.</li>
+        <li>Registration Fee Policy:<br>
+          - The cost of applying to the roles being offered by a company is ₹50.<br>
+          - If a company is conducting separate interviews for the roles they are offering, the division has been on the registration form and will be charged separately.
+          </li>
+        <li>As conveyed during the membership drive, ACM members of the year 2020-2021 will receive  3 company applications for free, post which the standard ₹50 fee will be charged per interview.</li>
+        <li>Once you select all the companies you wish to apply for, your total registration fee will be displayed. You are expected to pay the <b>total amount via Paytm/Gpay on 9619614649(Mokshit Mehta)</b> and upload the screenshot of the payment in the form for verification.</li>
+        <li>On submitting the form you will receive all your application details and upon verification of payment, you will receive a receipt from our end on your mail confirming your registration.</li>
+        <li>There is a possibility that a company may shortlist candidates before the interviews on 9th and 10th April and DJ-ACM is in no way involved in the shortlisting of the candidates. If a candidate is not shortlisted for an interview for a company they have paid for, the amount paid for that respective company will be refunded back to the candidate. </li>
+        <li>The refund procedure for IF (if applicable to a candidate ) shall only begin after the completion of the event. We request that you are patient , our team will be assiduously working to complete refunds as soon as possible. </li>
+        <li>The interviews will be held on 9th and 10th April, 2021 from 10am- 6pm. The schedule for the interviews will be released on our website & our discord channel by 7th April in the evening. Please ensure if you have registered, you diligently check the schedule & join our discord channel for updates. <br>Discord : <a href="https://discord.gg/SzhmN26F">https://discord.gg/SzhmN26F</a></li>
+        <li>Please ensure that you are on time for all your interview slots , DJ-ACM will  not be responsible for missed interviews.</li>
+        <li>The interviews will be held on 9th and 10th April, 2021 in between slots of 10am-1am and 2pm-5pm  </li>
+      </ol>
+      
+    </div>
+  </div>
+</div>
+<div class="wrapper2">
+  <div class="wrapper">
+      <form onsubmit="return checkTerms()" id="mainform" action="#" method="post" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if message %}
+        <div class="inputfield3">
+          {% if success %}
+          <p style="text-align: center;font-size: 12px;color:lightgreen">{{message}}</p>
+          {% else %}
+          <p style="text-align: center;font-size: 12px;color:red">{{message}}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="inputfield">
+          <label>Full Name</label>
+          <input name="name" type="text" class="input">
+        </div>
+        <div class="inputfield">
+          <label>SAP ID</label>
+          <input name="sap" type="text" oninput="getCost()" class="input">
+        </div>  
+        <div class="inputfield">
+          <label>Gender</label>
+          <div class="custom_select">
+            <select name="gender">
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="inputfield">
+          <label>Email Address</label>
+          <input name="email" type="email" class="input">
+        </div> 
+        <div class="inputfield">
+          <label>Phone Number</label>
+          <input name="phone" type="text" class="input">
+        </div>
+        <div class="inputfield">
+          <label>Whatsapp Number</label>
+          <input name="whatsapp" type="text" class="input">
+        </div>
+        <div class="inputfield">
+          <label>Resume Drive Link</label>
+          <input name="resume" type="url" class="input">
+        </div>  
+        <div class="inputfield">
+          <label>Department</label>
+          <div class="custom_select">
+            <select name="department">
+              <option value="">Select</option>
+              <option value="Computer Engineering">Computer Engineering</option>
+              <option value="Information Technology">Information Technology</option>
+              <option value="Electronics & Telecommunication Engineering">Electronics & Telecommunication</option>
+              <option value="Electronics Engineering">Electronics Engineering</option>
+              <option value="Mechanical Engineering">Mechanical Engineering</option>
+              <option value="Chemical Engineering">Chemical Engineering</option>
+              <option value="Production Engineering">Production Engineering</option>
+              <option value="Biomedical Engineering">Biomedical Engineering</option>
+            </select>
+          </div>
+        </div>
+        <div class="inputfield">
+          <label>Year</label>
+          <div class="custom_select">
+            <select name="year">
+              <option value="">Select</option>
+              <option value="Second Year">S.E.</option>
+              <option value="Third Year">T.E.</option>
+              <option value="Fourth Year">B.E.</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="inputfield">
+          <label>Company List:</label>
+        </div>
+        <div class="row companylist">
+          {%for category_name,sub_categories in categories%}
+          <div class="col-md-4 inputfield2 terms">
+            <h5>{{category_name}}</h5>
+            {% for sub_category in sub_categories %}
+            <p><label class="check">
+              <input onclick="getCost();" class="checks" name ="{{sub_category}}"type="checkbox">
+            </label>
+            &nbsp;&nbsp;
+            <span name="position" style="color:#57aba2">{{sub_category}}</span></p>
+            {% endfor %}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="inputfield3">
+          <p id="message" style="text-align: center;font-size: 12px;color:red"></p>
+        </div>
+        <div class="inputfield">
+          <label>Cost</label>
+          <input value="₹ 0" name="payment" type="text" class="input" disabled>
+        </div>
+        <div class="inputfield">
+          <label>Payment Confirmation</label>
+          <input name="paymentconfirmation" type="file" class="input" disabled>
+        </div>
+        <br>
+        <div class="inputfield">
+          <input type="checkbox" name="terms" id="terms">
+          <label class="conditions" for="terms">By submitting this form you agree that you have read all the job descriptions carefully and all the details entered in this form are correct and you would abide by our <a href="https://docs.google.com/document/d/1R761IESqxZoSws6JhF35q2ZErfjjf8l1sOvsU8MkfTI/edit">Rules & Regulations</a></label>  
+        </div>
+        <div class="inputfield3">
+          <p id="termsmessage" style="text-align: center;font-size: 12px;color:red"></p>
+        </div>
+        <div class="inputfield">
+          <button id="submitbtn" type="submit" value="Register" class="btn">SUBMIT</button>
+        </div>
+      </form>
+  </div>
+</div>
+<footer id="footer" class="footer-distributed " style="padding-top: 80px;padding-bottom: 10px;">
+            
+  <div class="row" style="color:white;line-height: 2;">
+
+      <div class="col-md-3 col-xs-12 footerModify text-center">
+          <div class="footerTitle">
+              About us
+          </div>
+          <div class="footerLogo">
+              <a class="" >
+                  <img class="styleFootLogo" width="50%" src="{% static 'images/acm-white-logo.png' %}"/>
+              </a> 
+          </div>
+      
+          <div>
+              Don't let us convince you about our success. Let our three consecutive Best Student Chapter of the Year awards do the talking.
+          </div>
+
+      </div>
+      <div class="col-md-3 col-xs-12 footerModify text-center">
+          <div class="footerTitle text-center">
+              Navigation
+          </div>
+          <div class="row">
+              <div class=" col-xs-12 col-md-12 col-lg-12 text-center">
+              
+                      <a href="{% url 'job_profile' %}" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Job Profiles</a>
+                      <!-- <a href="#domain" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Problems</a>
+                      <a href="#schedule" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Schedule</a> -->
+                      <a href="{% url 'if_form' %}" class="footerLink"><i class="fa fa-angle-right footerIcon"></i>Registration</a>
+              
+              </div>
+          </div>
+
+      </div>
+
+      <div class="col-md-3 col-xs-12 footerModify  text-center">
+          <div class="footerTitle">
+              Location
+          </div>
+          <div>
+              <ul style="list-style-type:none;padding:0 ">
+                  <li class="widget_anpstext">
+                      
+                      No.U-15,
+                      J.V.P.D. Scheme,
+                      Bhaktivedanta Swami Marg,
+                      Opp.Cooper Hospital
+                      Vile Parle (West),
+                      
+                      Mumbai-400 056.
+                      India
+                  </li>
+              
+                 
+                  <li class="widget_anpstext">
+                      coreacm@gmail.com
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="col-md-3 col-xs-12 footerModify text-center">
+          <div class="footerTitle">
+              Follow us
+          </div>
+          <div>
+              <a class="mediaLink facebook" href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></a>
+              <a class="mediaLink " href="https://www.djacm.co.in" ><i class="fa fa-globe"></i></a>
+              <a class="mediaLink instagram" href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+          </div>
+      </div>
+      <div class="col-md-12 text-center">Made with  <span class="fa fa-heart " style="color: red;"></span> by DJACM INFOTECH team</div>
+  </div>
+  
+  
+</footer>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/stickyfill.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/quill.min.js' %}"></script>
+    
+    
+    <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+    
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    -->
+    <!-- Scrolling Effect  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+
+        offset: 100, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 600, // values from 0 to 3000, with step 50ms
+      });
+    </script>	
+<script>
+function positionChanger(){
+  var position = document.getElementsByName("position")
+  for(i=0;i<position.length;i++){
+    position[i].innerHTML=position[i].innerHTML.split("|")[2]
+  }
+
+}
+function checkTerms(){
+  var terms = document.getElementById('terms')
+  var message = document.getElementById('termsmessage')
+  if(terms.checked===false){
+    message.innerHTML = "Please agree to the given rules and regulations"
+    return false
+  }
+  else{
+    return true
+  }
+}
+function getCost(){
+  companies_total = "{{companies_total}}"
+  var sap = document.getElementsByName('sap')[0].value
+  var message = document.getElementById('message')
+  if(sap==="" || sap.length!=11 || sap.slice(0,3)!=="600"){
+    message.innerHTML = "Please Enter a valid SAP ID"
+  }
+  else{
+    message.innerHTML = ""
+    var memberList = ['60004190060', '60004190007', '60003190048', '60004190065', '60004190106', '60004190017', '60004190118', '60004190099', '60004190090', '60004190004', '60004190009', '60004190005', '60004190034', '60004190014', '60003190005', '60004190073', '60004190120', '60004190101', '60004190067', '60004190129', '60004190126', '60004190105', '60004190102', '60004190057', '60004190072', '60004190033', '60004190043', '60003190032', '60003190053', '60004190080', '60001190055', '60004190124', '60004190029', '60004190082', '60004190047', '60004190054', '60002190085', '60004190075', '60004190125', '60004190062', '60004190006', '60003190056', '60004190025', '60004190117', '60004190039', '60004200053', '60003190057', '60004190058', '60002190035', '60002190011', '60003190059', '60004190059', '60004190022', '60004190016', '6004190070', '60004190028', '60004190114', '60004190092', '60004190095', '60004190113', '60004190038', '60004190098', '60004200040', '60004190068', '60004200064', '60001190001', '60004190069', '60004190013', '60004190100', '60004190107', '60004190094', '60004190078', '60004190051', '60004190003', '60004190061', '60004190027', '60004190011', '60004190008', '60004190121', '60004190112', '60004190088', '60004190042', '60004190055', '60004190048', '60004190020', '60004190115', '60004190066', '60004190087', '60003190049', '60004190116', '60004190010', '60004190032', '60004190056', '60004190035', '60004190122', '60004190096', '60001190054', '60004190128', '60004190091', '60004190097', '60004190001', '60004200043']
+    var companyList = new Set()
+    var member = memberList.includes(sap)
+    var checks = document.getElementsByClassName('checks')
+    var cost = document.getElementsByName('payment')[0]
+    var c=0
+    var companies_chosen = 0
+    var payment = document.getElementsByName('paymentconfirmation')[0]
+    for(i=0;i<companies_total;i++){
+      if(checks[i].checked === true){
+        var name = checks[i].name.split("|")
+        name = name[0]+"|"+name[1]
+        companyList.add(name)
+      }
+    }
+    console.log(companyList)
+
+    companies_chosen = companyList.size
+    if (member) {
+      if(companies_chosen<=3){
+        c =0
+      }
+      else{
+        c =(companies_chosen-3)*50
+      }
+    }
+    else{
+      c= (companies_chosen)*50
+    }
+    cost.value = "₹ "+c
+    if (c>0){
+      payment.disabled=false
+    }
+    else{
+      payment.disabled=true
+    }
+  }
+}
+</script>	
+</body>
+</html>

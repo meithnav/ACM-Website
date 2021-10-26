@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJACM - ABOUT ASCII</title>
+
+    <!-- META TAGS FOR SEO -->
+
+    <meta name="keywords" content="djacm , djscoe acm, acm, dj acm, djscoe student chapter, events, computing, resources, world, students ">
+    <meta name="description" content="DJSCOE-ACM has established itself as a successful committee in terms of the number of members who have become a part of the ACM family and in terms of the seminars/workshops that have been conducted.">
+    <meta name="author" content="DJSCOE-ACM">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google-site-verification" content="0iXdl6xLt6MOIy6RSAZ5h3giWMn7Yuyhv2Ahld1h8pg" />
+
+
+
+
+    <!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--Font Awesome-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Header Font-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<!--Scrolling Effect-->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!--Favicon-->
+<link rel="shortcut icon" href="{% static 'images/acm-black-logo.png' %}" type="image/x-icon">
+<!--Header js-->
+<!--HEADER CSS-->
+<!-- <link rel="stylesheet" href="{% static 'css/pageLayout.css' %}"> -->
+
+<!--YOUR FILE CSS-->
+<link rel="stylesheet" href="{% static 'css/ascii.css' %}">
+
+<!-- <link rel="stylesheet" href="./payment.css"> -->
+
+
+
+</head>
+<body>
+
+  <!-- HEADER  -->
+  <div class="banner">
+    <div class="header" id="header">
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a>
+        </div>
+        <div class="menubtn" id="menubtn">
+            <div class="p">
+                <p id="bar1"></p>
+                <p id="bar2"></p>
+                <p id="bar3">  </p>
+            </div>
+        </div>
+
+        <div class="innerheader" id="innerheader">
+                    <div class="items"><a href="{% url 'home' %}"> Home </a></div>
+                    <div class="items"><a href="{% url 'events' %}"> Events </a></div>
+                    <div class="items"><a href="{% url 'teams' %}"> Committee </a></div>
+                    <div class="items">
+                        <div class="dropdown " >
+                            <button class="dropbtn">Resources</button>
+                            <div class="dropdown-content">
+                                <a href="{% url 'resources' %}">PPT</a>
+                                <a href="{% url 'ascii' %}">ASCII</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items"><a href="{% url 'blog' %}"> Blogs </a></div>
+                    <!-- <div class="items"><a href=""> Blogs </a></div> -->
+                    <div class="items contact"><a href="{% url 'contact' %}"> Contact Us </a></div>
+                    <!-- <div class="items member"><a href="{% url 'submit' %}" class="membertext"> Be a Member</a></div> -->
+                    <div class="items member"><a href="{% url 'if_home' %}" class="membertext">IF</a></div>
+                </div><!--closes innerheader-->
+
+    </div> <!--closes header-->
+  </div>
+
+
+<div class="ascii-main">
+
+  <h1 data-aos="fade-in" data-aos-delay="200"  data-aos-duration="1000">About DJ-ASCII</h1>
+  <h3 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">DJASCII is a state level project and poster competition organised by DJ-ACM and DJ-CSI in collaboration, with the faculty of both the IT and Computer Engineering departments managing the event. It is a medium to encourage the BE students to present their project topics at state level. A strict scrutiny of the participants project is done to shortlist the projects for final presentation. Finals has two rounds where in the first round detail implementation of the project is checked by our esteemed alumni working in that particular domain. Shortlisted projects from the first round are then evaluated by industry experts. For both rounds the projects are evaluated on rubrics such as methodology, feasibility, social relevance, applicability etc. To encourage projects that could not make up to the competition Poster Presentation is organized for them on the same day. The display of these projects help third year students to be aware of research areas and innovative applications of technology. Best poster is selected by our alumni judges. The winners of the project competition are felicitated by certificates and cash prize and those of poster presentation are also awarded certificates.</h3>
+  <br>
+  <h3 data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
+DJASCII 17 was all the more successful with approximately 120 entries for the project competition from all over Mumbai and 70 entries for poster presentation. Out of the 120 projects, 80 were shortlisted and 60 teams were registered for the competition. A strong team of almost 15 Alumni of Computer and IT department evaluated the projects for the first round and posters as well. Esteemed industry personnel were invited as judges for the final round of project competition.</h3>
+
+</div>
+
+<!--FOOTER-->
+<footer>
+
+<div class="innerfooter">
+    <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/acm-white-logo.png' %}" alt=""></a></div>
+
+    <div class="footerbox">
+        <div class="parts involved">
+            <h2>Get Involved</h2>
+            <ul>
+                <li><a href="{% url 'resources' %}"> PPT </a></li>
+                <li><a href="{% url 'blog' %}"> Blogs </a></li>
+                <!-- <li><a href=""> Blogs </a></li> -->
+                <li><a href="{% url 'events' %}"> Events </a></li>
+                <li><a href="{% url 'contact' %}"> Contact Us </a></li>
+            </ul>
+        </div>
+        <div class="parts sociallinks">
+            <h2>Stay Connected</h2>
+            <div class="icons">
+              <a href="https://www.instagram.com/djsanghvi_acm/?hl=en"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.facebook.com/djscoe.acm.5"><i class="fa fa-facebook"></i></i></a>
+              <a href="https://in.linkedin.com/company/dj-sanghvi-acm"><i class="fa fa-linkedin"></i></i></a>
+            </div>
+        </div>
+        <div class="parts subscribe">
+            <h2>Subscribe To NewsLetter</h2>
+           <div class="emailinput">
+              <input type="email" class="email" placeholder="Enter your Email Address">
+              <button>Join</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="copyright"> <i class="fa fa-copyright"></i> 2021 DJSCE ACM -- All Rights Reserved</div>
+</footer>
+
+
+
+
+
+
+<script>
+
+window.onscroll = function() { StickyHeader() };
+</script>
+
+<!--JQuery Menu for small screen-->
+<script>
+$(document).ready(function(){
+      $("#menubtn").click(function(){
+        $("#innerheader").slideToggle("activemenu");
+        $(".header").toggleClass("activemenu");
+        $(".logo").toggleClass("activelogo");
+
+      });
+    });
+</script>
+
+<!--Scrolling Effect-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init({
+
+    offset: 150, // offset (in px) from the original trigger point
+    delay: 0, // values from 0 to 3000, with step 50ms
+    duration: 600, // values from 0 to 3000, with step 50ms
+});
+</script>
+
+<script>
+function StickyHeader() {
+    var header = document.getElementById("header") ;
+    var sticky = header.offsetTop ;
+
+  if (window.pageYOffset > sticky) {
+    header.style.backgroundColor=" rgba(7, 18, 54, 0.904)";
+  } else {
+    header.style.backgroundColor=" rgba(0, 0, 0, 0.00)";
+    }
+  }
+
+</script>
+
+
+</body>
+</html>
